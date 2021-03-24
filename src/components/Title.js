@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Layout = () => {
+const Title = () => {
     return (
         <div>
-            Layout
+            title
         </div>
     );
 };
 
-export default Layout;
+export default Title;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Layout = () => {
+const galerija= () => {
     return (
         <div>
-            Layout
+           galerija
         </div>
     );
 };
 
-export default Layout;
+export default galerija;
