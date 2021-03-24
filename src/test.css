@@ -1,4 +1,28 @@
 :root {
+  /*ja dodao moguce boje*/
+  --clr-1: #eae7dc;
+  --clr-2: #d8c3a5;
+  --clr-3: #8e8d8a;
+  --clr-4: #e98074;
+  --clr-5: #e85a4f;
+
+  --cl-1: #191919;
+  --cl-2: #dfe2db;
+  --cl-3: #fff056;
+  --cl-4: #ffffff;
+
+  --c-1: #cbc5c1;
+  --c-2: #a2aab0;
+  --c-3: #ebeced;
+  --c-4: #4c586f;
+  --c-5: #3e3b3f;
+
+  --x-1: rgb(200, 105, 49);
+  --x-2: rgb(164, 72, 21);
+  --x-3: rgb(80, 131, 126);
+  --x-4: rgb(19, 72, 66);
+  --x-5: rgb(5, 46, 38);
+
   /* dark shades of primary color*/
   --clr-primary-1: hsl(21, 91%, 17%);
   --clr-primary-2: hsl(21, 84%, 25%);
