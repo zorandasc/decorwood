@@ -1,10 +1,15 @@
 import React from 'react';
+import NavBar from './NavBar'
+import SideBar from "./SideBar"
+import Footer from "./Footer"
 
-const Layout = () => {
+const Layout = ({children}) => {
     return (
-        <div>
-            Layout
-        </div>
+        <>
+            <NavBar></NavBar>
+            {children}
+            <Footer></Footer>
+        </>
     );
 };
 
