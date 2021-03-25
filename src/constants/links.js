@@ -10,7 +10,7 @@ export default [
   {
     page: "onama",
     label: "O Nama",
-    url: `/about`,
+    url: `/onama`,
     icon: <FaBabyCarriage className="icon" />,
   },
   {

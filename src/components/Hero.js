@@ -47,17 +47,18 @@ const fadeIn = keyframes`
 const Wrapper = styled.section`
     display: grid;
     .bcg{
+        margin-top: -5rem;
         grid-area: 1/1;
-            // You can set a maximum height for the image, if you wish.
-            // maxHeight: 600,
-        max-height: 100vh,
+        // You can set a maximum height for the image, if you wish.
+        // maxHeight: 600,
+        min-height: 100vh,
         
     }
     .content{
         // By using the same grid area for both, they are stacked on top of each other
         grid-area: 1/1;
         position: relative;
-          // This centers the other elements inside the hero component
+        // This centers the other elements inside the hero component
         place-items: center;
         display: grid;
         article {
