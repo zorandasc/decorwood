@@ -1,14 +1,18 @@
-import React from 'react';
+import React,{useContext}from 'react';
+
+import { GatsbyContext } from "../context/context"
 import NavBar from './NavBar'
-//import SideBar from "./SideBar"
+import SideBar from "./SideBar"
 import Footer from "./Footer"
 
 const Layout = ({children}) => {
+     const { isSidebarOpen } = useContext(GatsbyContext)
     return (
         <>
-            <NavBar></NavBar>
-            {children}
-            <Footer></Footer>
+          <NavBar></NavBar>
+          {isSidebarOpen && <SideBar></SideBar>}
+          {children}
+          <Footer></Footer>
         </>
     );
 };

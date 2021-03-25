@@ -43,15 +43,12 @@ const fadeIn = keyframes`
 `
 
 const Wrapper = styled.section`
-    display: grid;
-    
+    display: grid;   
     .bcg{
-        margin-top:0;
         grid-area: 1/1;
         // You can set a maximum height for the image, if you wish.
         // maxHeight: 600,
         min-height: 100vh;
-        
     }
     
 

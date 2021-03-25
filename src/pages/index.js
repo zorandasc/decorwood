@@ -1,13 +1,13 @@
 import * as React from "react"
-import {Layout,Hero} from "../components"
+import {Layout,Hero, About} from "../components"
 
 // markup
 const IndexPage = () => {
   return (
     <Layout>
-      <main>
+     
         <Hero></Hero>
-      </main>
+        <About></About>
     </Layout>
   )
 }
