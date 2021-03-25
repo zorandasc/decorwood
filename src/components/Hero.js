@@ -16,7 +16,7 @@ const Hero = () => {
                 // This is a presentational image, so the alt should be an empty string
                 alt=""
                 placeholder="blurred"
-                src={"../images/47677.jpg"}
+                src={"../images/1163.jpg"}
                 formats={["auto", "webp", "avif"]}
             />
             <div className='content'>
@@ -49,6 +49,7 @@ const Wrapper = styled.section`
         // You can set a maximum height for the image, if you wish.
         // maxHeight: 600,
         min-height: 100vh;
+        max-height:100vh;
     }
     
 
