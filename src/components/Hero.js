@@ -1,5 +1,5 @@
 import React from 'react';
-import BackGround from './BackGround'
+//import BackGround from './BackGround'
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled, { keyframes } from "styled-components"
@@ -42,18 +42,19 @@ const fadeIn = keyframes`
 
 `
 
-
-
 const Wrapper = styled.section`
     display: grid;
+    
     .bcg{
-        margin-top: -5rem;
+        margin-top:0;
         grid-area: 1/1;
         // You can set a maximum height for the image, if you wish.
         // maxHeight: 600,
-        min-height: 100vh,
+        min-height: 100vh;
         
     }
+    
+
     .content{
         // By using the same grid area for both, they are stacked on top of each other
         grid-area: 1/1;
@@ -61,6 +62,7 @@ const Wrapper = styled.section`
         // This centers the other elements inside the hero component
         place-items: center;
         display: grid;
+       
         article {
             color: var(--clr-white);
             width: 85vw;
@@ -72,10 +74,12 @@ const Wrapper = styled.section`
                 line-height: 1.25;
                 margin: 2rem 0 3rem 0;
                 letter-spacing: 3px;
+                text-shadow: var(--text-shadow);
             }
             h3 {
                 font-weight: 400;
                 font-family: "Caveat", cursive;
+                text-shadow: var(--text-shadow);
             }
             a {
                 background: transparent;
@@ -92,7 +96,16 @@ const Wrapper = styled.section`
                 background: var(--clr-white);
                 color: var(--clr-black);
             }
-        }
+            @media (min-width: 800px) {
+                    a {
+                        font-size: 1.25rem;
+                        padding: 0.5rem 1.25rem;
+                    }
+                    h1 {
+                        letter-spacing: 5px;
+                    }
+                }
+            }
         animation: ${fadeIn} 2s ease-in-out 1 forwards;
     }
 `

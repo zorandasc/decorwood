@@ -1,6 +1,6 @@
 import React from "react"
 import { FaHome, FaBabyCarriage, FaHatWizard,FaEnvelopeOpenText} from "react-icons/fa"
-export default [
+const links= [
   {
     page: "pocetna",
     label: "Početna",
@@ -26,5 +26,6 @@ export default [
     icon: <FaEnvelopeOpenText className="icon" />,
   },
  
-  
 ]
+
+export default links

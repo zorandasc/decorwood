@@ -111,11 +111,11 @@ const Wrapper = styled.header`
                 width: 100%;
                 text-transform: capitalize;
                 position: relative;
-                transition:var(--transition)
+                transition:var(--transition);
+                text-shadow: var(--text-shadow);
             }
             .links:hover{
-                transform:scale(1.1)
-
+                transform:scale(1.1);
             }
         }
 
