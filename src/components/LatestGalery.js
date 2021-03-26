@@ -1,145 +1,130 @@
 import React from "react";
 import styled from "styled-components";
 
-import Title from "./Title"
-import uros from "../images/work/uros.jpg"
-import jana from "../images/work/jana.jpg"
-import petar from "../images/work/petar.jpg"
+import Title from "./Title";
+import uros from "../images/work/uros.jpg";
+import jana from "../images/work/jana.jpg";
+import petar from "../images/work/petar.jpg";
 
 const LatestGalery = () => {
   return (
-    <Wrapper>
-      <div className="flip-card-container" style={{ "--hue": "220" }}>
-        <div className="flip-card">
-          <div className="card-front">
-            <figure>
-              <div className="img-bg"></div>
-              <img
-                src={uros}
-                alt="Uskrsne dekoracije"
-              ></img>
-              <figcaption>Uskrsne dekoracije</figcaption>
-            </figure>
+    <Wrapper className="section">
+      <Title title="Najnoviji radovi"></Title>
+      <div className="flip-cards">
+        <div className="flip-card-container" style={{ "--hue": "220" }}>
+          <div className="flip-card">
+            <div className="card-front">
+              <figure>
+                <div className="img-bg"></div>
+                <img src={uros} alt="Uskrsne dekoracije"></img>
+                <figcaption>Uskrsne dekoracije</figcaption>
+              </figure>
 
-            <ul>
-              <li>Detail 1</li>
-              <li>Detail 2</li>
-              <li>Detail 3</li>
-              <li>Detail 4</li>
-              <li>Detail 5</li>
-            </ul>
-          </div>
+              <ul>
+                <li>Detail 1</li>
+                <li>Detail 2</li>
+                <li>Detail 3</li>
+                <li>Detail 4</li>
+                <li>Detail 5</li>
+              </ul>
+            </div>
 
-          <div className="card-back">
-            <figure>
-              <div className="img-bg"></div>
-              <img
-                src={uros}
-                alt="Brohm Lake"
-              ></img>
-            </figure>
+            <div className="card-back">
+              <figure>
+                <div className="img-bg"></div>
+                <img src={uros} alt="Brohm Lake"></img>
+              </figure>
 
-            <button>Više</button>
+              <button>Više</button>
 
-            <div className="design-container">
-              <span className="design design--1"></span>
-              <span className="design design--2"></span>
-              <span className="design design--3"></span>
-              <span className="design design--4"></span>
-              <span className="design design--5"></span>
-              <span className="design design--6"></span>
-              <span className="design design--7"></span>
-              <span className="design design--8"></span>
+              <div className="design-container">
+                <span className="design design--1"></span>
+                <span className="design design--2"></span>
+                <span className="design design--3"></span>
+                <span className="design design--4"></span>
+                <span className="design design--5"></span>
+                <span className="design design--6"></span>
+                <span className="design design--7"></span>
+                <span className="design design--8"></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="flip-card-container" style={{ "--hue": "170" }}>
-        <div className="flip-card">
-          <div className="card-front">
-            <figure>
-              <div className="img-bg"></div>
-              <img
-                src={petar}
-                alt="Uskrsne dekoracije"
-              ></img>
-              <figcaption>Uskrsne dekoracije</figcaption>
-            </figure>
+        <div className="flip-card-container" style={{ "--hue": "170" }}>
+          <div className="flip-card">
+            <div className="card-front">
+              <figure>
+                <div className="img-bg"></div>
+                <img src={petar} alt="Uskrsne dekoracije"></img>
+                <figcaption>Uskrsne dekoracije</figcaption>
+              </figure>
 
-            <ul>
-              <li>Detail 1</li>
-              <li>Detail 2</li>
-              <li>Detail 3</li>
-              <li>Detail 4</li>
-              <li>Detail 5</li>
-            </ul>
-          </div>
+              <ul>
+                <li>Detail 1</li>
+                <li>Detail 2</li>
+                <li>Detail 3</li>
+                <li>Detail 4</li>
+                <li>Detail 5</li>
+              </ul>
+            </div>
 
-          <div className="card-back">
-            <figure>
-              <div className="img-bg"></div>
-              <img
-                src={petar}
-                alt="Uskrsne dekoracije"
-              ></img>
-            </figure>
+            <div className="card-back">
+              <figure>
+                <div className="img-bg"></div>
+                <img src={petar} alt="Uskrsne dekoracije"></img>
+              </figure>
 
-            <button>Više</button>
+              <button>Više</button>
 
-            <div className="design-container">
-              <span className="design design--1"></span>
-              <span className="design design--2"></span>
-              <span className="design design--3"></span>
-              <span className="design design--4"></span>
-              <span className="design design--5"></span>
-              <span className="design design--6"></span>
-              <span className="design design--7"></span>
-              <span className="design design--8"></span>
+              <div className="design-container">
+                <span className="design design--1"></span>
+                <span className="design design--2"></span>
+                <span className="design design--3"></span>
+                <span className="design design--4"></span>
+                <span className="design design--5"></span>
+                <span className="design design--6"></span>
+                <span className="design design--7"></span>
+                <span className="design design--8"></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="flip-card-container" style={{ "--hue": "350" }}>
-        <div className="flip-card">
-          <div className="card-front">
-            <figure>
-              <div className="img-bg"></div>
-              <img
-                src={jana}
-                alt="Uskrsne dekoracije"
-              ></img>
-              <figcaption>Uskrsne dekoracije</figcaption>
-            </figure>
+        <div className="flip-card-container" style={{ "--hue": "350" }}>
+          <div className="flip-card">
+            <div className="card-front">
+              <figure>
+                <div className="img-bg"></div>
+                <img src={jana} alt="Uskrsne dekoracije"></img>
+                <figcaption>Uskrsne dekoracije</figcaption>
+              </figure>
 
-            <ul>
-              <li>Detail 1</li>
-              <li>Detail 2</li>
-              <li>Detail 3</li>
-              <li>Detail 4</li>
-              <li>Detail 5</li>
-            </ul>
-          </div>
+              <ul>
+                <li>Detail 1</li>
+                <li>Detail 2</li>
+                <li>Detail 3</li>
+                <li>Detail 4</li>
+                <li>Detail 5</li>
+              </ul>
+            </div>
 
-          <div className="card-back">
-            <figure>
-              <div className="img-bg"></div>
-              <img
-                src={jana}
-                alt="Uskrsne dekoracije"
-              ></img>
-            </figure>
-            <button>Više</button>
-            <div className="design-container">
-              <span className="design design--1"></span>
-              <span className="design design--2"></span>
-              <span className="design design--3"></span>
-              <span className="design design--4"></span>
-              <span className="design design--5"></span>
-              <span className="design design--6"></span>
-              <span className="design design--7"></span>
-              <span className="design design--8"></span>
+            <div className="card-back">
+              <figure>
+                <div className="img-bg"></div>
+                <img src={jana} alt="Uskrsne dekoracije"></img>
+              </figure>
+              <button>Više</button>
+              <div className="design-container">
+                <span className="design design--1"></span>
+                <span className="design design--2"></span>
+                <span className="design design--3"></span>
+                <span className="design design--4"></span>
+                <span className="design design--5"></span>
+                <span className="design design--6"></span>
+                <span className="design design--7"></span>
+                <span className="design design--8"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -149,13 +134,15 @@ const LatestGalery = () => {
 };
 
 const Wrapper = styled.section`
-  min-height: 100vh;
-  padding: 5rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   background: hsl(220, 10%, 12%);
+  .flip-cards {
+    min-height: 100vh;
+    padding: 5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 
   /* .flip-card-container */
   .flip-card-container {
@@ -233,7 +220,7 @@ const Wrapper = styled.section`
   /* figcaption */
   figcaption {
     font-family: "Caveat", cursive;
-    text-transform:uppercase;
+    text-transform: uppercase;
     display: block;
     width: auto;
     margin-top: 12%;
