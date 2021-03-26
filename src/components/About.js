@@ -3,16 +3,16 @@ import styled from "styled-components"
 
 import services from "../constants/services"
 import Title from "./Title"
-import rac from "../images/rac.png"
+import kutija from "../images/kutija.png"
 
 const About = () => {
-  return <Wrapper className="section about-us">
+  return <Wrapper className="section">
     <Title title="O nama"></Title>
     <div className="services">
       {services.map(({id, icon, label, text})=>{
         return (
           <div key={id} className="service">
-            <div class="service-header">
+            <div className="service-header">
                 <span>{icon}</span>
                 <h4>{label}</h4>
               </div>
@@ -20,18 +20,15 @@ const About = () => {
           </div>
         )
       })}
-      <div class="about-us-img-wrapper">
-        <img src={rac} />
+      <div className="about-us-img-wrapper">
+        <img src={kutija} />
       </div>
     </div>
     </Wrapper>
 }
 
 const Wrapper=styled.section`
-.about-us {
-  width: 100%;
-  background-color: #f5f5f5;
-}
+background: var(--clr-grey-10);
 .services {
   margin-top:4rem;
   width: 100%;
@@ -44,6 +41,7 @@ const Wrapper=styled.section`
   .service {
     width: 90%;
     margin: 0 auto;
+
     .service-header {
       display: flex;
       align-items: center;
@@ -60,6 +58,7 @@ const Wrapper=styled.section`
       }
     }
     p {
+      text-align: center;
       color: var(--clr-grey-3);
       max-width: 35em;
     }
