@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
+import Title from "./Title"
+import uros from "../images/work/uros.jpg"
+import jana from "../images/work/jana.jpg"
+import petar from "../images/work/petar.jpg"
+
 const LatestGalery = () => {
   return (
     <Wrapper>
@@ -10,10 +15,10 @@ const LatestGalery = () => {
             <figure>
               <div className="img-bg"></div>
               <img
-                src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="Brohm Lake"
+                src={uros}
+                alt="Uskrsne dekoracije"
               ></img>
-              <figcaption>Brohm Lake</figcaption>
+              <figcaption>Uskrsne dekoracije</figcaption>
             </figure>
 
             <ul>
@@ -29,12 +34,12 @@ const LatestGalery = () => {
             <figure>
               <div className="img-bg"></div>
               <img
-                src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                src={uros}
                 alt="Brohm Lake"
               ></img>
             </figure>
 
-            <button>Book</button>
+            <button>Više</button>
 
             <div className="design-container">
               <span className="design design--1"></span>
@@ -56,10 +61,10 @@ const LatestGalery = () => {
             <figure>
               <div className="img-bg"></div>
               <img
-                src="https://images.unsplash.com/photo-1545436864-cd9bdd1ddebc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="Image 2"
+                src={petar}
+                alt="Uskrsne dekoracije"
               ></img>
-              <figcaption>Légende</figcaption>
+              <figcaption>Uskrsne dekoracije</figcaption>
             </figure>
 
             <ul>
@@ -75,12 +80,12 @@ const LatestGalery = () => {
             <figure>
               <div className="img-bg"></div>
               <img
-                src="https://images.unsplash.com/photo-1545436864-cd9bdd1ddebc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="image-2"
+                src={petar}
+                alt="Uskrsne dekoracije"
               ></img>
             </figure>
 
-            <button>Book</button>
+            <button>Više</button>
 
             <div className="design-container">
               <span className="design design--1"></span>
@@ -102,10 +107,10 @@ const LatestGalery = () => {
             <figure>
               <div className="img-bg"></div>
               <img
-                src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="Brohm Lake"
+                src={jana}
+                alt="Uskrsne dekoracije"
               ></img>
-              <figcaption>Brohm Lake</figcaption>
+              <figcaption>Uskrsne dekoracije</figcaption>
             </figure>
 
             <ul>
@@ -121,11 +126,11 @@ const LatestGalery = () => {
             <figure>
               <div className="img-bg"></div>
               <img
-                src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                alt="Brohm Lake"
+                src={jana}
+                alt="Uskrsne dekoracije"
               ></img>
             </figure>
-            <button>Book</button>
+            <button>Više</button>
             <div className="design-container">
               <span className="design design--1"></span>
               <span className="design design--2"></span>
@@ -145,7 +150,7 @@ const LatestGalery = () => {
 
 const Wrapper = styled.section`
   min-height: 100vh;
-  padding: 40px;
+  padding: 5rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -227,6 +232,8 @@ const Wrapper = styled.section`
 
   /* figcaption */
   figcaption {
+    font-family: "Caveat", cursive;
+    text-transform:uppercase;
     display: block;
     width: auto;
     margin-top: 12%;
@@ -258,8 +265,8 @@ const Wrapper = styled.section`
     transform: translate(-50%, -50%) rotate(18deg);
 
     width: 100%;
-    height: 6px;
-    border: 1px solid var(--primary);
+    height: 10px;
+    border: 3px solid var(--primary);
     border-left-color: transparent;
     border-right-color: transparent;
 
@@ -315,7 +322,7 @@ const Wrapper = styled.section`
     font-weight: bold;
     color: var(--white-1);
     letter-spacing: 2px;
-    padding: 9px 20px;
+    padding: 14px 25px;
     border: 1px solid var(--grey);
     border-radius: 1000px;
     background: transparent;
@@ -346,7 +353,7 @@ const Wrapper = styled.section`
   /* .design */
   .design {
     display: block;
-    background: var(--grey);
+    background-color: var(--primary);
     position: absolute;
     opacity: var(--op);
     transition: 0.3s;
@@ -356,7 +363,7 @@ const Wrapper = styled.section`
   .design--2,
   .design--3,
   .design--4 {
-    width: 1px;
+    width: 2px;
     height: 100%;
   }
   /*gore, transform ugornju
@@ -392,7 +399,7 @@ const Wrapper = styled.section`
   .design--7,
   .design--8 {
     width: 100%;
-    height: 1px;
+    height: 2px;
   }
   .design--5,
   .design--6 {

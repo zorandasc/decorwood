@@ -62,6 +62,7 @@ Global Styles
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 body {
   font-family: var(--ff-secondary);
@@ -69,6 +70,7 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
+  overflow-x:hidden; 
 }
 ul {
   list-style-type: none;

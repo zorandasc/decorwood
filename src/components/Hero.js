@@ -16,7 +16,7 @@ const Hero = () => {
                 // This is a presentational image, so the alt should be an empty string
                 alt=""
                 placeholder="blurred"
-                src={"../images/1163.jpg"}
+                src={"../images/law.jpg"}
                 formats={["auto", "webp", "avif"]}
             />
             <div className='content'>
@@ -42,9 +42,22 @@ const fadeIn = keyframes`
 
 `
 
+const scale = keyframes`
+  0%{
+    transform:scale(1.3);
+  }
+  100%{
+    transform:scale(1);
+  }
+
+`
+
 const Wrapper = styled.section`
-    display: grid;   
+    display: grid;  
+    overflow:hidden;
     .bcg{
+        animation: ${scale} 10s ease-in-out 1.5;
+        animation-iteration-count: 1;
         grid-area: 1/1;
         // You can set a maximum height for the image, if you wish.
         // maxHeight: 600,
