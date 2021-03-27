@@ -30,7 +30,7 @@ const About = () => {
 };
 
 const Wrapper = styled.section`
-  background: var(--clr-grey-10);
+  background: var(--clr-white);
   .services {
     margin-top: 6rem;
     width: 100%;
