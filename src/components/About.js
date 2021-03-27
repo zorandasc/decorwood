@@ -3,12 +3,13 @@ import styled from "styled-components";
 
 import services from "../constants/services";
 import Title from "./Title";
+import Title2 from "./Title2";
 import kutija from "../images/kutija.png";
 
 const About = () => {
   return (
     <Wrapper className="section">
-      <Title title="O nama"></Title>
+      <Title2 subtitle="Pozdrav" title="Mi smo Decorwood"></Title2>
       <div className="services">
         {services.map(({ id, icon, label, text }) => {
           return (
@@ -61,12 +62,14 @@ const Wrapper = styled.section`
         h4 {
           text-transform: uppercase;
           font-weight: 500;
+          font-size: 1.4rem;
         }
       }
       p {
         text-align: center;
         color: var(--clr-black);
         max-width: 35em;
+        font-size: 1.2rem;
       }
     }
     @media (min-width: 868px) {
@@ -75,6 +78,10 @@ const Wrapper = styled.section`
       grid-row-gap: 4rem;
       .service {
         width: 100%;
+        align-items: flex-start;
+        p {
+          text-align: left;
+        }
       }
       .service:nth-child(1) {
         grid-column: 3 / 6;

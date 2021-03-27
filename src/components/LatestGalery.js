@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Title from "./Title";
+import Title2 from "./Title2";
 import uros from "../images/work/uros.jpg";
 import jana from "../images/work/jana.jpg";
 import petar from "../images/work/petar.jpg";
@@ -9,7 +10,11 @@ import petar from "../images/work/petar.jpg";
 const LatestGalery = () => {
   return (
     <Wrapper className="section">
-      <Title title="Najnoviji radovi"></Title>
+      <Title2
+        subtitle="Šta Mi Radimo"
+        title="Sve što Vam treba za savršen poklon"
+        invertColor={true}
+      ></Title2>
       <div className="flip-cards">
         <div className="flip-card-container" style={{ "--hue": "220" }}>
           <div className="flip-card">
