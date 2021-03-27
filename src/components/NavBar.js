@@ -99,8 +99,12 @@ const Wrapper = styled.header`
     .nav-links {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      max-width: 500px;
+      max-width: 700px;
+      margin-left: 2rem;
       .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: var(--clr-white);
         background: transparent;
         border: transparent;
@@ -112,10 +116,10 @@ const Wrapper = styled.header`
         text-transform: capitalize;
         position: relative;
         transition: var(--transition);
-        text-shadow: var(--text-shadow);
       }
       .links:hover {
-        transform: scale(1.1);
+        transform: rotate(-10deg);
+        box-shadow: 1rem 1rem 1rem #fff;
       }
     }
   }
