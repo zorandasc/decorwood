@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   text-align: center;
   margin-bottom: 2rem;
   h3 {
+    font-weight: 400;
     color: var(--clr-primary-5);
   }
   h2 {
@@ -29,11 +30,20 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-weight: 500;
+    margin-right: 1rem;
+    margin-left: 1rem;
     span {
-      font-size: 0.85em;
-      color: var(--clr-primary-5);
-      margin-right: 1rem;
-      font-weight: 700;
+      display: none;
+    }
+
+    @media (min-width: 800px) {
+      span {
+        display: initial;
+        font-size: 0.85em;
+        color: var(--clr-primary-5);
+        margin-right: 1rem;
+        font-weight: 700;
+      }
     }
   }
 `;

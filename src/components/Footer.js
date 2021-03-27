@@ -18,8 +18,8 @@ const Footer = () => {
         })}
       </ul>
       <p>
-        &copy; {new Date().getFullYear()} zorandsc. All rights reserved.
-        DecorWood
+        &copy; Copyright {new Date().getFullYear()} zorandsc. All rights
+        reserved. DecorWood
       </p>
     </Wrapper>
   );
@@ -43,11 +43,11 @@ const Wrapper = styled.footer`
       color: var(--clr-white);
       margin: 1rem 2rem;
       background: var(--clr-black);
+      box-shadow: 0 2rem 3rem #000;
       transition: var(--transition);
     }
     .footer-link:hover {
       transform: rotate(-10deg);
-      box-shadow: 0 2rem 3rem #000;
     }
   }
   p {

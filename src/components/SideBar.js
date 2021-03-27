@@ -1,38 +1,38 @@
-import React, { useContext } from "react"
-import styled from "styled-components"
-import { MdClose } from "react-icons/md"
-import { Link } from "gatsby"
+import React, { useContext } from "react";
+import styled from "styled-components";
+import { MdClose } from "react-icons/md";
+import { Link } from "gatsby";
 
-import { GatsbyContext } from "../context/context"
-import links from "../constants/links"
+import { GatsbyContext } from "../context/context";
+import links from "../constants/links";
 
 const SideBar = () => {
-    const {  hideSidebar } = useContext(GatsbyContext)
-    return (
-         <Wrapper>
-            <div className="container">
-                <button onClick={hideSidebar}>
-                    <MdClose className="icon" />
-                </button>
-                <div className="links">
-                    {links.map((link, index) => {
-                        const { url, label, icon } = link
-                        return (
-                        <Link to={url} key={index} onClick={hideSidebar}>
-                            {icon}
-                            {label}
-                        </Link>
-                        )
-                    })}
-                </div>
-            </div>
-        </Wrapper>
-    );
+  const { hideSidebar } = useContext(GatsbyContext);
+  return (
+    <Wrapper>
+      <div className="container">
+        <button onClick={hideSidebar}>
+          <MdClose className="icon" />
+        </button>
+        <div className="links">
+          {links.map((link, index) => {
+            const { url, label, icon } = link;
+            return (
+              <Link to={url} key={index} onClick={hideSidebar}>
+                {icon}
+                {label}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.aside`
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -47,10 +47,10 @@ const Wrapper = styled.aside`
   .container {
     background: var(--clr-white);
     width: 80vw;
-    height: 80vh;
+    height: 85vh;
     border-radius: var(--radius);
     position: relative;
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 3rem 2rem 2rem 2rem;
     button {
       position: absolute;
       top: 0.5rem;
@@ -90,6 +90,6 @@ const Wrapper = styled.aside`
       }
     }
   }
-`
+`;
 
 export default SideBar;
