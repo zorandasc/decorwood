@@ -2,14 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 import services from "../constants/services";
-import Title from "./Title";
-import Title2 from "./Title2";
+//import Title from "./Title";
+import Title from "./Title2";
 import kutija from "../images/kutija.png";
 
 const About = () => {
   return (
     <Wrapper className="section">
-      <Title2 subtitle="Pozdrav" title="Mi smo Decorwood"></Title2>
+      <Title
+        subtitle="Šta mi radimo"
+        title="Sve što Vam je potrebno za savršen poklon"
+      ></Title>
       <div className="services">
         {services.map(({ id, icon, label, text }) => {
           return (

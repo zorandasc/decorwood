@@ -19,13 +19,19 @@ const Title2 = ({ title, subtitle, invertColor }) => {
 };
 
 const Wrapper = styled.div`
-  text-align: center;
+  margin: 0 auto;
   margin-bottom: 2rem;
+  width: 85vw;
+  max-width: 800px;
+  text-align: center;
+
   h3 {
+    text-transform: none;
     font-weight: 400;
     color: var(--clr-primary-5);
   }
   h2 {
+    text-transform: none;
     display: flex;
     align-items: center;
     justify-content: center;

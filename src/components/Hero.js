@@ -24,7 +24,7 @@ const Hero = () => {
         {/* Any content here will be centered in the component */}
         <article>
           <h3>If you can dream it we can created</h3>
-          <h1>let your gift be uniq and stylish</h1>
+          <h1>Jedinstveni i unikatni predmeti od drveta</h1>
           <Link to="/galerija" className="banner-btn">
             Galerija
           </Link>

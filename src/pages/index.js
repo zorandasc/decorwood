@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Layout, Hero, About, LatestGalery } from "../components";
+import { Layout, Hero, About, LatestGalery, Contact } from "../components";
 
 // markup
 const IndexPage = () => {
@@ -8,6 +8,7 @@ const IndexPage = () => {
       <Hero></Hero>
       <About></About>
       <LatestGalery></LatestGalery>
+      <Contact></Contact>
     </Layout>
   );
 };
