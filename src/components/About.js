@@ -33,9 +33,9 @@ const Wrapper = styled.section`
     max-width: 900px;
     margin: 4rem auto;
     display: grid;
-    gap: 3rem;
+    gap: 4rem;
     /* safari workaround */
-    grid-gap: 3rem;
+    grid-gap: 4rem;
     article {
     }
     .service-header {

@@ -3,5 +3,6 @@ import Hero from "./Hero";
 import About from "./About";
 import LatestGalery from "./LatestGalery";
 import Contact from "./Contact";
+import GridProjects from "./GridProjects";
 
-export { Layout, Hero, About, LatestGalery, Contact };
+export { Layout, Hero, About, LatestGalery, Contact, GridProjects };
