@@ -6,7 +6,7 @@ import {
   Hero,
   About,
   //LatestGalery,
-  Contact,
+  //Contact,
   GridProjects,
 } from "../components";
 
@@ -20,7 +20,6 @@ const IndexPage = ({ data }) => {
       <Hero></Hero>
       <About></About>
       <GridProjects projects={projects}></GridProjects>
-      <Contact></Contact>
     </Layout>
   );
 };
