@@ -1,10 +1,10 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
-import { Link } from "gatsby";
 
 //import Title from "./Title";
 import Title from "./Title2";
+import BtnGalery from "./BtnGalery";
 
 const GridProjects = ({ projects, title }) => {
   return (
@@ -17,7 +17,8 @@ const GridProjects = ({ projects, title }) => {
 
       <div className="tile-layout">
         {projects.map((project, index) => {
-          const { id, category, image } = project;
+          const { id, category, image, itemNum } = project;
+          console.log(itemNum);
           const gatsImage = getImage(image);
           return (
             <article key={id} className={`div-${index}`}>
@@ -29,9 +30,7 @@ const GridProjects = ({ projects, title }) => {
           );
         })}
       </div>
-      <Link to="/galerija" className="btn">
-        Galerija
-      </Link>
+      <BtnGalery></BtnGalery>
     </Wrapper>
   );
 };
@@ -64,28 +63,39 @@ const Wrapper = styled.section`
   }
   article {
     transition: var(--transition);
-    box-shadow: 3rem 3rem 4rem #aaa;
+    box-shadow: 2.5rem 2.5rem 2rem #aaa;
     position: relative;
     overflow: hidden;
     border-radius: var(--radius);
-    background: var(--clr-primary-7);
+    cursor: pointer;
     &:hover {
-      transform: translateY(-0.5rem);
-      box-shadow: 5rem 5rem 7rem #aaa;
+      // transform: translateY(-0.5rem);
+      box-shadow: 3.5rem 3.5rem 4rem #aaa;
     }
     &:hover .img {
-      opacity: 0.2;
+      //opacity: 0.2;
+      transform: scale(1.1);
     }
     .info {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0%;
+      left: 0%;
+      transform: translateY(50%);
       width: 100%;
+      height: 100%;
       transition: var(--transition);
       color: var(--clr-white);
+      background-image: linear-gradient(
+        transparent,
+        transparent,
+        rgb(218, 130, 10)
+      );
       text-align: center;
-      opacity: 0;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      transition: var(--transition);
       p {
         margin-bottom: 0.5rem;
         color: var(--clr-white);
@@ -93,7 +103,7 @@ const Wrapper = styled.section`
       }
     }
     &:hover .info {
-      opacity: 1;
+      transform: translateY(0%);
     }
   }
   @media (min-width: 768px) {
@@ -112,6 +122,7 @@ const Wrapper = styled.section`
     .tile-layout {
       display: grid;
       grid-template-areas:
+        "a b b"
         "a b b"
         "a c d";
       .div-0 {

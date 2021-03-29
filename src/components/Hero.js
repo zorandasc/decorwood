@@ -1,8 +1,9 @@
 import React from "react";
-//import BackGround from './BackGround'
-import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import styled, { keyframes } from "styled-components";
+
+//import BackGround from './BackGround'
+import BtnGalery from "./BtnGalery";
 import Cloud from "./Cloud";
 
 const Hero = () => {
@@ -25,9 +26,7 @@ const Hero = () => {
         <article>
           <h3>If you can dream it we can created</h3>
           <h1>Jedinstveni i unikatni predmeti od drveta</h1>
-          <Link to="/galerija" className="banner-btn">
-            Galerija
-          </Link>
+          <BtnGalery></BtnGalery>
         </article>
       </div>
       <Cloud></Cloud>
@@ -98,43 +97,7 @@ const Wrapper = styled.section`
         font-family: "Caveat", cursive;
         text-shadow: var(--text-shadow);
       }
-      .banner-btn {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background: var(--clr-primary-5);
-        text-transform: capitalize;
-        letter-spacing: 5px;
-        font-size: 1rem;
-        border-radius: 3rem;
-        border: 2px solid var(--clr-primary-5);
-        color: var(--clr-white);
-        box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
-        //text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-      }
-      .banner-btn::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, transparent, #fff, transparent);
-        position: absolute;
-        top: 0;
-        left: -100%;
-        transform: skewX(-30deg);
-        transition: left 0.5s;
-      }
 
-      .banner-btn:hover::before {
-        left: 100%;
-      }
-      /*
-      a:hover {
-        background: var(--clr-white);
-        color: var(--clr-black);
-      }
-      */
       @media (min-width: 800px) {
         a {
           font-size: 1.25rem;

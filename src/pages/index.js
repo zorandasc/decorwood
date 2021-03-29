@@ -27,11 +27,15 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allContentfulProduct(limit: 4, sort: { fields: date, order: DESC }) {
+    allContentfulProduct(
+      sort: { fields: itemNum, order: ASC }
+      filter: { featured: { eq: true } }
+    ) {
       nodes {
         id
         category
         date
+        itemNum
         image {
           gatsbyImageData(
             placeholder: BLURRED
