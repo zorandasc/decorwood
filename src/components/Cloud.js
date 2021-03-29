@@ -29,7 +29,8 @@ export default styled(Cloud)`
 
   img {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
+    height: 35%;
     max-width: 100%;
     animation: animate calc(var(--speed) * var(--i)) linear infinite;
   }
@@ -44,5 +45,8 @@ export default styled(Cloud)`
   @media screen and (min-width: 876px) {
     --speed: 20s;
     bottom: -100px;
+    img {
+      height: initial;
+    }
   }
 `;
