@@ -94,7 +94,7 @@ const Wrapper = styled.section`
       background-image: linear-gradient(
         transparent,
         transparent,
-        rgb(218, 130, 10)
+        rgb(186, 93, 44)
       );
       text-align: center;
       opacity: 1;

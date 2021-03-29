@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const BtnGalery = () => {
   return (
@@ -9,6 +9,27 @@ const BtnGalery = () => {
     </Wrapper>
   );
 };
+
+//gliter
+const gliter = keyframes`
+ 0% {
+    //left:-100%;
+    transform:translateX(-100%) skewX(-30deg);
+  }
+
+  /* Finish changes by here */
+  20% {
+     //left:100%;
+    transform:translateX(100%) skewX(-30deg);
+  }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+     //left:100%;
+    transform:translateX(100%) skewX(-30deg);
+  }
+
+`;
 
 const Wrapper = styled(Link)`
   display: inline-block;
@@ -25,6 +46,7 @@ const Wrapper = styled(Link)`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
   &::before {
     content: "";
     width: 100%;
@@ -32,9 +54,10 @@ const Wrapper = styled(Link)`
     background: linear-gradient(to right, transparent, #fff, transparent);
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     transform: skewX(-30deg);
     transition: left 0.5s;
+    animation: ${gliter} 1.8s linear infinite alternate;
   }
 
   &:hover::before {

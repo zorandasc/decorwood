@@ -8,7 +8,7 @@ module.exports = {
     description: ` `,
     author: `@zorandasic`,
     titleTemplate: `%s | DecorWood`,
-    siteUrl: `https://svadbenicvet.com`,
+    siteUrl: `https://decorwood.netlify.app`,
     image: ``,
     twitterUsername: ``,
   },
