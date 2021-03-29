@@ -123,7 +123,6 @@ const Wrapper = styled.section`
       display: grid;
       grid-template-areas:
         "a b b"
-        "a b b"
         "a c d";
       .div-0 {
         grid-area: a;
