@@ -1,8 +1,8 @@
-import React from 'react'
-import {createGlobalStyle} from "styled-components"
-import { GatsbyProvider } from "./src/context/context"
+import React from "react";
+import { createGlobalStyle } from "styled-components";
+import { GatsbyProvider } from "./src/context/context";
 
-const GlobalStyle=createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
     /*
 =============== 
 Variables
@@ -19,6 +19,7 @@ Variables
   /* lighter shades of primary color */
   --clr-primary-6: hsl(21, 57%, 50%);
   --clr-primary-7: hsl(21, 65%, 59%);
+  //rgb(218,130,10)
   --clr-primary-8: hsl(21, 80%, 74%);
   --clr-primary-9: hsl(21, 94%, 87%);
   --clr-primary-10: hsl(21, 100%, 94%);
@@ -171,15 +172,13 @@ p {
 }
 
 
-`
+`;
 
-
-export const wrapRootElement=({element})=>{
-    return (
-        <>
-        <GlobalStyle></GlobalStyle>
-        <GatsbyProvider>{element}</GatsbyProvider>
-        
-        </>
-    )
-}
+export const wrapRootElement = ({ element }) => {
+  return (
+    <>
+      <GlobalStyle></GlobalStyle>
+      <GatsbyProvider>{element}</GatsbyProvider>
+    </>
+  );
+};

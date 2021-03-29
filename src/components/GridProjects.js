@@ -12,7 +12,7 @@ const GridProjects = ({ projects, title }) => {
       {/*<Title title={title || "projects"} />*/}
       <Title
         subtitle="Mi volimo to što radimo"
-        title="Pogledajte naša najnovija izdanja"
+        title="Naša najnovija izdanja"
       ></Title>
 
       <div className="tile-layout">

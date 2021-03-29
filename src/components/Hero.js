@@ -35,6 +35,7 @@ const Hero = () => {
   );
 };
 
+//wraper animation to black
 const fadeIn = keyframes`
   from{
     background-color:rgb(0,0,0,0.8);
@@ -45,6 +46,7 @@ const fadeIn = keyframes`
 
 `;
 
+//image animation to scale down
 const scale = keyframes`
   0%{
     transform:scale(1.3);

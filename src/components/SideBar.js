@@ -32,7 +32,7 @@ const SideBar = () => {
 
 const Wrapper = styled.aside`
   position: fixed;
-  top: 20px;
+  top: 0px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -78,7 +78,7 @@ const Wrapper = styled.aside`
         font-weight: 700;
         font-size: 1.2rem;
         .icon {
-          color: rgb(19, 72, 66);
+          color: var(--clr-primary-5);
           font-size: 3rem;
         }
         &:hover {
