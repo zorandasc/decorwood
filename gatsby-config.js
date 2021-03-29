@@ -8,7 +8,7 @@ module.exports = {
     description: ` `,
     author: `@zorandasic`,
     titleTemplate: `%s | DecorWood`,
-    siteUrl: ``,
+    siteUrl: `www.svadbenicvet.com`,
     image: ``,
     twitterUsername: ``,
   },
