@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Title from "./Title2";
-import formImg from "../images/form-img.png";
+//import formImg from "../images/form-img.png";
 
 const Contact = () => {
   return (

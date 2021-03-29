@@ -3,29 +3,34 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-import Title from "./Title";
+//import Title from "./Title";
+import Title from "./Title2";
 
-const GridProjects = ({ data, title }) => {
-  console.log(data);
+const GridProjects = ({ projects, title }) => {
   return (
     <Wrapper>
-      <Title title={title || "projects"} />
-      {/*
+      {/*<Title title={title || "projects"} />*/}
+      <Title
+        subtitle="Mi volimo to što radimo"
+        title="Pogledajte naša najnovija izdanja"
+      ></Title>
+
       <div className="tile-layout">
         {projects.map((project, index) => {
+          const { id, category, image } = project;
+          const gatsImage = getImage(image);
           return (
             <article key={id} className={`div-${index}`}>
-              <GatsbyImage className="img" image={image} />
+              <GatsbyImage className="img" image={gatsImage} alt={category} />
               <div className="info">
-                <h3>{name}</h3>
+                <h3>{category}</h3>
               </div>
             </article>
           );
         })}
       </div>
-       */}
-      <Link to="/projects" className="btn">
-        all projects
+      <Link to="/galerija" className="btn">
+        Galerija
       </Link>
     </Wrapper>
   );
@@ -58,10 +63,16 @@ const Wrapper = styled.section`
     transition: var(--transition);
   }
   article {
+    transition: var(--transition);
+    box-shadow: 3rem 3rem 4rem #aaa;
     position: relative;
     overflow: hidden;
     border-radius: var(--radius);
     background: var(--clr-primary-7);
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 5rem 5rem 7rem #aaa;
+    }
     &:hover .img {
       opacity: 0.2;
     }
@@ -121,7 +132,7 @@ const Wrapper = styled.section`
     display: block;
     width: 9rem;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 6rem;
     text-align: center;
   }
 `;

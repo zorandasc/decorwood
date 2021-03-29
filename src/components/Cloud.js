@@ -9,11 +9,11 @@ import cloud5 from "../images/clouds/cloud5.png";
 const Cloud = ({ className }) => {
   return (
     <div className={className}>
-      <img src={cloud1} style={{ "--i": "1" }} />
-      <img src={cloud2} style={{ "--i": "2" }} />
-      <img src={cloud3} style={{ "--i": "3" }} />
-      <img src={cloud4} style={{ "--i": "4" }} />
-      <img src={cloud5} style={{ "--i": "5" }} />
+      <img src={cloud1} style={{ "--i": "1" }} alt="cloud" />
+      <img src={cloud2} style={{ "--i": "2" }} alt="cloud" />
+      <img src={cloud3} style={{ "--i": "3" }} alt="cloud" />
+      <img src={cloud4} style={{ "--i": "4" }} alt="cloud" />
+      <img src={cloud5} style={{ "--i": "5" }} alt="cloud" />
     </div>
   );
 };

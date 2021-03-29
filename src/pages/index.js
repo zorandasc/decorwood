@@ -5,18 +5,21 @@ import {
   Layout,
   Hero,
   About,
-  LatestGalery,
+  //LatestGalery,
   Contact,
   GridProjects,
 } from "../components";
 
 // markup
 const IndexPage = ({ data }) => {
+  const {
+    allContentfulProduct: { nodes: projects },
+  } = data;
   return (
     <Layout>
       <Hero></Hero>
       <About></About>
-      <GridProjects data={data}></GridProjects>
+      <GridProjects projects={projects}></GridProjects>
       <Contact></Contact>
     </Layout>
   );
@@ -24,17 +27,18 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allContentfulWork(limit: 4, sort: { fields: date, order: DESC }) {
+    allContentfulProduct(limit: 4, sort: { fields: date, order: DESC }) {
       nodes {
-        images {
+        id
+        category
+        date
+        image {
           gatsbyImageData(
             placeholder: BLURRED
             layout: CONSTRAINED
             formats: [AUTO, WEBP]
           )
-          id
         }
-        name
       }
     }
   }
