@@ -69,14 +69,14 @@ const Wrapper = styled.section`
   }
   article {
     transition: var(--transition);
-    box-shadow: 3rem 3rem 4rem #aaa;
+    box-shadow: 2.5rem 2.5rem 2rem #aaa;
     position: relative;
     overflow: hidden;
     border-radius: var(--radius);
     background: var(--clr-primary-7);
     &:hover {
       // transform: translateY(-0.5rem);
-      box-shadow: 5rem 5rem 7rem #aaa;
+      box-shadow: 3.5rem 3.5rem 4rem #aaa;
     }
     &:hover .img {
       opacity: 0.2;
@@ -133,13 +133,6 @@ const Wrapper = styled.section`
         grid-area: d;
       }
     }
-  }
-  a {
-    display: block;
-    width: 9rem;
-    margin: 0 auto;
-    margin-top: 6rem;
-    text-align: center;
   }
 `;
 

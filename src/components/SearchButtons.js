@@ -50,7 +50,7 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
 
 const Wrapper = styled.section`
   display: flex;
-  margin-bottom: 0;
+  margin-bottom: 4rem;
   justify-content: center;
   flex-wrap: wrap;
   button {
