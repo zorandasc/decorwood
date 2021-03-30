@@ -3,9 +3,6 @@ import styled from "styled-components";
 
 //import Title from "./Title";
 import Title from "./Title2";
-import uros from "../images/work/uros.jpg";
-import jana from "../images/work/jana.jpg";
-import petar from "../images/work/petar.jpg";
 
 const LatestGalery = () => {
   return (
@@ -21,7 +18,7 @@ const LatestGalery = () => {
             <div className="card-front">
               <figure>
                 <div className="img-bg"></div>
-                <img src={uros} alt="Uskrsne dekoracije"></img>
+                {/* <img alt="Uskrsne dekoracije"></img>*/}
                 <figcaption>Uskrsne dekoracije</figcaption>
               </figure>
 
@@ -37,7 +34,7 @@ const LatestGalery = () => {
             <div className="card-back">
               <figure>
                 <div className="img-bg"></div>
-                <img src={uros} alt="Brohm Lake"></img>
+                {/*   <img  alt="Brohm Lake"></img>*/}
               </figure>
 
               <button>Više</button>
@@ -61,7 +58,8 @@ const LatestGalery = () => {
             <div className="card-front">
               <figure>
                 <div className="img-bg"></div>
-                <img src={petar} alt="Uskrsne dekoracije"></img>
+                {/*
+                <img  alt="Uskrsne dekoracije"></img>*/}
                 <figcaption>Uskrsne dekoracije</figcaption>
               </figure>
 
@@ -77,7 +75,7 @@ const LatestGalery = () => {
             <div className="card-back">
               <figure>
                 <div className="img-bg"></div>
-                <img src={petar} alt="Uskrsne dekoracije"></img>
+                {/* <img alt="Uskrsne dekoracije"></img>*/}
               </figure>
 
               <button>Više</button>
@@ -101,7 +99,7 @@ const LatestGalery = () => {
             <div className="card-front">
               <figure>
                 <div className="img-bg"></div>
-                <img src={jana} alt="Uskrsne dekoracije"></img>
+                {/* <img  alt="Uskrsne dekoracije"></img>*/}
                 <figcaption>Uskrsne dekoracije</figcaption>
               </figure>
 
@@ -117,7 +115,7 @@ const LatestGalery = () => {
             <div className="card-back">
               <figure>
                 <div className="img-bg"></div>
-                <img src={jana} alt="Uskrsne dekoracije"></img>
+                {/* <img  alt="Uskrsne dekoracije"></img>*/}
               </figure>
               <button>Više</button>
               <div className="design-container">

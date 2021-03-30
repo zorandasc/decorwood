@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 //import BackGround from './BackGround'
 import BtnGalery from "./BtnGalery";
-import Cloud from "./Cloud";
+//import Cloud from "./Cloud";
 
 const Hero = () => {
   return (
@@ -29,7 +29,6 @@ const Hero = () => {
           <BtnGalery></BtnGalery>
         </article>
       </div>
-      <Cloud></Cloud>
     </Wrapper>
   );
 };
