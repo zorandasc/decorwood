@@ -108,6 +108,9 @@ const Wrapper = styled.section`
     }
   }
   @media (min-width: 768px) {
+    article {
+      margin-right: 0;
+    }
     .tile-layout {
       grid-template-columns: 1fr 1fr;
     }

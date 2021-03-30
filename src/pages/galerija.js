@@ -19,11 +19,12 @@ const galerija = ({ data }) => {
 
 export const query = graphql`
   {
-    allContentfulProduct(sort: { fields: date, order: DESC }) {
+    allContentfulProduct(sort: { fields: itemNum, order: ASC }) {
       nodes {
         id
         category
         date
+        itemNum
         image {
           gatsbyImageData(
             placeholder: BLURRED

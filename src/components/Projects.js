@@ -24,7 +24,7 @@ const Projects = ({ projects: data, title }) => {
 
       <div className="tile-layout">
         {projects.map((project, index) => {
-          const { id, category, image } = project;
+          const { id, category, itemNum, image } = project;
           const gatsImage = getImage(image);
           return (
             <article key={id}>
@@ -32,6 +32,7 @@ const Projects = ({ projects: data, title }) => {
               <div className="info">
                 <h3>{category}</h3>
               </div>
+              <span className="broj">{itemNum}</span>
             </article>
           );
         })}
@@ -111,8 +112,21 @@ const Wrapper = styled.section`
     &:hover .info {
       transform: translateY(0%);
     }
+    .broj {
+      position: absolute;
+      left: 0;
+      top: 10%;
+      background: var(--clr-primary-5);
+      color: var(--clr-white);
+      padding: 0.4rem 0.5rem;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
   }
   @media (min-width: 768px) {
+    article {
+      margin-right: 0;
+    }
     .tile-layout {
       grid-template-columns: 1fr 1fr;
     }
