@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Title from "./Title";
@@ -55,9 +54,9 @@ const Wrapper = styled.section`
     grid-gap: 1rem;
     //definise dva rowa visine 300px
     //u ovom slucaju to su articly
-    grid-template-rows: 300px 300px;
+    grid-template-rows: 350px 350px;
     //za svaki dodatni row
-    grid-auto-rows: 300px;
+    grid-auto-rows: 350px;
   }
 
   /*GOTCHA AKO HOCEM DA GATBY IMAGE PLAY NICELY WIDTH DEFINET 300PX  HEIGHT OF ROW
@@ -68,15 +67,16 @@ const Wrapper = styled.section`
     transition: var(--transition);
   }
   article {
+    margin-right: 0.5rem;
     transition: var(--transition);
-    box-shadow: 2.5rem 2.5rem 2rem #aaa;
+    box-shadow: var(--dark-shadow);
     position: relative;
     overflow: hidden;
     border-radius: var(--radius);
     cursor: pointer;
     &:hover {
       // transform: translateY(-0.5rem);
-      box-shadow: 3.5rem 3.5rem 4rem #aaa;
+      box-shadow: var(--up-shadow);
     }
     &:hover .img {
       //opacity: 0.2;
@@ -120,28 +120,13 @@ const Wrapper = styled.section`
   @media (min-width: 992px) {
     .tile-layout {
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 250px 250px;
-      grid-auto-rows: 250px;
+      //grid-template-rows: 350px 350px;
+      //grid-auto-rows: 350px;
     }
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1600px) {
     .tile-layout {
-      display: grid;
-      grid-template-areas:
-        "a b b"
-        "a c d";
-      .div-0 {
-        grid-area: a;
-      }
-      .div-1 {
-        grid-area: b;
-      }
-      .div-2 {
-        grid-area: c;
-      }
-      .div-3 {
-        grid-area: d;
-      }
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 `;

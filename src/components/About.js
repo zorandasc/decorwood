@@ -35,7 +35,8 @@ const Wrapper = styled.section`
     display: grid;
     gap: 4rem;
     /* safari workaround */
-    grid-gap: 4rem;
+    grid-row-gap: 4rem;
+    grid-column-gap: 6rem;
     article {
     }
     .service-header {
@@ -58,6 +59,7 @@ const Wrapper = styled.section`
     p {
       margin: 0 auto;
       max-width: 35em;
+      font-size: 1.2rem;
     }
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
