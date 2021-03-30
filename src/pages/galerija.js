@@ -11,7 +11,7 @@ const galerija = ({ data }) => {
   return (
     <Wrapper>
       <Layout>
-        <Projects title="our projects" projects={projects} page></Projects>
+        <Projects title="galerija" projects={projects} page></Projects>
       </Layout>
     </Wrapper>
   );

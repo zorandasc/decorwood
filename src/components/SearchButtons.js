@@ -9,17 +9,20 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
   //strukturu koju konvertujemo sa ... tacke u array jedinst
   //venig arraje tipova
   const types = [
-    "all",
+    "Sve",
     ...new Set(
       projects.map((project) => {
         return project.category;
       })
     ),
+    "8 Mart",
+    "Dan Republike",
+    "Rođendan",
   ];
 
   const showProjects = (type, typeIndex) => {
     setIndex(typeIndex);
-    if (type === "all") {
+    if (type === "Sve") {
       setBackToAll();
     } else {
       const tempProjects = projects.filter(
@@ -32,6 +35,7 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
   return (
     <Wrapper>
       {types.map((type, typeIndex) => {
+        console.log(type);
         return (
           <button
             key={typeIndex}
@@ -57,18 +61,20 @@ const Wrapper = styled.section`
     margin: 0.5rem;
     text-transform: capitalize;
     background: transparent;
-    border: transparent;
-    color: var(--clr-grey-6);
+    padding: 0.5rem;
+    border-radius: 3rem;
+    border: 2px solid var(--clr-primary-5);
+    color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
     font-size: 1.2rem;
-    padding: 0.25rem;
     cursor: pointer;
     outline: none;
+    box-shadow: var(--dark-shadow);
     transition: var(--transition);
   }
   button:hover,
   button.active {
-    box-shadow: 0px 1.5px 0 var(--clr-grey-6);
+    box-shadow: var(--light-shadow);
   }
 `;
 
