@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { GoThreeBars } from "react-icons/go";
 
 import { GatsbyContext } from "../context/context";
-import logo from "../images/logo.svg";
+import logo from "../images/logo_white.svg";
 import links from "../constants/links";
 
 const NavBar = () => {
@@ -45,7 +45,7 @@ const Wrapper = styled.header`
   left: 0;
   width: 100vw;
   background: transparent;
-  z-index: 1;
+  z-index: 101;
   height: 5rem;
   display: flex;
   align-items: center;
@@ -61,6 +61,8 @@ const Wrapper = styled.header`
     justify-content: space-between;
     img {
       width: auto;
+      transform: scale(1.1);
+      padding-bottom: 0.5rem;
     }
     .toggle-btn {
       width: 3.5rem;
@@ -85,6 +87,9 @@ const Wrapper = styled.header`
   }
   @media (min-width: 800px) {
     .nav-header {
+      img {
+        transform: scale(1.4);
+      }
       .toggle-btn {
         display: none;
       }
@@ -120,6 +125,13 @@ const Wrapper = styled.header`
       .links:hover {
         transform: rotate(-10deg);
         box-shadow: 1rem 1rem 1rem #fff;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    .nav-header {
+      img {
+        transform: scale(1.6);
       }
     }
   }

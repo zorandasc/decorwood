@@ -46,8 +46,8 @@ const Wrapper = styled.aside`
   }
   .container {
     background: var(--clr-white);
-    width: 80vw;
-    height: 85vh;
+    width: 85vw;
+    height: 75vh;
     border-radius: var(--radius);
     position: relative;
     padding: 3rem 2rem 2rem 2rem;
