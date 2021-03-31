@@ -50,7 +50,10 @@ const Wrapper = styled.aside`
     height: 75vh;
     border-radius: var(--radius);
     position: relative;
-    padding: 3rem 2rem 2rem 2rem;
+    //padding: 3rem 2rem 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     button {
       position: absolute;
       top: 0.5rem;
@@ -77,9 +80,11 @@ const Wrapper = styled.aside`
         text-transform: capitalize;
         font-weight: 700;
         font-size: 1.2rem;
+        border-bottom: 1px solid black;
         .icon {
           color: var(--clr-primary-5);
           font-size: 3rem;
+          margin-bottom: 0.5rem;
         }
         &:hover {
           color: #88add2;

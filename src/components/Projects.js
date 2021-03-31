@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import Title from "./Title";
 import SearchButtons from "./SearchButtons";
+import img from "../images/patternpad.svg";
 
 const Projects = ({ projects: data, title }) => {
   const [projects, setProjects] = React.useState(data);
@@ -14,7 +14,9 @@ const Projects = ({ projects: data, title }) => {
 
   return (
     <Wrapper className="section">
-      <Title title={title || "projects"}></Title>
+      <div className="header">
+        <h1>Galerija</h1>
+      </div>
 
       <SearchButtons
         projects={data}
@@ -42,8 +44,32 @@ const Projects = ({ projects: data, title }) => {
 };
 
 const Wrapper = styled.section`
+  padding-top: 0;
   background: var(--clr-grey-10);
-  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .header {
+    height: 40vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(${img});
+    color: var(--clr-white);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.25;
+      margin: 2rem 0 3rem 0;
+      letter-spacing: 3px;
+      text-shadow: var(--text-shadow);
+    }
+  }
   .tile-layout {
     margin-top: 2rem;
     display: grid;
@@ -124,6 +150,9 @@ const Wrapper = styled.section`
     }
   }
   @media (min-width: 768px) {
+    .header {
+      height: 50vh;
+    }
     article {
       margin-right: 0;
     }

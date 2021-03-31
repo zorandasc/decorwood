@@ -44,7 +44,12 @@ const Wrapper = styled.header`
   top: 0;
   left: 0;
   width: 100vw;
-  background: transparent;
+  //background: transparent;
+  background-image: linear-gradient(
+    rgb(0, 0, 0),
+    rgb(0, 0, 0, 0.5),
+    rgb(0, 0, 0, 0.1)
+  );
   z-index: 101;
   height: 5rem;
   display: flex;
