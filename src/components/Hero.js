@@ -18,7 +18,7 @@ const Hero = () => {
         // This is a presentational image, so the alt should be an empty string
         alt=""
         placeholder="blurred"
-        src={"../images/law.jpg"}
+        src={"../images/hero.jpg"}
         formats={["auto", "webp", "avif"]}
       />
       <div className="content">
