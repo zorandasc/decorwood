@@ -67,7 +67,7 @@ const Wrapper = styled.section`
       text-transform: uppercase;
       font-weight: 500;
       line-height: 1.25;
-      margin: 2rem 0 3rem 0;
+      margin: 5rem 0 3rem 0;
       letter-spacing: 3px;
       text-shadow: var(--text-shadow);
     }
@@ -104,7 +104,6 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     cursor: pointer;
     &:hover {
-      // transform: translateY(-0.5rem);
       box-shadow: var(--up-shadow);
     }
     &:hover .img {
@@ -115,7 +114,7 @@ const Wrapper = styled.section`
       position: absolute;
       top: 0%;
       left: 0%;
-      transform: translateY(50%);
+      transform: translateY(0%);
       width: 100%;
       height: 100%;
       transition: var(--transition);
@@ -123,7 +122,7 @@ const Wrapper = styled.section`
       background-image: linear-gradient(
         transparent,
         transparent,
-        rgb(186, 93, 44)
+        var(--clr-black)
       );
       text-align: center;
       opacity: 1;
@@ -138,7 +137,7 @@ const Wrapper = styled.section`
       }
     }
     &:hover .info {
-      transform: translateY(0%);
+      transform: translateY(50%);
     }
     .broj {
       position: absolute;

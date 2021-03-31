@@ -88,7 +88,7 @@ const Wrapper = styled.section`
       position: absolute;
       top: 0%;
       left: 0%;
-      transform: translateY(50%);
+      transform: translateY(0%);
       width: 100%;
       height: 100%;
       transition: var(--transition);
@@ -96,7 +96,7 @@ const Wrapper = styled.section`
       background-image: linear-gradient(
         transparent,
         transparent,
-        rgb(186, 93, 44)
+        var(--clr-black)
       );
       text-align: center;
       opacity: 1;
@@ -111,7 +111,7 @@ const Wrapper = styled.section`
       }
     }
     &:hover .info {
-      transform: translateY(0%);
+      transform: translateY(50%);
     }
   }
   @media (min-width: 768px) {
