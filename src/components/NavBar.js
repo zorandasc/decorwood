@@ -128,8 +128,8 @@ const Wrapper = styled.header`
         transition: var(--transition);
       }
       .links:hover {
-        transform: rotate(-10deg);
-        box-shadow: 1rem 1rem 1rem #fff;
+        transform: rotate(-4deg);
+        box-shadow: 4px 6px 5px 0px var(--clr-grey-9);
       }
     }
   }
