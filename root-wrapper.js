@@ -16,6 +16,8 @@ Variables
   --clr-primary-4: hsl(21, 77%, 34%);
   /* primary/main color */
   --clr-primary-5: hsl(21, 62%, 45%);
+  //BA5D2C
+  //rgb(186,93,44)
   /* lighter shades of primary color */
   --clr-primary-6: hsl(21, 57%, 50%);
   --clr-primary-7: hsl(21, 65%, 59%);

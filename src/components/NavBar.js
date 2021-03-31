@@ -61,7 +61,7 @@ const Wrapper = styled.header`
     justify-content: space-between;
     img {
       width: auto;
-      transform: scale(1.1);
+      transform: scale(1.2);
       padding-bottom: 0.5rem;
     }
     .toggle-btn {

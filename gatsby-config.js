@@ -61,5 +61,17 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Decorwood`,
+        short_name: `Decorwood`,
+        start_url: `/`,
+        background_color: `#BA5D2C`,
+        theme_color: `#BA5D2C`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
   ],
 };
