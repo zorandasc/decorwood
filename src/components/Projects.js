@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import SearchButtons from "./SearchButtons";
-//import img from "../images/patternpad.svg";
 
 const Projects = ({ projects: data, title }) => {
   const [projects, setProjects] = React.useState(data);
@@ -15,7 +14,9 @@ const Projects = ({ projects: data, title }) => {
   return (
     <Wrapper className="section">
       <div className="header">
-        <h1>Galerija</h1>
+        <div className="floral">
+          <h1>Galerija</h1>
+        </div>
       </div>
 
       <SearchButtons
@@ -63,13 +64,21 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    .floral {
+      margin-top: 2rem;
+      color: var(--clr-primary-8);
+      background-color: var(--clr-black);
+      padding: 0.7rem;
+      border-radius: 3rem;
+      border: 2px solid var(--clr-primary-8);
+      box-shadow: var(--dark-shadow);
+    }
     h1 {
       text-transform: uppercase;
       font-weight: 500;
-      line-height: 1.25;
-      margin: 5rem 0 3rem 0;
+      line-height: 1;
       letter-spacing: 3px;
-      text-shadow: var(--text-shadow);
+      margin: 0;
     }
   }
   .tile-layout {
