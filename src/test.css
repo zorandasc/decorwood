@@ -1,4 +1,11 @@
 :root {
+  /*fence*/
+  -st0: none;
+  -st1: #f2da97;
+  -st2: #dbc07b;
+  -st3: #a8773b;
+  -st4: #f9ebca;
+
   /*ja dodao moguce boje*/
   --clr-1: #eae7dc;
   --clr-2: #d8c3a5;
