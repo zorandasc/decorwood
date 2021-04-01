@@ -14,7 +14,7 @@ const Projects = ({ projects: data, title }) => {
   return (
     <Wrapper className="section">
       <div className="header">
-        <div className="floral">
+        <div className="title">
           <h1>Galerija</h1>
         </div>
       </div>
@@ -64,7 +64,7 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    .floral {
+    .title {
       margin-top: 2rem;
       color: var(--clr-primary-8);
       background-color: var(--clr-black);

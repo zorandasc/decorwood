@@ -64,7 +64,7 @@ const Wrapper = styled.aside`
       border: transparent;
       font-size: 2rem;
       cursor: pointer;
-      color: var(--clr-primary-5);
+      color: var(--clr-primary-7);
     }
     .links {
       display: grid;
@@ -78,7 +78,7 @@ const Wrapper = styled.aside`
         gap: 1rem;
         grid-gap: 1rem;
         align-items: center;
-        color: var(--clr-primary-5);
+        color: var(--clr-primary-8);
         background-color: var(--clr-black);
         padding: 0.6rem;
         text-transform: capitalize;
@@ -87,7 +87,7 @@ const Wrapper = styled.aside`
         border: 1px solid var(--clr-black);
         border-radius: 50px;
         .icon {
-          color: var(--clr-primary-5);
+          color: var(--clr-primary-8);
           font-size: 2rem;
           margin-bottom: 0.5rem;
         }
