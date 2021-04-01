@@ -63,18 +63,6 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    clip-path: polygon(
-      50% 0%,
-      90% 0,
-      100% 0,
-      100% 70%,
-      80% 90%,
-      50% 100%,
-      20% 90%,
-      0% 70%,
-      0 0,
-      19% 0
-    );
     .title {
       z-index: 10;
       margin-top: 2rem;
@@ -173,7 +161,7 @@ const Wrapper = styled.section`
   }
   @media (min-width: 768px) {
     .header {
-      height: 60vh;
+      height: 50vh;
     }
     article {
       margin-right: 0;
