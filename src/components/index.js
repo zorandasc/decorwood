@@ -4,5 +4,6 @@ import About from "./About";
 import Contact from "./Contact";
 import GridProjects from "./GridProjects";
 import Projects from "./Projects";
+import SEO from "./seo";
 
-export { Layout, Hero, About, Contact, GridProjects, Projects };
+export { Layout, Hero, About, Contact, GridProjects, Projects, SEO };

@@ -1,13 +1,12 @@
-import React from "react"
+import React from "react";
 import {
   GiCompass,
   GiDiamondHard,
   GiStabbedNote,
   GiBriefcase,
-} from "react-icons/gi"
+} from "react-icons/gi";
 
-
-const services= [
+const services = [
   {
     id: 1,
     icon: <GiCompass className="icon" />,
@@ -32,10 +31,10 @@ const services= [
   {
     id: 4,
     icon: <GiBriefcase className="icon" />,
-    label: "rad",
+    label: "predanost",
     text:
       "Man braid banh mi prism disrupt hella cray mlkshk jean shorts typewriter synth salvia direct trade pabst knausgaard.",
   },
-]
+];
 
 export default services;

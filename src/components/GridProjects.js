@@ -14,7 +14,7 @@ const GridProjects = ({ projects, title }) => {
       {/*<Title title={title || "projects"} />*/}
       <Title
         subtitle="Mi volimo to što radimo"
-        title="Naša najnovija izdanja"
+        title="Pogledajte naša najnovija izdanja"
         invertColor={true}
       ></Title>
 

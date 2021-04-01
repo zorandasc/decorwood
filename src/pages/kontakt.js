@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Layout } from "../components";
+import { Layout, SEO } from "../components";
 
 const kontakt = () => {
   return (
     <Layout>
+      <SEO title="Kontakt"></SEO>
       <Wrapper>
         <h1>Naš kontakt</h1>
       </Wrapper>

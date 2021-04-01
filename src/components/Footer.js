@@ -7,7 +7,7 @@ import links from "../constants/links";
 const Footer = () => {
   return (
     <Wrapper>
-      <ul className="footer-list">
+      <div className="footer-list">
         {links.map((link, index) => {
           const { url, label } = link;
           return (
@@ -16,7 +16,7 @@ const Footer = () => {
             </Link>
           );
         })}
-      </ul>
+      </div>
       <p>
         &copy; Copyright {new Date().getFullYear()} zorandsc. All rights
         reserved. DecorWood

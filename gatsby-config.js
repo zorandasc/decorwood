@@ -5,11 +5,11 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `DecorWood`,
-    description: ` `,
+    description: `Jedinstveni i unikatni predmeti od drveta.`,
     author: `@zorandasic`,
     titleTemplate: `%s | DecorWood`,
     siteUrl: `https://decorwood.netlify.app`,
-    image: ``,
+    image: `/hero.jpg`,
     twitterUsername: ``,
   },
   plugins: [

@@ -11,7 +11,7 @@ const About = () => {
     <Wrapper className="section">
       <Title
         subtitle="Šta mi radimo"
-        title="Sve što Vam je potrebno za savršen poklon"
+        title="Za Vaš savršen poklon naša ..."
       ></Title>
       <div className="section-center">
         {services.map(({ id, icon, label, text }) => {

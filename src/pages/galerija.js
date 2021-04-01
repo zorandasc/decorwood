@@ -2,18 +2,19 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 
-import { Layout, Projects } from "../components";
+import { Layout, Projects, SEO } from "../components";
 
 const galerija = ({ data }) => {
   const {
     allContentfulProduct: { nodes: projects },
   } = data;
   return (
-    <Wrapper>
-      <Layout>
+    <Layout>
+      <SEO title="Galerija"></SEO>
+      <Wrapper>
         <Projects title="galerija" projects={projects} page></Projects>
-      </Layout>
-    </Wrapper>
+      </Wrapper>
+    </Layout>
   );
 };
 

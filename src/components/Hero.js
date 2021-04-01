@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="content">
         {/* Any content here will be centered in the component */}
         <article>
-          <h3>If you can dream it we can created</h3>
+          <p lang="en">If you can dream it we can created</p>
           <h1>Dekorativni predmeti od drveta</h1>
           <BtnGalery></BtnGalery>
         </article>
@@ -91,10 +91,16 @@ const Wrapper = styled.section`
         letter-spacing: 3px;
         text-shadow: var(--text-shadow);
       }
-      h3 {
+      p {
+        color: inherit;
         font-weight: 400;
         font-family: "Caveat", cursive;
         text-shadow: var(--text-shadow);
+        letter-spacing: var(--spacing);
+        text-transform: capitalize;
+        line-height: 1.25;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
       }
 
       @media (min-width: 800px) {
@@ -104,6 +110,9 @@ const Wrapper = styled.section`
         }
         h1 {
           letter-spacing: 5px;
+        }
+        p {
+          font-size: 1.75rem;
         }
       }
     }

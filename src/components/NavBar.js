@@ -17,7 +17,11 @@ const NavBar = () => {
             <img src={logo} alt="design"></img>
           </Link>
           {!isSidebarOpen && (
-            <button className="toggle-btn" onClick={showSidebar}>
+            <button
+              className="toggle-btn"
+              aria-label="Menu Button"
+              onClick={showSidebar}
+            >
               <GoThreeBars></GoThreeBars>
             </button>
           )}

@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Layout } from "../components";
+import { Layout, SEO } from "../components";
 
 const onama = () => {
   return (
     <Layout>
+      <SEO title="O nama"></SEO>
       <Wrapper>
         <h1>nešto o nama</h1>
       </Wrapper>

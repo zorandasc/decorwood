@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Title2 = ({ title, subtitle, invertColor }) => {
   return (
     <Wrapper>
-      <h3>{subtitle}</h3>
+      <p>{subtitle}</p>
       <h2
         style={
           invertColor
@@ -25,10 +25,15 @@ const Wrapper = styled.div`
   max-width: 800px;
   text-align: center;
 
-  h3 {
-    text-transform: none;
-    font-weight: 400;
+  p {
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--clr-primary-5);
+    text-shadow: var(--text-shadow);
+    letter-spacing: var(--spacing);
+    text-transform: none;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
   }
   h2 {
     text-align: center;
@@ -42,8 +47,9 @@ const Wrapper = styled.div`
     span {
       display: none;
     }
-
-    @media (min-width: 800px) {
+  }
+  @media (min-width: 800px) {
+    h2 {
       span {
         display: initial;
         font-size: 0.85em;
@@ -51,6 +57,9 @@ const Wrapper = styled.div`
         margin-right: 1rem;
         font-weight: 700;
       }
+    }
+    p {
+      font-size: 1.75rem;
     }
   }
 `;
