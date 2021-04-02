@@ -2,9 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import styled, { keyframes } from "styled-components";
 
-//import BackGround from './BackGround'
 import BtnGalery from "./BtnGalery";
-//import Cloud from "./Cloud";
 
 const Hero = () => {
   return (
@@ -89,14 +87,12 @@ const Wrapper = styled.section`
         line-height: 1.25;
         margin: 2rem 0 3rem 0;
         letter-spacing: 3px;
-        //text-shadow: var(--text-shadow);
         text-shadow: var(--text-shadow2);
       }
       p {
-        color: inherit;
+        color: var(--clr-white);
         font-weight: 400;
         font-family: "Caveat", cursive;
-        text-shadow: var(--text-shadow);
         letter-spacing: var(--spacing);
         text-transform: capitalize;
         line-height: 1.25;
@@ -118,6 +114,7 @@ const Wrapper = styled.section`
         }
       }
     }
+    //FADE IN BACKGROUND TO BLACK
     animation: ${fadeIn} 2s ease-in-out 1 forwards;
   }
 `;

@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 import links from "../constants/links";
+import blackCloud from "../images/cloudBlack.svg";
 
 const Footer = () => {
   return (
@@ -32,6 +33,18 @@ const Wrapper = styled.footer`
   justify-content: space-around;
   text-align: center;
   padding: 4rem;
+  position: relative;
+  &::before {
+    content: "";
+    color: white;
+    position: absolute;
+    background-image: url(${blackCloud});
+    background-repeat: repeat-x;
+    top: -4.9rem;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+  }
   .footer-list {
     padding-bottom: 2rem;
     .footer-link {

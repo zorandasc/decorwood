@@ -51,7 +51,7 @@ Variables
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --up-shadow: 8px 10px 5px 5px rgba(0, 0, 0, 0.2);
-  --text-shadow:2px 2px rgba(0, 0, 0, 1)
+  --text-shadow:2px 2px rgba(0, 0, 0, 1);
   --text-shadow2: 3px 3px 3px rgba(0, 0, 0, 0.4);
   --max-width: 1170px;
   --fixed-width: 620px;
@@ -71,11 +71,10 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  overflow-x:hidden; 
+  
 }
 ul {
   list-style-type: none;
