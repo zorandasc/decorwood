@@ -16,8 +16,8 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
       })
     ),
     "8 Mart",
-    "Dan Republike",
-    "Rođendan",
+    "Svadbene Dekoracije",
+    "Rođendani",
   ];
 
   const showProjects = (type, typeIndex) => {
