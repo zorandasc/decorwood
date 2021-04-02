@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import SearchButtons from "./SearchButtons";
+import Wave from "../components/Wave";
 
 const Projects = ({ projects: data, title }) => {
   const [projects, setProjects] = React.useState(data);
@@ -17,6 +18,7 @@ const Projects = ({ projects: data, title }) => {
         <div className="title">
           <h1>Galerija</h1>
         </div>
+        <Wave></Wave>
       </div>
 
       <SearchButtons
@@ -71,7 +73,6 @@ const Wrapper = styled.section`
       padding: 0.7rem;
       border-radius: 3rem;
       border: 2px solid var(--clr-primary-8);
-      box-shadow: var(--dark-shadow);
     }
     h1 {
       text-transform: uppercase;
@@ -161,7 +162,10 @@ const Wrapper = styled.section`
   }
   @media (min-width: 768px) {
     .header {
-      height: 50vh;
+      height: 70vh;
+      .title {
+        margin-top: 0;
+      }
     }
     article {
       margin-right: 0;

@@ -61,7 +61,7 @@ const Wrapper = styled.section`
     margin: 0.5rem;
     text-transform: capitalize;
     background: transparent;
-    padding: 0.5rem;
+    padding: 0.6rem;
     border-radius: 3rem;
     border: 2px solid var(--clr-primary-8);
     color: var(--clr-primary-8);
