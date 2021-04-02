@@ -14,7 +14,7 @@ const NavBar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="design"></img>
+            <img src={logo} alt="design" width="200" height="36"></img>
           </Link>
           {!isSidebarOpen && (
             <button
