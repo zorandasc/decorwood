@@ -76,8 +76,8 @@ const Wrapper = styled.section`
   button:hover,
   button.active {
     box-shadow: var(--light-shadow);
-    color: var(--clr-primary-7);
-    border-color: var(--clr-primary-7);
+    color: var(--clr-white);
+    border-color: var(--clr-white);
   }
 `;
 
