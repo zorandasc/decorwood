@@ -89,7 +89,8 @@ const Wrapper = styled.section`
         line-height: 1.25;
         margin: 2rem 0 3rem 0;
         letter-spacing: 3px;
-        text-shadow: var(--text-shadow);
+        //text-shadow: var(--text-shadow);
+        text-shadow: var(--text-shadow2);
       }
       p {
         color: inherit;
@@ -101,6 +102,7 @@ const Wrapper = styled.section`
         line-height: 1.25;
         font-size: 1.25rem;
         margin-bottom: 0.75rem;
+        text-shadow: var(--text-shadow2);
       }
 
       @media (min-width: 800px) {

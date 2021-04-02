@@ -41,7 +41,7 @@ const Wrapper = styled(Link)`
   border-radius: 3rem;
   border: 2px solid var(--clr-primary-5);
   color: var(--clr-white);
-  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
+  box-shadow: var(--dark-shadow);
   //text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
   cursor: pointer;
   position: relative;

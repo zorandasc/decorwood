@@ -52,6 +52,7 @@ Variables
   --dark-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --up-shadow: 8px 10px 5px 5px rgba(0, 0, 0, 0.2);
   --text-shadow:2px 2px rgba(0, 0, 0, 1)
+  --text-shadow2: 3px 3px 3px rgba(0, 0, 0, 0.4);
   --max-width: 1170px;
   --fixed-width: 620px;
 }

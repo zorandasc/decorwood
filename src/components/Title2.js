@@ -34,6 +34,7 @@ const Wrapper = styled.div`
     text-transform: none;
     line-height: 1.25;
     margin-bottom: 0.75rem;
+    text-shadow: var(--text-shadow2);
   }
   h2 {
     text-align: center;
@@ -44,6 +45,7 @@ const Wrapper = styled.div`
     font-weight: 500;
     margin-right: 1rem;
     margin-left: 1rem;
+    text-shadow: var(--text-shadow2);
     span {
       display: none;
     }
