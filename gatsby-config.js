@@ -3,6 +3,10 @@ require("dotenv").config({
 });
 
 module.exports = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
+  },
   siteMetadata: {
     title: `DecorWood`,
     description: `Jedinstveni i unikatni predmeti od drveta.`,

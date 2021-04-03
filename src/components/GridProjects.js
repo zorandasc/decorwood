@@ -19,8 +19,7 @@ const GridProjects = ({ projects, title }) => {
 
       <div className="tile-layout">
         {projects.map((project, index) => {
-          const { id, category, image, itemNum } = project;
-          console.log(itemNum);
+          const { id, category, image } = project;
           const gatsImage = getImage(image);
           return (
             <article key={id} className={`div-${index}`}>

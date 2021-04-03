@@ -35,7 +35,6 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
   return (
     <Wrapper>
       {types.map((type, typeIndex) => {
-        console.log(type);
         return (
           <button
             key={typeIndex}
