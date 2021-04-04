@@ -102,10 +102,12 @@ const Wrapper = styled.section`
     bottom: 0;
     left: 0;
     overflow: hidden;
+    z-index: 105;
 
     .dialogContent {
       cursor: pointer;
       width: 70vw;
+      max-width: 900px;
       height: 88vh;
       margin: 10vh auto;
       background: #fff;
@@ -227,19 +229,26 @@ const Wrapper = styled.section`
   }
   @media (min-width: 768px) {
     .header {
-      height: 70vh;
+      height: 60vh;
       .title {
         margin-top: 0;
+        margin-bottom: 4rem;
       }
     }
     .article {
       margin-right: 0;
+      .info {
+        padding: 0.5rem;
+      }
     }
     .tile-layout {
       grid-template-columns: 1fr 1fr;
     }
   }
   @media (min-width: 992px) {
+    .header {
+      height: 65vh;
+    }
     .tile-layout {
       grid-template-columns: 1fr 1fr 1fr;
       //grid-template-rows: 350px 350px;
