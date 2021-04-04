@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { Layout, Projects, SEO } from "../components";
 
-const galerija = ({ data }) => {
+const Galerija = ({ data }) => {
   const {
     allContentfulProduct: { nodes: projects },
   } = data;
@@ -46,4 +46,4 @@ const Wrapper = styled.main`
   }
 `;
 
-export default galerija;
+export default Galerija;

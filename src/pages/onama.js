@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { Layout, SEO } from "../components";
 
-const onama = () => {
+const Onama = () => {
   return (
     <Layout>
       <SEO title="O nama"></SEO>
@@ -22,4 +22,4 @@ const Wrapper = styled.section`
   align-items: center;
 `;
 
-export default onama;
+export default Onama;

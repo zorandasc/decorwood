@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { Layout, SEO } from "../components";
 
-const kontakt = () => {
+const Kontakt = () => {
   return (
     <Layout>
       <SEO title="Kontakt"></SEO>
@@ -22,4 +22,4 @@ const Wrapper = styled.section`
   align-items: center;
 `;
 
-export default kontakt;
+export default Kontakt;
