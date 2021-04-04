@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import styled from "styled-components";
 
 import { Layout, Projects, SEO } from "../components";
 
@@ -11,9 +10,8 @@ const Galerija = ({ data }) => {
   return (
     <Layout>
       <SEO title="Galerija"></SEO>
-      <Wrapper>
-        <Projects title="galerija" projects={projects} page></Projects>
-      </Wrapper>
+
+      <Projects title="galerija" projects={projects} page></Projects>
     </Layout>
   );
 };
@@ -35,14 +33,6 @@ export const query = graphql`
         }
       }
     }
-  }
-`;
-
-const Wrapper = styled.main`
-  min-height: 100vh;
-  background: var(--clr-grey-10);
-  nav {
-    background: var(--clr-primary-7);
   }
 `;
 

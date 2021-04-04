@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { useSpring, animated, config } from "react-spring";
 
 import SearchButtons from "./SearchButtons";
 import Wave from "../components/Wave";
 
 const Projects = ({ projects: data, title }) => {
-  const [projects, setProjects] = React.useState(data);
+  const [projects, setProjects] = useState(data);
+  const [{ showLightbox, currentImage }, setLightbox] = useState({
+    showLightbox: false,
+    currentImage: null,
+  });
 
   const setBackToAll = () => {
     setProjects(data);
@@ -32,27 +37,86 @@ const Projects = ({ projects: data, title }) => {
           const { id, category, itemNum, image } = project;
           const gatsImage = getImage(image);
           return (
-            <article key={id}>
+            <animated.div
+              className="article"
+              key={id}
+              onClick={() =>
+                setLightbox({
+                  showLightbox: true,
+                  currentImage: gatsImage,
+                })
+              }
+              onKeyDown={() =>
+                setLightbox({
+                  showLightbox: true,
+                  currentImage: gatsImage,
+                })
+              }
+              role="button"
+              tabIndex="0"
+            >
               <GatsbyImage className="img" image={gatsImage} alt={category} />
               <div className="info">
                 <h3>{category}</h3>
               </div>
               <span className="broj">{itemNum}</span>
-            </article>
+            </animated.div>
           );
         })}
       </div>
+      {showLightbox && (
+        <div className="dialog">
+          <div className="dialogContent">
+            <GatsbyImage
+              className="img"
+              image={currentImage}
+              alt="image"
+              onClick={() =>
+                setLightbox({
+                  showLightbox: false,
+                  currentImage: null,
+                })
+              }
+            />
+          </div>
+        </div>
+      )}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
+  position: relative;
   padding-top: 0;
+
   background: var(--clr-grey-10);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .dialog {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    .dialogContent {
+      cursor: pointer;
+      width: 70vw;
+      height: 88vh;
+      margin: 10vh auto;
+      background: #fff;
+      padding: 1rem;
+      outline: none;
+      border-radius: var(--radius);
+      .img {
+        transform: scale(1);
+      }
+    }
+  }
   .header {
     position: relative;
     height: 40vh;
@@ -83,11 +147,10 @@ const Wrapper = styled.section`
     }
   }
   .tile-layout {
-    margin-top: 2rem;
     display: grid;
     width: 90vw;
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin: 2rem auto 6rem auto;
     gap: 1rem;
     /* safari workaround */
     grid-gap: 1rem;
@@ -101,11 +164,12 @@ const Wrapper = styled.section`
   /*GOTCHA AKO HOCEM DA GATBY IMAGE PLAY NICELY WIDTH DEFINET 300PX  HEIGHT OF ROW
   MORA SE ZA IMG DEFINISATI HEIGHT OD 100%*/
   .img {
+    width: 100%;
     height: 100%;
     border-radius: var(--radius);
     transition: var(--transition);
   }
-  article {
+  .article {
     margin-right: 0.5rem;
     transition: var(--transition);
     box-shadow: var(--dark-shadow);
@@ -113,6 +177,7 @@ const Wrapper = styled.section`
     overflow: hidden;
     border-radius: var(--radius);
     cursor: pointer;
+    will-change: width, height;
     &:hover {
       box-shadow: var(--up-shadow);
     }
@@ -167,7 +232,7 @@ const Wrapper = styled.section`
         margin-top: 0;
       }
     }
-    article {
+    .article {
       margin-right: 0;
     }
     .tile-layout {
