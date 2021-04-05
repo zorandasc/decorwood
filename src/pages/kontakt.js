@@ -93,7 +93,7 @@ const Wrapper = styled.section`
     width: 90%;
     max-width: 1000px;
     height: 42rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(201, 219, 220, 0.8);
     margin: auto;
     flex-direction: column;
     border-radius: 0.5rem;
@@ -150,8 +150,8 @@ const Wrapper = styled.section`
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
     margin-top: 1rem;
-    background-color: var(--clr-black);
-    color: var(--clr-primary-8);
+    background-color: var(--clr-primary-5);
+    color: var(--clr-white);
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;

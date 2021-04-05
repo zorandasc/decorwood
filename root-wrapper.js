@@ -37,6 +37,9 @@ Variables
   --clr-grey-8: hsl(210, 31%, 80%);
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: #f1f5f8;
+  --clr-glass:RGB(201, 219, 220)
+  //#c9dbdc
+  //HSL(183, 21.3%, 82.5%)
   --mainGrey: #ececec;
   --darkGrey: #afafaf;
   --clr-white: #fff;
