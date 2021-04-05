@@ -12,14 +12,14 @@ const Kontakt = () => {
       <Wrapper>
         <h1 className="contact-heading">Pišite nam</h1>
         <form
-          name="kontakt"
+          name="Decorwood_contact"
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           className="contact-form center"
         >
           <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="Decorwood_contact" />
           <div className="input-group">
             <label htmlFor="name">Ime Prezime *</label>
             <input
