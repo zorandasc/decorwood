@@ -72,7 +72,7 @@ const Kontakt = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 10rem 0 20rem 0;
+  padding: 8rem 0 20rem 0;
   text-align: center;
   background: url(${img});
   background-size: contain;
@@ -80,20 +80,20 @@ const Wrapper = styled.section`
   background-attachment: fixed;
 
   .contact-heading {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     color: var(--clr-white);
     text-shadow: 0 1rem 2rem #000;
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
   }
 
   .contact-form {
     width: 90%;
     max-width: 1000px;
     height: 42rem;
-    background-color: rgba(201, 219, 220, 0.8);
+    background-color: rgba(201, 219, 220, 0.7);
     margin: auto;
     flex-direction: column;
     border-radius: 0.5rem;
@@ -119,7 +119,7 @@ const Wrapper = styled.section`
   .input-group input,
   .input-group textarea {
     padding: 3rem 1rem 1rem 1rem;
-    background-color: var(--mainGrey);
+    background-color: var(--clr-white);
     border: 0.1rem solid var(--darkGrey);
     font-size: 1.4rem;
     color: var(--clr-grey-4);
