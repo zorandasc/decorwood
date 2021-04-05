@@ -12,7 +12,7 @@ const Kontakt = () => {
       <Wrapper>
         <h1 className="contact-heading">Pišite nam</h1>
         <form
-          name="Decorwood_contact"
+          name="kontakt"
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
