@@ -92,16 +92,17 @@ const Wrapper = styled.section`
   .contact-form {
     width: 90%;
     max-width: 1000px;
-    height: 42rem;
+    height: 40rem;
     padding: 2rem;
     margin: auto;
     flex-direction: column;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: var(--dark-shadow);
     border-radius: 5px;
     position: relative;
     z-index: 1;
     background: inherit;
     overflow: hidden;
+    transition: var(--transition);
     &:before {
       content: "";
       position: absolute;
@@ -114,6 +115,9 @@ const Wrapper = styled.section`
       box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
       filter: blur(10px);
       margin: -20px;
+    }
+    &:hover {
+      box-shadow: var(--up-shadow);
     }
   }
 
