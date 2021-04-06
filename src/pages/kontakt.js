@@ -72,7 +72,7 @@ const Kontakt = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 8rem 0 20rem 0;
+  padding: 8rem 0 12rem 0;
   text-align: center;
   background: url(${img});
   background-size: contain;
@@ -80,25 +80,41 @@ const Wrapper = styled.section`
   background-attachment: fixed;
 
   .contact-heading {
+    margin-bottom: 5rem;
     font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     color: var(--clr-white);
     text-shadow: 0 1rem 2rem #000;
-    margin-bottom: 6rem;
   }
 
   .contact-form {
     width: 90%;
     max-width: 1000px;
     height: 42rem;
-    background-color: rgba(201, 219, 220, 0.7);
+    padding: 2rem;
     margin: auto;
     flex-direction: column;
-    border-radius: 0.5rem;
-    box-shadow: 0 1rem 3rem #000;
-    padding: 2rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      background: inherit;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+      filter: blur(10px);
+      margin: -20px;
+    }
   }
 
   .input-group {
@@ -121,7 +137,7 @@ const Wrapper = styled.section`
     padding: 3rem 1rem 1rem 1rem;
     background-color: var(--clr-white);
     border: 0.1rem solid var(--darkGrey);
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: var(--clr-grey-4);
     letter-spacing: 0.1rem;
     border-radius: 0.5rem;
@@ -134,7 +150,7 @@ const Wrapper = styled.section`
   }
 
   .input-group label {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -147,7 +163,7 @@ const Wrapper = styled.section`
   .form-btn {
     width: 50%;
     padding: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     letter-spacing: 0.1rem;
     margin-top: 1rem;
     background-color: var(--clr-primary-5);
@@ -169,9 +185,10 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 768px) {
-    padding: 15rem 0 20rem 0;
+    padding: 12rem 0 20rem 0;
     .contact-heading {
       font-size: 6rem;
+      margin-bottom: 6rem;
     }
   }
   @media (min-width: 992px) {
