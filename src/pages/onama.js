@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import styled from "styled-components";
@@ -24,13 +24,44 @@ const Onama = ({ data }) => {
         <h1 className="heading">O nama</h1>
         <BgImage image={sources} className="center">
           <article>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+            <p>
+              Mi smo tim koji je u želji da iskaže svoju kreativnost otpočeo sa
+              izradom drvenih dekoracija.
+            </p>
+            <span>*</span>
+            <p>
+              Sada iza nas stoji višegodišnji rad sa velikim brojem uspešno
+              pripremljenih unikatnih i ručno izrađenih dekoracija za venčanja,
+              rođendane, uskrse, 8 martovske i druge svečane priredbe.
+            </p>
+            <span>*</span>
+            <p>
+              Sa nama možete ostvariti sve svoje želje. Vaši darovi mogu biti
+              personalizovani, elegantni, upečatljivi, raskošni, otmeni.
+            </p>
+            <span>*</span>
+            <p>
+              U našoj <Link to="/galerija">galeriji</Link> ćete svakako moći da
+              vidite prezentaciju naših radova i sigurno ćete pronaći neke koji
+              Vam se dopadaju.
+            </p>
+            <span>*</span>
+            <p>
+              Prepustite se mašti i <Link to="/kontakt">kontaktirajte</Link> nas
+              da zajedno kreiramo dekoracije za Vaše najmilije.
+            </p>
+            <span>*</span>
+            <p>
+              U slučaju da ste zainteresovani isključivo za svadbene dekoracije,
+              posetite naš sestrinski sajt:{" "}
+              <a href="www.svadbenicvet.com">www.svadbenicvet.com</a>
+            </p>
+            <span>*</span>
+            <p>
+              Naručenu robu šaljemo brzom poštom na teritoriji cele Srbije.
+              Takođe, robu šaljemo i na teritoriji Balkana. Ostavljamo Vam i
+              mogućnost ličnog preuzimanja.
+            </p>
           </article>
         </BgImage>
       </Wrapper>
@@ -79,11 +110,8 @@ const Wrapper = styled(BgImage)`
   }
 
   .center {
-    color: var(--clr-white);
-    font-size: 1.5rem;
     width: 90%;
     max-width: 1000px;
-    height: 44rem;
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
@@ -96,6 +124,14 @@ const Wrapper = styled(BgImage)`
     background: inherit;
     overflow: hidden;
     transition: var(--transition);
+    p,
+    span {
+      color: var(--clr-white);
+      font-size: 1.5rem;
+    }
+    a {
+      color: var(--clr-primary-8);
+    }
 
     //da bi se zadrzao glass
     //before je potreban kod promjene page
@@ -137,14 +173,15 @@ const Wrapper = styled(BgImage)`
       margin-bottom: 6rem;
     }
     .center {
-      font-size: 1.8rem;
       padding: 4rem;
+      p {
+        font-size: 1.8rem;
+      }
     }
   }
   @media (min-width: 992px) {
     .center {
       width: 80%;
-      height: 37rem;
     }
   }
   @media (min-width: 1600px) {
