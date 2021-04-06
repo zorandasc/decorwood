@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { useSpring, animated, config } from "react-spring";
+//import { useSpring, animated, config } from "react-spring";
 
 import SearchButtons from "./SearchButtons";
 import Wave from "../components/Wave";
@@ -37,7 +37,7 @@ const Projects = ({ projects: data, title }) => {
           const { id, category, itemNum, image } = project;
           const gatsImage = getImage(image);
           return (
-            <animated.div
+            <div
               className="article"
               key={id}
               onClick={() =>
@@ -60,7 +60,7 @@ const Projects = ({ projects: data, title }) => {
                 <h3>{category}</h3>
               </div>
               <span className="broj">{itemNum}</span>
-            </animated.div>
+            </div>
           );
         })}
       </div>

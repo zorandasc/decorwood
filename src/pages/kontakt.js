@@ -1,80 +1,97 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 
 import { Layout, SEO } from "../components";
-//import img from "../images/contact-us-bg.png";
-import img from "../images/delivery.jpg";
 
-const Kontakt = () => {
+const Kontakt = ({ data }) => {
+  const bcgImage = getImage(data.file);
   return (
     <Layout>
       <SEO title="Kontakt"></SEO>
-      <Wrapper>
+      <Wrapper image={bcgImage}>
         <h1 className="contact-heading">Pišite nam</h1>
-        <form
-          name="Decorwood_contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          className="contact-form center"
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="Decorwood_contact" />
-          <div className="input-group">
-            <label htmlFor="name">Ime Prezime *</label>
-            <input
-              required
-              type="text"
-              name="name"
-              id="name"
-              className="contact-input"
-              placeholder="Unesite Vaše ime"
-            />
-          </div>
-          <div className="input-groups">
+        <BgImage image={bcgImage} className="center">
+          <form
+            name="Decorwood_contact"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            className="contact-form"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="Decorwood_contact" />
             <div className="input-group">
-              <label htmlFor="email">Email *</label>
+              <label htmlFor="name">Ime Prezime *</label>
               <input
                 required
-                type="email"
-                name="email"
-                id="email"
+                type="text"
+                name="name"
+                id="name"
                 className="contact-input"
-                placeholder="Unesite Vaš email"
+                placeholder="Unesite Vaše ime"
               />
+            </div>
+            <div className="input-groups">
+              <div className="input-group">
+                <label htmlFor="email">Email *</label>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="contact-input"
+                  placeholder="Unesite Vaš email"
+                />
+              </div>
+              <div className="input-group">
+                <label htmlFor="phone">Telefon</label>
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  className="contact-input"
+                  placeholder="Unesite broj telefona"
+                />
+              </div>
             </div>
             <div className="input-group">
-              <label htmlFor="phone">Telefon</label>
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                className="contact-input"
-                placeholder="Unesite broj telefona"
-              />
+              <label htmlFor="message">Poruka</label>
+              <textarea
+                required
+                name="message"
+                id="message"
+                className="form-textarea"
+                placeholder="Vaša poruka ovdje..."
+              ></textarea>
             </div>
-          </div>
-          <div className="input-group">
-            <label htmlFor="message">Poruka</label>
-            <textarea
-              required
-              name="message"
-              id="message"
-              className="form-textarea"
-              placeholder="Vaša poruka ovdje..."
-            ></textarea>
-          </div>
-          <input type="submit" value="Pošalji" className="form-btn" />
-        </form>
+            <input type="submit" value="Pošalji" className="form-btn" />
+          </form>
+        </BgImage>
       </Wrapper>
     </Layout>
   );
 };
 
-const Wrapper = styled.section`
+export const query = graphql`
+  {
+    file(name: { eq: "delivery" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+  }
+`;
+
+const Wrapper = styled(BgImage)`
   padding: 8rem 0 12rem 0;
   text-align: center;
-  background: url(${img});
   background-size: contain;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -89,13 +106,15 @@ const Wrapper = styled.section`
     text-shadow: 0 1rem 2rem #000;
   }
 
-  .contact-form {
+  .center {
     width: 90%;
     max-width: 1000px;
     height: 40rem;
     padding: 2rem;
     margin: auto;
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: var(--dark-shadow);
     border-radius: 5px;
     position: relative;
@@ -103,7 +122,8 @@ const Wrapper = styled.section`
     background: inherit;
     overflow: hidden;
     transition: var(--transition);
-    &:before {
+    &:before,
+    &:after {
       content: "";
       position: absolute;
       background: inherit;
@@ -114,10 +134,12 @@ const Wrapper = styled.section`
       bottom: 0;
       box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
       filter: blur(10px);
-      margin: -20px;
     }
     &:hover {
       box-shadow: var(--up-shadow);
+    }
+    .contact-form {
+      flex-direction: column;
     }
   }
 
@@ -198,7 +220,6 @@ const Wrapper = styled.section`
   @media (min-width: 992px) {
     .contact-form {
       width: 80%;
-      height: 37rem;
     }
     .input-groups .input-group {
       width: 48.5%;

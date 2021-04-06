@@ -1,17 +1,28 @@
 import React from "react";
+import { graphql } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 import styled from "styled-components";
 
 import { Layout, SEO } from "../components";
-//import img from "../images/contact-us-bg.png";
-import img from "../images/gift.jpg";
 
-const Onama = () => {
+const Onama = ({ data }) => {
+  //const bcgImage = getImage(data.desktopImage);
+  //art direction sa cropovanom image for mobile
+  const sources = [
+    getImage(data.mobileImage),
+    {
+      ...getImage(data.desktopImage),
+      media: `(min-width: 491px)`,
+    },
+  ];
+
   return (
     <Layout>
       <SEO title="O nama"></SEO>
-      <Wrapper>
+      <Wrapper image={sources}>
         <h1 className="heading">O nama</h1>
-        <div className="center">
+        <BgImage image={sources} className="center">
           <article>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -21,16 +32,38 @@ const Onama = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum
           </article>
-        </div>
+        </BgImage>
       </Wrapper>
     </Layout>
   );
 };
 
-const Wrapper = styled.section`
+export const query = graphql`
+  {
+    desktopImage: file(name: { eq: "gift" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+    mobileImage: file(name: { eq: "gift_mob" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: CONSTRAINED
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+  }
+`;
+
+const Wrapper = styled(BgImage)`
   padding: 8rem 0 12rem 0;
   text-align: center;
-  background: url(${img});
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -47,21 +80,25 @@ const Wrapper = styled.section`
 
   .center {
     color: var(--clr-white);
+    font-size: 1.5rem;
     width: 90%;
     max-width: 1000px;
-    height: 40rem;
-    font-size: 1.5rem;
+    height: 44rem;
     padding: 2rem 1rem;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    flex-direction: column;
-    box-shadow: var(--dark-shadow);
-    border-radius: 5px;
     position: relative;
     z-index: 1;
+    box-shadow: var(--dark-shadow);
+    border-radius: 5px;
     background: inherit;
     overflow: hidden;
     transition: var(--transition);
+
+    //da bi se zadrzao glass
+    //before je potreban kod promjene page
     &:before {
       content: "";
       position: absolute;
@@ -73,7 +110,20 @@ const Wrapper = styled.section`
       bottom: 0;
       box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
       filter: blur(10px);
-      margin: -20px;
+    }
+    //da bi se zadrzao glass efecat
+    //a after je potreban kod realoada
+    &:after {
+      content: "";
+      position: absolute;
+      background: inherit;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+      filter: blur(10px);
     }
     &:hover {
       box-shadow: var(--up-shadow);
