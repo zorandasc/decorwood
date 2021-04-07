@@ -4,7 +4,7 @@ import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import styled from "styled-components";
 
-import { Layout, SEO } from "../components";
+import { Layout, SEO, PageTitle } from "../components";
 
 const Onama = ({ data }) => {
   //const bcgImage = getImage(data.desktopImage);
@@ -21,7 +21,10 @@ const Onama = ({ data }) => {
     <Layout>
       <SEO title="O nama"></SEO>
       <Wrapper image={sources}>
-        <h1 className="heading">O nama</h1>
+        <PageTitle
+          subtitle="Samo malo da vam kažemo"
+          title="nesto o nama"
+        ></PageTitle>
         <BgImage image={sources} className="center">
           <article>
             <p>
@@ -54,7 +57,13 @@ const Onama = ({ data }) => {
             <p>
               U slučaju da ste zainteresovani isključivo za svadbene dekoracije,
               posetite naš sestrinski sajt:{" "}
-              <a href="www.svadbenicvet.com">www.svadbenicvet.com</a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.svadbenicvet.com"
+              >
+                www.svadbenicvet.com
+              </a>
             </p>
             <span>*</span>
             <p>
@@ -98,16 +107,6 @@ const Wrapper = styled(BgImage)`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  .heading {
-    margin-bottom: 5rem;
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    color: var(--clr-white);
-    text-shadow: 0 1rem 2rem #000;
-  }
 
   .center {
     width: 90%;
@@ -168,15 +167,8 @@ const Wrapper = styled(BgImage)`
 
   @media (min-width: 768px) {
     padding: 12rem 0 20rem 0;
-    .heading {
-      font-size: 6rem;
-      margin-bottom: 6rem;
-    }
     .center {
       padding: 4rem;
-      p {
-        font-size: 1.8rem;
-      }
     }
   }
   @media (min-width: 992px) {

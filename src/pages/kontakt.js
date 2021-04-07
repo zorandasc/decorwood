@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 
-import { Layout, SEO } from "../components";
+import { Layout, SEO, PageTitle } from "../components";
 
 const Kontakt = ({ data }) => {
   const bcgImage = getImage(data.file);
@@ -12,7 +12,10 @@ const Kontakt = ({ data }) => {
     <Layout>
       <SEO title="Kontakt"></SEO>
       <Wrapper image={bcgImage}>
-        <h1 className="contact-heading">Pišite nam</h1>
+        <PageTitle
+          subtitle="Ne budite stidljivi"
+          title="pišite nam"
+        ></PageTitle>
         <BgImage image={bcgImage} className="center">
           <form
             name="Decorwood_contact"
@@ -95,16 +98,6 @@ const Wrapper = styled(BgImage)`
   background-size: contain;
   background-repeat: repeat;
   background-attachment: fixed;
-
-  .contact-heading {
-    margin-bottom: 5rem;
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    color: var(--clr-white);
-    text-shadow: 0 1rem 2rem #000;
-  }
 
   .center {
     width: 90%;
@@ -212,10 +205,6 @@ const Wrapper = styled(BgImage)`
 
   @media (min-width: 768px) {
     padding: 12rem 0 20rem 0;
-    .contact-heading {
-      font-size: 6rem;
-      margin-bottom: 6rem;
-    }
   }
   @media (min-width: 992px) {
     .contact-form {
@@ -224,8 +213,6 @@ const Wrapper = styled(BgImage)`
     .input-groups .input-group {
       width: 48.5%;
     }
-  }
-  @media (min-width: 1600px) {
   }
 `;
 
