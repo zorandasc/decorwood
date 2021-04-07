@@ -13,7 +13,7 @@ const Kontakt = ({ data }) => {
       <SEO title="Kontakt"></SEO>
       <Wrapper image={bcgImage}>
         <PageTitle
-          subtitle="Ne budite stidljivi"
+          subtitle="Ne budite stidljivi ostanite u kontaktu"
           title="pišite nam"
         ></PageTitle>
         <BgImage image={bcgImage} className="center">
@@ -98,6 +98,8 @@ const Wrapper = styled(BgImage)`
   background-size: contain;
   background-repeat: repeat;
   background-attachment: fixed;
+  background-color: rgba(34, 34, 34, 0.5);
+  background-blend-mode: overlay;
 
   .center {
     width: 90%;

@@ -91,12 +91,12 @@ const Wrapper = styled.section`
       }
       p {
         color: var(--clr-white);
-        font-weight: 400;
+        font-weight: 600;
         font-family: "Caveat", cursive;
-        letter-spacing: var(--spacing);
+        letter-spacing: 4px;
         text-transform: capitalize;
         line-height: 1.25;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         margin-bottom: 0.75rem;
         text-shadow: var(--text-shadow2);
       }
