@@ -94,31 +94,6 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .dialog {
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: 105;
-
-    .dialogContent {
-      cursor: pointer;
-      width: 70vw;
-      max-width: 900px;
-      height: 88vh;
-      margin: 10vh auto;
-      background: #fff;
-      padding: 1rem;
-      outline: none;
-      border-radius: var(--radius);
-      .img {
-        transform: scale(1);
-      }
-    }
-  }
   .header {
     position: relative;
     height: 40vh;
@@ -226,6 +201,31 @@ const Wrapper = styled.section`
       padding: 0.4rem 0.5rem;
       border-top-right-radius: 1rem;
       border-bottom-right-radius: 1rem;
+    }
+  }
+  .dialog {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 105;
+
+    .dialogContent {
+      cursor: pointer;
+      width: 70vw;
+      max-width: 900px;
+      height: 88vh;
+      margin: 10vh auto;
+      background: #fff;
+      padding: 1rem;
+      outline: none;
+      border-radius: var(--radius);
+      .img {
+        transform: scale(1);
+      }
     }
   }
   @media (min-width: 768px) {

@@ -92,7 +92,7 @@ const Wrapper = styled.section`
       p {
         color: var(--clr-white);
         font-weight: 600;
-        font-family: "Caveat", cursive;
+        font-family: var(--ff-ternary);
         letter-spacing: 4px;
         text-transform: capitalize;
         line-height: 1.25;

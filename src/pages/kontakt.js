@@ -70,7 +70,7 @@ const Kontakt = ({ data }) => {
                 placeholder="Vaša poruka ovdje..."
               ></textarea>
             </div>
-            <input type="submit" value="Pošalji" className="form-btn" />
+            <input type="submit" value="POŠALJI" className="form-btn" />
           </form>
         </BgImage>
       </Wrapper>
@@ -102,6 +102,7 @@ const Wrapper = styled(BgImage)`
   background-blend-mode: overlay;
 
   .center {
+    font-family: var(--ff-secondary);
     width: 90%;
     max-width: 1000px;
     height: 40rem;
@@ -182,6 +183,7 @@ const Wrapper = styled(BgImage)`
   }
 
   .form-btn {
+    font-family: var(--ff-secondary);
     width: 50%;
     padding: 1rem;
     font-size: 1.3rem;

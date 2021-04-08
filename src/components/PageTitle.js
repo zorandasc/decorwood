@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   place-items: center;
   display: grid;
   --text-shadow: 1px 1px #222, 2px 2px #222, 3px 3px #222, 4px 4px #222,
-    5px 5px #222, 6px 6px #222, 7px 7px #222; // 8px 8px #222; // 9px 9px #222;
+    5px 5px #222, 6px 6px #222; // 7px 7px #222; // 8px 8px #222; // 9px 9px #222;
   //10px 10px #222, 11px 11px #222, 12px 12px #222, 13px 13px #222;
   //14px 14px #222, 15px 15px #222, 16px 16px #222, 17px 17px #222;
   //18px 18px #222, 19px 19px #222, 20px 20px #222, 21px 21px #222;
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
     p {
       color: var(--clr-white);
       font-weight: 600;
-      font-family: "Caveat", cursive;
+      font-family: var(--ff-ternary);
       letter-spacing: 4px;
       text-transform: capitalize;
       line-height: 1.25;
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
         letter-spacing: 5px;
       }
       p {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
       }
     }
   }

@@ -57,6 +57,7 @@ const Wrapper = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   button {
+    font-family: var(--ff-secondary);
     margin: 0.5rem;
     text-transform: capitalize;
     background: transparent;

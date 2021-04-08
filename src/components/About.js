@@ -11,7 +11,7 @@ const About = () => {
     <Wrapper className="section">
       <Title
         subtitle="Pozdrav, mi smo Decorwood"
-        title="Za Vaš savršen poklon naša ..."
+        title="Za Vaš savršen poklon naš-a ..."
       ></Title>
       <div className="section-center">
         {services.map(({ id, icon, label, text }) => {

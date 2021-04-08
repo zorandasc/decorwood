@@ -32,10 +32,11 @@ const gliter = keyframes`
 `;
 
 const Wrapper = styled(Link)`
+  font-family: "Kaushan Script", serif;
   display: inline-block;
   padding: 0.5rem 1rem;
   background: var(--clr-primary-5);
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 1rem;
   border-radius: 3rem;

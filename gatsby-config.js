@@ -47,15 +47,15 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Roboto",
+              family: "Montserrat",
               variants: [`400`, `500`, `700`],
             },
             {
-              family: "Open Sans",
-              variants: ["300", "700"],
+              family: `Kaushan Script`,
             },
+
             {
-              family: `Caveat`,
+              family: `Bilbo Swash Caps`,
             },
           ],
         },

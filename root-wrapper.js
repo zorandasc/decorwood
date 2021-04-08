@@ -48,8 +48,9 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Kaushan Script", serif;
+  --ff-ternary: "Bilbo Swash Caps", cursive;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -75,7 +76,7 @@ Global Styles
 
 }
 body {
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-primary);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -86,6 +87,7 @@ ul {
 }
 a {
   text-decoration: none;
+  
 }
 img {
   width: 100%;
@@ -99,7 +101,7 @@ h4 {
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: var(--ff-primary);
+  font-family: var(--ff-secondary);
   font-weight: 400;
 }
 h1 {
@@ -144,6 +146,7 @@ p {
 
 /*  global classes */
 .btn {
+  font-family: var(--ff-secondary);
   text-transform: uppercase;
   background: var(--clr-primary-5);
   color: var(--clr-primary-10);

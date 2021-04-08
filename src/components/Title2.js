@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--clr-primary-5);
-    text-shadow: var(--text-shadow);
+    font-family: "Kaushan Script", serif;
     letter-spacing: var(--spacing);
     text-transform: none;
     line-height: 1.25;
@@ -44,7 +44,7 @@ const Wrapper = styled.div`
     font-weight: 500;
     margin-right: 1rem;
     margin-left: 1rem;
-    text-shadow: var(--text-shadow);
+    //text-shadow: var(--text-shadow);
     span {
       display: none;
     }
