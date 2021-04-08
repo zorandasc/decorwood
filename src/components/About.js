@@ -82,18 +82,23 @@ const Wrapper = styled.section`
         margin-bottom: 1rem;
         margin-right: 1rem;
       }
-      h4 {
-        text-transform: uppercase;
+      h3 {
+        text-transform: capitalize;
         font-weight: 500;
+        font-size: 1.8rem;
       }
     }
     p {
+      text-align: center;
       margin: 0 auto;
       max-width: 35em;
       font-size: 1.2rem;
     }
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      p {
+        text-align: left;
+      }
     }
   }
   @media (min-width: 1000px) {

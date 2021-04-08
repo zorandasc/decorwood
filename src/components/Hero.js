@@ -23,6 +23,7 @@ const Hero = () => {
         {/* Any content here will be centered in the component */}
         <article>
           <p lang="en">If you can dream it we can created</p>
+          <div className="divider div-transparent div-dot"></div>
           <h1>Dekorativni predmeti od drveta</h1>
           <BtnGalery></BtnGalery>
         </article>
@@ -99,6 +100,39 @@ const Wrapper = styled.section`
         font-size: 1.5rem;
         margin-bottom: 0.75rem;
         text-shadow: var(--text-shadow2);
+      }
+      .divider {
+        position: relative;
+        margin-top: 30px;
+        height: 1px;
+      }
+      .div-transparent:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 1px;
+        background-image: linear-gradient(
+          to right,
+          transparent,
+          white,
+          transparent
+        );
+      }
+      .div-dot:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -9px;
+        left: calc(50% - 9px);
+        width: 18px;
+        height: 18px;
+        background-color: var(--clr-primary-5);
+        border: 1px solid white;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
       }
 
       @media (min-width: 800px) {

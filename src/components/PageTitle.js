@@ -7,6 +7,7 @@ const PageTitle = ({ title, subtitle }) => {
       {/* Any content here will be centered in the component */}
       <article>
         <p>{subtitle}</p>
+        <div className="divider div-transparent div-dot"></div>
         <h1>{title}</h1>
       </article>
     </Wrapper>
@@ -48,6 +49,39 @@ const Wrapper = styled.div`
       font-size: 1.5rem;
       margin-bottom: 0.4rem;
       text-shadow: var(--text-shadow);
+    }
+    .divider {
+      position: relative;
+      margin-top: 20px;
+      height: 1px;
+    }
+    .div-transparent:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 5%;
+      right: 5%;
+      width: 90%;
+      height: 1px;
+      background-image: linear-gradient(
+        to right,
+        transparent,
+        white,
+        transparent
+      );
+    }
+    .div-dot:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: -9px;
+      left: calc(50% - 9px);
+      width: 18px;
+      height: 18px;
+      background-color: var(--clr-primary-5);
+      border: 1px solid white;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
     }
     @media (min-width: 800px) {
       h1 {

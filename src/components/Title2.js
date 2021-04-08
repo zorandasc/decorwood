@@ -20,13 +20,13 @@ const Title2 = ({ title, subtitle, invertColor }) => {
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
   width: 85vw;
   max-width: 800px;
   text-align: center;
 
   p {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--clr-primary-5);
     font-family: "Kaushan Script", serif;
@@ -50,6 +50,7 @@ const Wrapper = styled.div`
     }
   }
   @media (min-width: 800px) {
+    margin-bottom: 6rem;
     h2 {
       span {
         display: initial;
