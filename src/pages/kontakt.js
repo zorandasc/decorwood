@@ -115,14 +115,18 @@ const Wrapper = styled(BgImage)`
     border-radius: 5px;
     position: relative;
     z-index: 1;
-    background: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow: hidden;
     transition: var(--transition);
     &:before,
     &:after {
       content: "";
       position: absolute;
-      background: inherit;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       z-index: -1;
       top: 0;
       left: 0;

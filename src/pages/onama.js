@@ -120,7 +120,9 @@ const Wrapper = styled(BgImage)`
     z-index: 1;
     box-shadow: var(--dark-shadow);
     border-radius: 5px;
-    background: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow: hidden;
     transition: var(--transition);
     p,
@@ -134,24 +136,18 @@ const Wrapper = styled(BgImage)`
 
     //da bi se zadrzao glass
     //before je potreban kod promjene page
-    &:before {
-      content: "";
-      position: absolute;
-      background: inherit;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-      filter: blur(10px);
-    }
-    //da bi se zadrzao glass efecat
     //a after je potreban kod realoada
+    //posto gatby image vec ionako korsti image
+    //on after and befoe, ovdije ne treba
+    //background-image inherit vec samo
+    //podudaranje sa ostalimi backgound-propertisima
+    &:before,
     &:after {
       content: "";
       position: absolute;
-      background: inherit;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       z-index: -1;
       top: 0;
       left: 0;
