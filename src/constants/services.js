@@ -33,7 +33,7 @@ const services = [
     icon: <GiDiamondHard className="icon" />,
     label: "vizija",
     text:
-      "Da postanemo partner od povijerenja prilikom pružanja nasih servisa i usluga i time ostvarimo nabolju moguću saradnju sa nasim klijentima kako tokom tako i poslije ostvarenog projekta.",
+      "Da postanemo partner od povijerenja prilikom pružanja naših servisa i usluga i time ostvarimo nabolju moguću saradnju sa našim klijentima kako tokom tako i poslije ostvarenog projekta.",
   },
 ];
 

@@ -17,6 +17,11 @@ const Projects = ({ projects: data, title }) => {
     setProjects(data);
   };
 
+  //detektuj touch screan capacity
+  const isTouchScreendevice = () => {
+    return "ontouchstart" in window || navigator.maxTouchPoints;
+  };
+
   return (
     <Wrapper className="section">
       <div className="header">
@@ -64,7 +69,7 @@ const Projects = ({ projects: data, title }) => {
           );
         })}
       </div>
-      {showLightbox && (
+      {isTouchScreendevice && showLightbox && (
         <div className="dialog">
           <div className="dialogContent">
             <GatsbyImage

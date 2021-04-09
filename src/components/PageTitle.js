@@ -52,7 +52,7 @@ const Wrapper = styled.div`
     }
     .divider {
       position: relative;
-      margin-top: 20px;
+      margin-top: 25px;
       height: 1px;
     }
     .div-transparent:before {

@@ -23,7 +23,7 @@ const Onama = ({ data }) => {
       <Wrapper image={sources}>
         <PageTitle
           subtitle="Samo malo da vam kažemo"
-          title="nesto o nama"
+          title="nešto o nama"
         ></PageTitle>
         <BgImage image={sources} className="center">
           <article>
