@@ -25,6 +25,7 @@ const Projects = ({ projects: data, title }) => {
       navigator.msMaxTouchPoints > 0
     );
   };
+  console.log(isTouchScreendevice());
   return (
     <Wrapper className="section">
       <div className="header">
@@ -39,7 +40,7 @@ const Projects = ({ projects: data, title }) => {
         setProjects={setProjects}
         setBackToAll={setBackToAll}
       ></SearchButtons>
-
+      <div>TESTONJA: {isTouchScreendevice().toString()}</div>
       <div className="tile-layout">
         {projects.map((project, index) => {
           const { id, category, itemNum, image } = project;
