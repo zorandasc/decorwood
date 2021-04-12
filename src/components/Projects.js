@@ -19,6 +19,7 @@ const Projects = ({ projects: data, title }) => {
 
   //detektuj touch screan capacity
   const isTouchScreendevice = () => {
+    //ssr ne vidi window
     if (typeof window !== "undefined") {
       return (
         "ontouchstart" in window ||
@@ -28,7 +29,7 @@ const Projects = ({ projects: data, title }) => {
     }
     return false;
   };
-  console.log(isTouchScreendevice());
+
   return (
     <Wrapper className="section">
       <div className="header">
@@ -43,7 +44,7 @@ const Projects = ({ projects: data, title }) => {
         setProjects={setProjects}
         setBackToAll={setBackToAll}
       ></SearchButtons>
-      <div>TESTONJA: {isTouchScreendevice().toString()}</div>
+
       <div className="tile-layout">
         {projects.map((project, index) => {
           const { id, category, itemNum, image } = project;
