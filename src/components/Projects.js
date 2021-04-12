@@ -19,11 +19,14 @@ const Projects = ({ projects: data, title }) => {
 
   //detektuj touch screan capacity
   const isTouchScreendevice = () => {
-    return (
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    );
+    if (typeof window !== "undefined") {
+      return (
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      );
+    }
+    return false;
   };
   console.log(isTouchScreendevice());
   return (
