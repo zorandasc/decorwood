@@ -1,6 +1,8 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import styled, { keyframes } from "styled-components";
+import Rotate from "react-reveal/Rotate";
+import Bounce from "react-reveal/Bounce";
 
 import BtnGalery from "./BtnGalery";
 
@@ -22,16 +24,24 @@ const Hero = () => {
       <div className="content">
         {/* Any content here will be centered in the component */}
         <article>
-          <p lang="en">If you can dream it we can created</p>
-          <div className="divider div-transparent div-dot"></div>
-          <h1>Dekorativni predmeti od drveta</h1>
-          <BtnGalery></BtnGalery>
+          <Rotate top right>
+            <p lang="en">If you can dream it we can created</p>
+          </Rotate>
+          <Rotate>
+            <div className="divider div-transparent div-dot"></div>
+          </Rotate>
+          <Rotate bottom left>
+            <h1>Dekorativni predmeti od drveta</h1>
+          </Rotate>
+          <Bounce bottom delay={800}>
+            <BtnGalery></BtnGalery>
+          </Bounce>
         </article>
       </div>
     </Wrapper>
   );
 };
-
+/*
 const lowerHead = keyframes`
   from{
     transform: translateY(-500px);
@@ -69,8 +79,9 @@ const fadeIn = keyframes`
     background-color:rgba(0,0,0,0.4);
   }
 `;
-*/
+
 //image animation to scale down
+*/
 const scale = keyframes`
  from{
     transform:scale(1.3);
@@ -91,7 +102,7 @@ const Wrapper = styled.section`
     //i btn 2s
     //zapocni animaciju skaliranja u trajanju pod 10s
     //i zadrsi zadnju anumiranu vrijedmnost sa forwards
-    animation: ${scale} 10s ease-in-out 4s forwards;
+    animation: ${scale} 10s ease-in-out 1s forwards;
     animation-iteration-count: 1;
     grid-area: 1/1;
     // You can set a maximum height for the image, if you wish.
@@ -117,7 +128,6 @@ const Wrapper = styled.section`
       max-width: 800px;
       text-align: center;
       h1 {
-        animation: ${lowerHead} 1s ease-in-out 0s forwards;
         text-transform: uppercase;
         font-weight: 500;
         line-height: 1.25;
@@ -126,8 +136,6 @@ const Wrapper = styled.section`
         text-shadow: var(--text-shadow2);
       }
       p {
-        transform: translateY(-500px);
-        animation: ${lowerSub} 1s ease-in-out 1s forwards;
         color: var(--clr-white);
         font-weight: 600;
         font-family: var(--ff-ternary);
@@ -142,9 +150,6 @@ const Wrapper = styled.section`
         position: relative;
         margin-top: 30px;
         height: 1px;
-        //inicijalna anbimaciona vrijednos
-        transform: scale(0);
-        animation: ${showDivider} 2s ease-in-out 2s forwards;
       }
       .div-transparent:before {
         content: "";

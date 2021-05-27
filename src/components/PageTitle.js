@@ -1,19 +1,27 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled /*{ keyframes }*/ from "styled-components";
+import Rotate from "react-reveal/Rotate";
 
 const PageTitle = ({ title, subtitle }) => {
   return (
     <Wrapper>
       {/* Any content here will be centered in the component */}
       <article>
-        <p>{subtitle}</p>
-        <div className="divider div-transparent div-dot"></div>
-        <h1>{title}</h1>
+        <Rotate top right>
+          <p>{subtitle}</p>
+        </Rotate>
+        <Rotate>
+          <div className="divider div-transparent div-dot"></div>
+        </Rotate>
+        <Rotate bottom left>
+          <h1>{title}</h1>
+        </Rotate>
       </article>
     </Wrapper>
   );
 };
 
+/*
 const lowerHead = keyframes`
   from{
     transform: translateY(-500px);
@@ -40,7 +48,7 @@ const showDivider = keyframes`
     transform: scale(1);
   }
 `;
-
+*/
 const Wrapper = styled.div`
   place-items: center;
   display: grid;
@@ -65,8 +73,6 @@ const Wrapper = styled.div`
       margin: 1rem 0 6rem 0;
       letter-spacing: 3px;
       text-shadow: var(--text-shadow);
-      transform: translateY(-500px);
-      animation: ${lowerHead} 1s ease-in-out 1s forwards;
     }
     p {
       color: var(--clr-white);
@@ -78,16 +84,12 @@ const Wrapper = styled.div`
       font-size: 1.5rem;
       margin-bottom: 0.4rem;
       text-shadow: var(--text-shadow);
-
-      animation: ${lowerSub} 1s ease-in-out forwards;
     }
     .divider {
       position: relative;
       margin-top: 25px;
       height: 1px;
       //inicijalna anbimaciona vrijednos
-      transform: scale(0);
-      animation: ${showDivider} 2s ease-in-out 2s forwards;
     }
     .div-transparent:before {
       content: "";

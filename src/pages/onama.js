@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import styled from "styled-components";
+import Bounce from "react-reveal/Bounce";
 
 import { Layout, SEO, PageTitle } from "../components";
 
@@ -25,54 +26,57 @@ const Onama = ({ data }) => {
           subtitle="Samo malo da vam kažemo"
           title="nešto o nama"
         ></PageTitle>
-        <BgImage image={sources} className="center">
-          <article>
-            <p>
-              Mi smo tim koji je u želji da iskaže svoju kreativnost otpočeo sa
-              izradom drvenih dekoracija.
-            </p>
-            <span>*</span>
-            <p>
-              Sada iza nas stoji višegodišnji rad sa velikim brojem uspešno
-              pripremljenih unikatnih i ručno izrađenih dekoracija za venčanja,
-              rođendane, uskrse, 8 martovske i druge svečane priredbe.
-            </p>
-            <span>*</span>
-            <p>
-              Sa nama možete ostvariti sve svoje želje. Vaši darovi mogu biti
-              personalizovani, elegantni, upečatljivi, raskošni, otmeni.
-            </p>
-            <span>*</span>
-            <p>
-              U našoj <Link to="/galerija">galeriji</Link> ćete svakako moći da
-              vidite prezentaciju naših radova i sigurno ćete pronaći neke koji
-              Vam se dopadaju.
-            </p>
-            <span>*</span>
-            <p>
-              Prepustite se mašti i <Link to="/kontakt">kontaktirajte</Link> nas
-              da zajedno kreiramo dekoracije za Vaše najmilije.
-            </p>
-            <span>*</span>
-            <p>
-              U slučaju da ste zainteresovani isključivo za svadbene dekoracije,
-              posetite naš sestrinski sajt:{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.svadbenicvet.com"
-              >
-                www.svadbenicvet.com
-              </a>
-            </p>
-            <span>*</span>
-            <p>
-              Naručenu robu šaljemo brzom poštom na teritoriji cele Srbije.
-              Takođe, robu šaljemo i na teritoriji Balkana. Ostavljamo Vam i
-              mogućnost ličnog preuzimanja.
-            </p>
-          </article>
-        </BgImage>
+        <Bounce bottom delay={800}>
+          <BgImage image={sources} className="center">
+            <article>
+              <p>
+                Mi smo tim koji je u želji da iskaže svoju kreativnost otpočeo
+                sa izradom drvenih dekoracija.
+              </p>
+              <span>*</span>
+              <p>
+                Sada iza nas stoji višegodišnji rad sa velikim brojem uspešno
+                pripremljenih unikatnih i ručno izrađenih dekoracija za
+                venčanja, rođendane, uskrse, 8 martovske i druge svečane
+                priredbe.
+              </p>
+              <span>*</span>
+              <p>
+                Sa nama možete ostvariti sve svoje želje. Vaši darovi mogu biti
+                personalizovani, elegantni, upečatljivi, raskošni, otmeni.
+              </p>
+              <span>*</span>
+              <p>
+                U našoj <Link to="/galerija">galeriji</Link> ćete svakako moći
+                da vidite prezentaciju naših radova i sigurno ćete pronaći neke
+                koji Vam se dopadaju.
+              </p>
+              <span>*</span>
+              <p>
+                Prepustite se mašti i <Link to="/kontakt">kontaktirajte</Link>{" "}
+                nas da zajedno kreiramo dekoracije za Vaše najmilije.
+              </p>
+              <span>*</span>
+              <p>
+                U slučaju da ste zainteresovani isključivo za svadbene
+                dekoracije, posetite naš sestrinski sajt:{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.svadbenicvet.com"
+                >
+                  www.svadbenicvet.com
+                </a>
+              </p>
+              <span>*</span>
+              <p>
+                Naručenu robu šaljemo brzom poštom na teritoriji cele Srbije.
+                Takođe, robu šaljemo i na teritoriji Balkana. Ostavljamo Vam i
+                mogućnost ličnog preuzimanja.
+              </p>
+            </article>
+          </BgImage>
+        </Bounce>
       </Wrapper>
     </Layout>
   );

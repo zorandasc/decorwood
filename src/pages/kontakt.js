@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
+import Bounce from "react-reveal/Bounce";
 
 import { Layout, SEO, PageTitle } from "../components";
 
@@ -16,63 +17,65 @@ const Kontakt = ({ data }) => {
           subtitle="Ne budite stidljivi ostanite u kontaktu"
           title="pišite nam"
         ></PageTitle>
-        <BgImage image={bcgImage} className="center">
-          <form
-            name="Decorwood_contact"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            className="contact-form"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="Decorwood_contact" />
-            <div className="input-group">
-              <label htmlFor="name">Ime Prezime *</label>
-              <input
-                required
-                type="text"
-                name="name"
-                id="name"
-                className="contact-input"
-                placeholder="Unesite Vaše ime"
-              />
-            </div>
-            <div className="input-groups">
+        <Bounce bottom delay={800}>
+          <BgImage image={bcgImage} className="center">
+            <form
+              name="Decorwood_contact"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              className="contact-form"
+            >
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="Decorwood_contact" />
               <div className="input-group">
-                <label htmlFor="email">Email *</label>
+                <label htmlFor="name">Ime Prezime *</label>
                 <input
                   required
-                  type="email"
-                  name="email"
-                  id="email"
+                  type="text"
+                  name="name"
+                  id="name"
                   className="contact-input"
-                  placeholder="Unesite Vaš email"
+                  placeholder="Unesite Vaše ime"
                 />
+              </div>
+              <div className="input-groups">
+                <div className="input-group">
+                  <label htmlFor="email">Email *</label>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="contact-input"
+                    placeholder="Unesite Vaš email"
+                  />
+                </div>
+                <div className="input-group">
+                  <label htmlFor="phone">Telefon</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    className="contact-input"
+                    placeholder="Unesite broj telefona"
+                  />
+                </div>
               </div>
               <div className="input-group">
-                <label htmlFor="phone">Telefon</label>
-                <input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  className="contact-input"
-                  placeholder="Unesite broj telefona"
-                />
+                <label htmlFor="message">Poruka</label>
+                <textarea
+                  required
+                  name="message"
+                  id="message"
+                  className="form-textarea"
+                  placeholder="Vaša poruka ovdje..."
+                ></textarea>
               </div>
-            </div>
-            <div className="input-group">
-              <label htmlFor="message">Poruka</label>
-              <textarea
-                required
-                name="message"
-                id="message"
-                className="form-textarea"
-                placeholder="Vaša poruka ovdje..."
-              ></textarea>
-            </div>
-            <input type="submit" value="POŠALJI" className="form-btn" />
-          </form>
-        </BgImage>
+              <input type="submit" value="POŠALJI" className="form-btn" />
+            </form>
+          </BgImage>
+        </Bounce>
       </Wrapper>
     </Layout>
   );

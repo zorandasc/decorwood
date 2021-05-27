@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Zoom from "react-reveal/Zoom";
 
 import services from "../constants/services";
 import Title from "./Title2";
@@ -17,11 +18,13 @@ const About = () => {
         {services.map(({ id, icon, label, text }) => {
           return (
             <article key={id}>
-              <div className="service-header">
-                <span>{icon}</span>
-                <h3>{label}</h3>
-              </div>
-              <p>{text}</p>
+              <Zoom>
+                <div className="service-header">
+                  <span>{icon}</span>
+                  <h3>{label}</h3>
+                </div>
+                <p>{text}</p>
+              </Zoom>
             </article>
           );
         })}
