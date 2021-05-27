@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const PageTitle = ({ title, subtitle }) => {
   return (
@@ -13,6 +13,33 @@ const PageTitle = ({ title, subtitle }) => {
     </Wrapper>
   );
 };
+
+const lowerHead = keyframes`
+  from{
+    transform: translateY(-500px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+`;
+
+const lowerSub = keyframes`
+  from{
+    transform: translateY(-500px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+`;
+
+const showDivider = keyframes`
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+`;
 
 const Wrapper = styled.div`
   place-items: center;
@@ -38,6 +65,8 @@ const Wrapper = styled.div`
       margin: 1rem 0 6rem 0;
       letter-spacing: 3px;
       text-shadow: var(--text-shadow);
+      transform: translateY(-500px);
+      animation: ${lowerHead} 1s ease-in-out 1s forwards;
     }
     p {
       color: var(--clr-white);
@@ -49,11 +78,16 @@ const Wrapper = styled.div`
       font-size: 1.5rem;
       margin-bottom: 0.4rem;
       text-shadow: var(--text-shadow);
+
+      animation: ${lowerSub} 1s ease-in-out forwards;
     }
     .divider {
       position: relative;
       margin-top: 25px;
       height: 1px;
+      //inicijalna anbimaciona vrijednos
+      transform: scale(0);
+      animation: ${showDivider} 2s ease-in-out 2s forwards;
     }
     .div-transparent:before {
       content: "";

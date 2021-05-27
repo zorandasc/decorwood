@@ -32,7 +32,35 @@ const Hero = () => {
   );
 };
 
+const lowerHead = keyframes`
+  from{
+    transform: translateY(-500px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+`;
+
+const lowerSub = keyframes`
+  from{
+    transform: translateY(-500px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+`;
+
+const showDivider = keyframes`
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+`;
+
 //wraper animation to black
+/*
 const fadeIn = keyframes`
   from{
     background-color:rgb(0,0,0,0.8);
@@ -40,18 +68,16 @@ const fadeIn = keyframes`
   to{
     background-color:rgba(0,0,0,0.4);
   }
-
 `;
-
+*/
 //image animation to scale down
 const scale = keyframes`
-  0%{
+ from{
     transform:scale(1.3);
   }
-  100%{
+  to{
     transform:scale(1);
   }
-
 `;
 
 const Wrapper = styled.section`
@@ -59,7 +85,13 @@ const Wrapper = styled.section`
   overflow: hidden;
   position: relative;
   .bcg {
-    animation: ${scale} 10s ease-in-out 1.5;
+    //inicijalna pozicija
+    transform: scale(1.3);
+    //nakon sto se sppuste heading i subheading 2s
+    //i btn 2s
+    //zapocni animaciju skaliranja u trajanju pod 10s
+    //i zadrsi zadnju anumiranu vrijedmnost sa forwards
+    animation: ${scale} 10s ease-in-out 4s forwards;
     animation-iteration-count: 1;
     grid-area: 1/1;
     // You can set a maximum height for the image, if you wish.
@@ -75,6 +107,8 @@ const Wrapper = styled.section`
     // This centers the other elements inside the hero component
     place-items: center;
     display: grid;
+    background-color: rgba(0, 0, 0, 0.4);
+    //FADE IN BACKGROUND TO BLACK
 
     article {
       z-index: 100;
@@ -83,6 +117,7 @@ const Wrapper = styled.section`
       max-width: 800px;
       text-align: center;
       h1 {
+        animation: ${lowerHead} 1s ease-in-out 0s forwards;
         text-transform: uppercase;
         font-weight: 500;
         line-height: 1.25;
@@ -91,6 +126,8 @@ const Wrapper = styled.section`
         text-shadow: var(--text-shadow2);
       }
       p {
+        transform: translateY(-500px);
+        animation: ${lowerSub} 1s ease-in-out 1s forwards;
         color: var(--clr-white);
         font-weight: 600;
         font-family: var(--ff-ternary);
@@ -105,6 +142,9 @@ const Wrapper = styled.section`
         position: relative;
         margin-top: 30px;
         height: 1px;
+        //inicijalna anbimaciona vrijednos
+        transform: scale(0);
+        animation: ${showDivider} 2s ease-in-out 2s forwards;
       }
       .div-transparent:before {
         content: "";
@@ -148,8 +188,6 @@ const Wrapper = styled.section`
         }
       }
     }
-    //FADE IN BACKGROUND TO BLACK
-    animation: ${fadeIn} 2s ease-in-out 1 forwards;
   }
 `;
 

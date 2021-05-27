@@ -10,6 +10,15 @@ const BtnGalery = () => {
   );
 };
 
+const showBtn = keyframes`
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+`;
+
 //gliter
 const gliter = keyframes`
  0% {
@@ -46,6 +55,10 @@ const Wrapper = styled(Link)`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  //inicijalna anbimaciona vrijednos
+  transform: scale(0);
+  //nakon sto se spuste headings (2s) pokazi btn
+  animation: ${showBtn} 2s ease-in-out 2s forwards;
 
   &::before {
     content: "";
@@ -57,7 +70,8 @@ const Wrapper = styled(Link)`
     left: 0;
     transform: skewX(-30deg);
     transition: left 0.5s;
-    animation: ${gliter} 1.8s linear infinite alternate;
+    //delay 4s tek kad se pojavi btn (4s) onda glituj
+    animation: ${gliter} 1.8s linear 4s infinite alternate;
   }
 
   &:hover::before {
