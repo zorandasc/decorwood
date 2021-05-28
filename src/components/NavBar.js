@@ -2,6 +2,12 @@ import React, { useContext } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { GoThreeBars } from "react-icons/go";
+import {
+  HideBetween,
+  HideDuring,
+  HideOn,
+  HideScroll,
+} from "react-hide-on-scroll";
 
 import { GatsbyContext } from "../context/context";
 import logo from "../images/logo_white.svg";
@@ -11,6 +17,9 @@ const NavBar = () => {
   const { isSidebarOpen, showSidebar } = useContext(GatsbyContext);
   return (
     <Wrapper>
+      <HideOn inverse height={800}>
+        <div className="wrapperBcg">Shown while scrolling</div>
+      </HideOn>
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
@@ -48,16 +57,26 @@ const Wrapper = styled.header`
   top: 0;
   left: 0;
   width: 100vw;
-  //background: transparent;
-  background-image: linear-gradient(
-    rgb(0, 0, 0),
-    rgb(0, 0, 0, 0.5),
-    rgb(0, 0, 0, 0.1)
-  );
+  background: transparent;
+
   z-index: 101;
   height: 5rem;
   display: flex;
   align-items: center;
+  .wrapperBcg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-image: linear-gradient(
+      rgb(0, 0, 0),
+      rgb(0, 0, 0, 0.7),
+      rgb(0, 0, 0, 0.3)
+    );
+    z-index: -1;
+    height: 5rem;
+  }
+
   .nav-center {
     width: 90vw;
     margin: 0 auto;
