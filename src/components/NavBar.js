@@ -17,7 +17,7 @@ const NavBar = () => {
   const { isSidebarOpen, showSidebar } = useContext(GatsbyContext);
   return (
     <Wrapper>
-      <HideOn inverse height={800}>
+      <HideOn inverse height={700}>
         <div className="wrapperBcg">Shown while scrolling</div>
       </HideOn>
       <div className="nav-center">
@@ -75,6 +75,8 @@ const Wrapper = styled.header`
     );
     z-index: -1;
     height: 5rem;
+    border-bottom: 1px solid var(--clr-primary-6);
+    box-shadow: var(--dark-shadow);
   }
 
   .nav-center {
