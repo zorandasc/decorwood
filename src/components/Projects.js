@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import SearchButtons from "./SearchButtons";
 import Wave from "../components/Wave";
+import isTouchScreendevice from "../tools/isTouchScreendevice";
 
 const Projects = ({ projects: data, title }) => {
   const [projects, setProjects] = useState(data);
@@ -15,19 +16,6 @@ const Projects = ({ projects: data, title }) => {
 
   const setBackToAll = () => {
     setProjects(data);
-  };
-
-  //detektuj touch screan capacity
-  const isTouchScreendevice = () => {
-    //ssr ne vidi window
-    if (typeof window !== "undefined") {
-      return (
-        "ontouchstart" in window ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0
-      );
-    }
-    return false;
   };
 
   return (

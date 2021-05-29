@@ -7,12 +7,14 @@ import { HideOn } from "react-hide-on-scroll";
 import { GatsbyContext } from "../context/context";
 import logo from "../images/logo_white.svg";
 import links from "../constants/links";
+import isTouchScreendevice from "../tools/isTouchScreendevice";
 
 const NavBar = () => {
   const { isSidebarOpen, showSidebar } = useContext(GatsbyContext);
+  console.log(isTouchScreendevice());
   return (
     <Wrapper>
-      <HideOn inverse height={300}>
+      <HideOn inverse height={isTouchScreendevice() ? 100 : 300}>
         <div className="wrapperBcg">Shown while scrolling</div>
       </HideOn>
       <div className="nav-center">
@@ -84,9 +86,10 @@ const Wrapper = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 1rem;
     img {
       width: auto;
-      transform: scale(1.3);
+      transform: scale(1.4);
       padding-bottom: 0.5rem;
     }
     .toggle-btn {
