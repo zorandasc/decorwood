@@ -8,7 +8,7 @@ import {
   //LatestGalery,
   //Contact,
   GridProjects,
-  SEO,
+  Seo,
 } from "../components";
 
 // markup
@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
   } = data;
   return (
     <Layout>
-      <SEO title="Home"></SEO>
+      <Seo title="Home"></Seo>
       <Hero></Hero>
       <About></About>
       <GridProjects projects={projects}></GridProjects>

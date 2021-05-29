@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout, Projects, SEO } from "../components";
+import { Layout, Projects, Seo } from "../components";
 
 const Galerija = ({ data }) => {
   const {
@@ -9,7 +9,7 @@ const Galerija = ({ data }) => {
   } = data;
   return (
     <Layout>
-      <SEO title="Galerija"></SEO>
+      <Seo title="Galerija"></Seo>
 
       <Projects title="galerija" projects={projects} page></Projects>
     </Layout>

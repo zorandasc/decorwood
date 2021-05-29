@@ -5,7 +5,7 @@ import { BgImage } from "gbimage-bridge";
 import styled from "styled-components";
 import Bounce from "react-reveal/Bounce";
 
-import { Layout, SEO, PageTitle } from "../components";
+import { Layout, Seo, PageTitle } from "../components";
 
 const Onama = ({ data }) => {
   //const bcgImage = getImage(data.desktopImage);
@@ -20,7 +20,7 @@ const Onama = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="O nama"></SEO>
+      <Seo title="O nama"></Seo>
       <Wrapper image={sources}>
         <PageTitle
           subtitle="Samo malo da vam kažemo"

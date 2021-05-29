@@ -5,13 +5,13 @@ import { getImage } from "gatsby-plugin-image";
 import { BgImage } from "gbimage-bridge";
 import Bounce from "react-reveal/Bounce";
 
-import { Layout, SEO, PageTitle } from "../components";
+import { Layout, Seo, PageTitle } from "../components";
 
 const Kontakt = ({ data }) => {
   const bcgImage = getImage(data.file);
   return (
     <Layout>
-      <SEO title="Kontakt"></SEO>
+      <Seo title="Kontakt"></Seo>
       <Wrapper image={bcgImage}>
         <PageTitle
           subtitle="Ne budite stidljivi ostanite u kontaktu"
