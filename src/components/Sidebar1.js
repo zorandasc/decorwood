@@ -63,23 +63,24 @@ const SideBar = styled(animated.ul)`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(0, 0, 0, 0.8);
+  background-color: rgba(50, 50, 50, 0.7);
   z-index: -2;
+  box-shadow: var(--dark-shadow);
   a {
     align-items: center;
-    color: var(--clr-primary-5);
-    background-color: var(--clr-black);
+    color: var(--clr-white);
+    background: var(--clr-primary-5);
     padding: 0.6rem;
     text-transform: capitalize;
     font-weight: 700;
     font-size: 1rem;
-    border: 1px solid var(--clr-black);
+    //border: 1px solid var(--clr-black);
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    box-shadow: var(--dark-shadow);
     .icon {
-      color: var(--clr-primary-5);
+      color: var(--clr-white);
       font-size: 2rem;
       margin-bottom: 0.5rem;
     }
