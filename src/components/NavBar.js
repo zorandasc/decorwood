@@ -8,12 +8,14 @@ import { GatsbyContext } from "../context/context";
 import logo from "../images/logo_white.svg";
 import links from "../constants/links";
 import isTouchScreendevice from "../tools/isTouchScreendevice";
+import Sidebar1 from "./Sidebar1";
 
 const NavBar = () => {
-  const { isSidebarOpen, showSidebar } = useContext(GatsbyContext);
-  console.log(isTouchScreendevice());
+  const { toggleSidebar } = useContext(GatsbyContext);
+
   return (
     <Wrapper>
+      <Sidebar1></Sidebar1>
       <HideOn inverse height={isTouchScreendevice() ? 100 : 300}>
         <div className="wrapperBcg">Shown while scrolling</div>
       </HideOn>
@@ -22,15 +24,14 @@ const NavBar = () => {
           <Link to="/">
             <img src={logo} alt="design" width="200" height="36"></img>
           </Link>
-          {!isSidebarOpen && (
-            <button
-              className="toggle-btn"
-              aria-label="Menu Button"
-              onClick={showSidebar}
-            >
-              <GoThreeBars></GoThreeBars>
-            </button>
-          )}
+
+          <button
+            className="toggle-btn"
+            aria-label="Menu Button"
+            onClick={toggleSidebar}
+          >
+            <GoThreeBars></GoThreeBars>
+          </button>
         </div>
         <ul className="nav-links">
           {links.map((link, index) => {
@@ -55,7 +56,6 @@ const Wrapper = styled.header`
   left: 0;
   width: 100vw;
   background: transparent;
-
   z-index: 101;
   height: 5rem;
   display: flex;
@@ -93,6 +93,7 @@ const Wrapper = styled.header`
       padding-bottom: 0.5rem;
     }
     .toggle-btn {
+      z-index: 20;
       width: 3.5rem;
       height: 2.25rem;
       display: flex;
