@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 import { GatsbyContext } from "../context/context";
 import links from "../constants/links";
 
-const SideBar = () => {
+const SideBarOld = () => {
   const { hideSidebar } = useContext(GatsbyContext);
   return (
     <Wrapper>
@@ -94,4 +94,4 @@ const Wrapper = styled.aside`
   }
 `;
 
-export default SideBar;
+export default SideBarOld;
