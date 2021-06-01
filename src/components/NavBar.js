@@ -93,7 +93,7 @@ const Wrapper = styled.header`
       padding-bottom: 0.5rem;
     }
     .toggle-btn {
-      z-index: 20;
+      z-index: 101;
       width: 3.5rem;
       height: 2.25rem;
       display: flex;

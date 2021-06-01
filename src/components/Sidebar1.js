@@ -19,13 +19,16 @@ const Sidebar1 = () => {
   const springRef = useSpringRef();
   const transRef = useSpringRef();
 
-  const { size } = useSpring({
+  const { size, borWid } = useSpring({
     ref: springRef,
     config: config.stiff,
-    from: { size: "0vh" },
-    to: { size: isSidebarOpen ? "70vh" : "0vh" },
+    from: { size: "0%", borWid: "0" },
+    to: {
+      size: isSidebarOpen ? "70%" : "0%",
+      borWid: isSidebarOpen ? "1" : "0",
+    },
   });
-
+  console.log(borWid);
   const transition = useTransition(isSidebarOpen ? links : [], {
     ref: transRef,
     trail: 400 / links.length,
@@ -40,7 +43,12 @@ const Sidebar1 = () => {
   ]);
 
   return (
-    <SideBar style={{ height: size }}>
+    <SideBar
+      style={{
+        height: size,
+        borderBottom: borWid.to((b) => `${b}px solid var(--clr-primary-6)`),
+      }}
+    >
       {transition((style, item) => (
         <animated.li style={{ ...style }}>
           <Link to={item.url} onClick={toggleSidebar}>
@@ -63,21 +71,30 @@ const SideBar = styled(animated.ul)`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(50, 50, 50, 0.7);
+  background-image: linear-gradient(
+    rgb(0, 0, 0, 0.3),
+    rgb(0, 0, 0, 0.7),
+    rgb(0, 0, 0)
+  );
+  border-bottom: 1px solid var(--clr-primary-6);
   z-index: -2;
   box-shadow: var(--dark-shadow);
+
   a {
+    font-family: "Kaushan Script", serif;
+    letter-spacing: 5px;
     align-items: center;
     color: var(--clr-white);
     background: var(--clr-primary-5);
     padding: 0.6rem;
     text-transform: capitalize;
-    font-weight: 700;
+
     font-size: 1rem;
     //border: 1px solid var(--clr-black);
     border-radius: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
     box-shadow: var(--dark-shadow);
     .icon {
       color: var(--clr-white);
