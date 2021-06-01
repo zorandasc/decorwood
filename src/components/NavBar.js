@@ -8,14 +8,14 @@ import { GatsbyContext } from "../context/context";
 import logo from "../images/logo_white.svg";
 import links from "../constants/links";
 import isTouchScreendevice from "../tools/isTouchScreendevice";
-import Sidebar1 from "./Sidebar1";
+import Sidebar from "./Sidebar";
 
 const NavBar = () => {
   const { toggleSidebar } = useContext(GatsbyContext);
 
   return (
     <Wrapper>
-      <Sidebar1></Sidebar1>
+      <Sidebar></Sidebar>
       <HideOn inverse height={isTouchScreendevice() ? 100 : 300}>
         <div className="wrapperBcg">Shown while scrolling</div>
       </HideOn>
