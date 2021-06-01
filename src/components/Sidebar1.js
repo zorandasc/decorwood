@@ -43,7 +43,7 @@ const Sidebar1 = () => {
 
   useChain(isSidebarOpen ? [springRef, transRef] : [transRef, springRef], [
     0,
-    isSidebarOpen ? 0.1 : 0.6,
+    isSidebarOpen ? 0.1 : 0.3,
   ]);
 
   const handleClick = (url) => {
