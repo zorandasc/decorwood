@@ -47,7 +47,7 @@ const Sidebar = () => {
   ]);
 
   const handleClick = (url) => {
-    //setuj url na koji cemo da odemo
+    //setuj url na koji cemo da odemo nakon animacije, onRest
     setUrl(url);
     //zapoceni promjneu animacije
     toggleSidebar();

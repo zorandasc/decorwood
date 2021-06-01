@@ -16,8 +16,9 @@ const NavBar = () => {
   return (
     <Wrapper>
       <Sidebar></Sidebar>
+      {/*Shown navbar bcg on offset while scrolling for different device px*/}
       <HideOn inverse height={isTouchScreendevice() ? 100 : 300}>
-        <div className="wrapperBcg">Shown while scrolling</div>
+        <div className="wrapperBcg"></div>
       </HideOn>
       <div className="nav-center">
         <div className="nav-header">
