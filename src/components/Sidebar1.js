@@ -13,7 +13,7 @@ import {
 import { GatsbyContext } from "../context/context";
 import links from "../constants/links";
 
-const Sidebar = () => {
+const Sidebar1 = () => {
   const { isSidebarOpen, toggleSidebar } = useContext(GatsbyContext);
   const [url, setUrl] = useState("");
 
@@ -22,7 +22,7 @@ const Sidebar = () => {
 
   const { size, borWid } = useSpring({
     ref: springRef,
-    config: config.stiff,
+    config: isSidebarOpen ? config.wobbly : config.gentle,
     from: { size: "0%", borWid: "0" },
     to: {
       size: isSidebarOpen ? "70%" : "0%",
@@ -119,4 +119,4 @@ const Wrapper = styled(animated.ul)`
   }
 `;
 
-export default Sidebar;
+export default Sidebar1;
