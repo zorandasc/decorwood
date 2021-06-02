@@ -22,7 +22,7 @@ const Sidebar1 = () => {
 
   const { size, borWid } = useSpring({
     ref: springRef,
-    config: isSidebarOpen ? config.wobbly : config.gentle,
+    config: config.gentle,
     from: { size: "0%", borWid: "0" },
     to: {
       size: isSidebarOpen ? "70%" : "0%",

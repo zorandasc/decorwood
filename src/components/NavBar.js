@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { GoThreeBars } from "react-icons/go";
 import { HideOn } from "react-hide-on-scroll";
+import Slide from "react-reveal/Slide";
 
 import { GatsbyContext } from "../context/context";
 import logo from "../images/logo_white.svg";
@@ -18,7 +19,9 @@ const NavBar = () => {
       <Sidebar1></Sidebar1>
       {/*Shown navbar bcg on offset while scrolling for different device px*/}
       <HideOn inverse height={isTouchScreendevice() ? 100 : 300}>
-        <div className="wrapperBcg"></div>
+        <Slide top>
+          <div className="wrapperBcg"></div>
+        </Slide>
       </HideOn>
       <div className="nav-center">
         <div className="nav-header">
