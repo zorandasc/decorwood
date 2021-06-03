@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 //import { useSpring, animated, config } from "react-spring";
+import Roll from "react-reveal/Roll";
 
 import SearchButtons from "./SearchButtons";
 import Wave from "../components/Wave";
@@ -67,19 +68,21 @@ const Projects = ({ projects: data, title }) => {
       </div>
       {!isTouchScreendevice() && showLightbox && (
         <div className="dialog">
-          <div className="dialogContent">
-            <GatsbyImage
-              className="img"
-              image={currentImage}
-              alt="image"
-              onClick={() =>
-                setLightbox({
-                  showLightbox: false,
-                  currentImage: null,
-                })
-              }
-            />
-          </div>
+          <Roll top>
+            <div className="dialogContent">
+              <GatsbyImage
+                className="img"
+                image={currentImage}
+                alt="image"
+                onClick={() =>
+                  setLightbox({
+                    showLightbox: false,
+                    currentImage: null,
+                  })
+                }
+              />
+            </div>
+          </Roll>
         </div>
       )}
     </Wrapper>
