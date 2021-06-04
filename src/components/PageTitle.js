@@ -117,7 +117,7 @@ const Wrapper = styled.div`
       background-color: var(--clr-primary-5);
       border: 1px solid white;
       border-radius: 50%;
-      box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
+      box-shadow: inset 0 0 0 2px white, 0 0 0 6px white;
     }
     @media (min-width: 800px) {
       h1 {
