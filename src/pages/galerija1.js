@@ -1,47 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
-import styled from "styled-components";
 
-import {
-  Layout,
-  Projects1,
-  Seo,
-  PageTitle,
-  SearchButtons,
-} from "../components";
+import { Layout, Projects, Seo } from "../components";
 
-const Galerija = ({ data }) => {
+const Galerija1 = ({ data }) => {
   const {
     allContentfulProduct: { nodes: projects },
   } = data;
-
-  const [curProjects, setCurProjects] = useState(projects);
-
-  const setBackToAll = () => {
-    setCurProjects(projects);
-  };
-
   return (
     <Layout>
-      <Wrapper>
-        <Seo title="Galerija"></Seo>
-        <PageTitle
-          subtitle="Sve sto Vam treba za savrsen poklon"
-          title="naša galerija"
-        ></PageTitle>
-        <SearchButtons
-          projects={projects}
-          setProjects={setCurProjects}
-          setBackToAll={setBackToAll}
-        ></SearchButtons>
-        <Projects1 projects={curProjects}></Projects1>
-      </Wrapper>
+      <Seo title="Galerija"></Seo>
+
+      <Projects title="galerija" projects={projects} page></Projects>
     </Layout>
   );
 };
-const Wrapper = styled.section`
-  padding: 8rem 0;
-`;
 
 export const query = graphql`
   {
@@ -63,4 +36,4 @@ export const query = graphql`
   }
 `;
 
-export default Galerija;
+export default Galerija1;

@@ -1,17 +1,39 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+//import { useSpring, animated, config } from "react-spring";
+import Roll from "react-reveal/Roll";
 
+import SearchButtons from "./SearchButtons";
+import Wave from "./Wave";
 import isTouchScreendevice from "../tools/isTouchScreendevice";
 
-const Projects1 = ({ projects }) => {
+const Projects = ({ projects: data, title }) => {
+  const [projects, setProjects] = useState(data);
   const [{ showLightbox, currentImage }, setLightbox] = useState({
     showLightbox: false,
     currentImage: null,
   });
 
+  const setBackToAll = () => {
+    setProjects(data);
+  };
+
   return (
     <Wrapper className="section">
+      <div className="header">
+        <div className="title">
+          <h1>Galerija</h1>
+        </div>
+        <Wave></Wave>
+      </div>
+
+      <SearchButtons
+        projects={data}
+        setProjects={setProjects}
+        setBackToAll={setBackToAll}
+      ></SearchButtons>
+
       <div className="tile-layout">
         {projects.map((project, index) => {
           const { id, category, itemNum, image } = project;
@@ -46,19 +68,21 @@ const Projects1 = ({ projects }) => {
       </div>
       {!isTouchScreendevice() && showLightbox && (
         <div className="dialog">
-          <div className="dialogContent">
-            <GatsbyImage
-              className="img"
-              image={currentImage}
-              alt="image"
-              onClick={() =>
-                setLightbox({
-                  showLightbox: false,
-                  currentImage: null,
-                })
-              }
-            />
-          </div>
+          <Roll top>
+            <div className="dialogContent">
+              <GatsbyImage
+                className="img"
+                image={currentImage}
+                alt="image"
+                onClick={() =>
+                  setLightbox({
+                    showLightbox: false,
+                    currentImage: null,
+                  })
+                }
+              />
+            </div>
+          </Roll>
         </div>
       )}
     </Wrapper>
@@ -243,4 +267,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default Projects1;
+export default Projects;
