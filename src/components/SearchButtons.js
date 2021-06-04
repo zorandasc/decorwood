@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Bounce from "react-reveal/Bounce";
 
 const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
   //ovaj state je za lokali css underline line
@@ -36,15 +37,17 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
     <Wrapper>
       {types.map((type, typeIndex) => {
         return (
-          <button
-            key={typeIndex}
-            className={index === typeIndex ? "active" : undefined}
-            onClick={() => {
-              showProjects(type, typeIndex);
-            }}
-          >
-            {type}
-          </button>
+          <Bounce delay={800}>
+            <button
+              key={typeIndex}
+              className={index === typeIndex ? "active" : undefined}
+              onClick={() => {
+                showProjects(type, typeIndex);
+              }}
+            >
+              {type}
+            </button>
+          </Bounce>
         );
       })}
     </Wrapper>
