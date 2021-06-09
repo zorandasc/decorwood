@@ -8,7 +8,11 @@ import image from "../images/hero.jpg";
 const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 10;
 const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 10;
 
-const SingleSlide = () => {
+const SingleSlide = ({ offset }) => {
+  console.log(offset);
+  const dir = offset === 0 ? 0 : offset > 0 ? 1 : -1;
+  const zyndex = offset === 0 ? 100 : 100 - Math.abs(offset);
+
   useEffect(() => {
     const preventDefault = (e) => e.preventDefault();
     document.addEventListener("gesturestart", preventDefault);
@@ -34,92 +38,102 @@ const SingleSlide = () => {
   useGesture(
     {
       onMove: ({ xy: [px, py], dragging }) => {
-        !dragging &&
-          api({
+        offset === 0 &&
+          !dragging &&
+          api.start({
             rotateX: calcX(py, y.get()),
             rotateY: calcY(px, x.get()),
             scale: 1.1,
           });
       },
       onHover: ({ hovering }) =>
-        !hovering && api({ rotateX: 0, rotateY: 0, scale: 1 }),
+        !hovering && api.start({ rotateX: 0, rotateY: 0, scale: 1 }),
     },
     { domTarget, eventOptions: { passive: false } }
   );
 
   return (
-    <Card
-      ref={domTarget}
+    <Wrapper
       style={{
-        transform: "perspective(1000px)",
-        x,
-        y,
-        scale: to([scale, zoom], (s, z) => s + z),
-        rotateX,
-
-        rotateY,
+        zIndex: `${zyndex}`,
+        transform: `perspective(1000px) translateX(calc(100% * ${offset})) rotateY(calc(-45deg * ${dir}))`,
       }}
     >
-      <div
-        className="bcgImage"
-        style={{ backgroundImage: `url(${image})` }}
-      ></div>
-      <div className="slideContentInner">
-        <h2 className="slideTitle">title</h2>
-        <h3 className="slideSubtitle">subtitle</h3>
-        <p className="slideDescription">description</p>
-      </div>
-    </Card>
+      <animated.div
+        ref={domTarget}
+        className="card"
+        style={{
+          transform: "perspective(1000px)",
+          x,
+          y,
+          scale: to([scale, zoom], (s, z) => s + z),
+          rotateX,
+          rotateY,
+        }}
+      >
+        <div
+          className="bcgImage"
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+        <div className="slideContentInner">
+          <h2 className="slideTitle">title</h2>
+          <h3 className="slideSubtitle">subtitle</h3>
+          <p className="slideDescription">description</p>
+        </div>
+      </animated.div>
+    </Wrapper>
   );
 };
 
-const Card = styled(animated.div)`
+const Wrapper = styled(animated.div)`
   grid-area: 1/-1;
-  display: grid;
-  align-items: center;
-  width: 300px;
-  height: 400px;
-  background: transparent;
-  border-radius: 10px;
-  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-  will-change: transform;
-  cursor: grab;
-  transform-style: preserve-3d;
-  &:hover {
-    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-  }
-  .bcgImage {
+  .card {
+    display: grid;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    background: transparent;
     border-radius: 10px;
-    grid-area: 1/-1;
-    background-size: cover;
-    background-position: center center;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
     will-change: transform;
-    height: 100%;
-    margin: 0;
-  }
-  .slideContentInner {
-    grid-area: 1/-1;
+    cursor: grab;
     transform-style: preserve-3d;
-    transform: translateZ(4rem);
-    text-shadow: 0 0.1rem 1rem #000;
-    opacity: 1;
-    .slideSubtitle,
-    .slideTitle {
-      color: whitesmoke;
-      font-size: 2rem;
-      font-weight: normal;
-      letter-spacing: 0.2ch;
-      text-transform: uppercase;
+    &:hover {
+      box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    }
+    .bcgImage {
+      border-radius: 10px;
+      grid-area: 1/-1;
+      background-size: cover;
+      background-position: center center;
+      will-change: transform;
+      height: 100%;
       margin: 0;
     }
-    .slideSubtitle::before {
-      content: "— ";
-    }
-    .slideDescription {
-      color: whitesmoke;
-      margin: 0;
-      font-size: 0.8rem;
-      letter-spacing: 0.2ch;
+    .slideContentInner {
+      grid-area: 1/-1;
+      transform-style: preserve-3d;
+      transform: translateZ(4rem);
+      text-shadow: 0 0.1rem 1rem #000;
+      opacity: 1;
+      .slideSubtitle,
+      .slideTitle {
+        color: whitesmoke;
+        font-size: 2rem;
+        font-weight: normal;
+        letter-spacing: 0.2ch;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .slideSubtitle::before {
+        content: "— ";
+      }
+      .slideDescription {
+        color: whitesmoke;
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.2ch;
+      }
     }
   }
 `;
