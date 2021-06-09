@@ -21,31 +21,19 @@ const SingleSlide = () => {
 
   const domTarget = useRef(null);
 
-  const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
-    () => ({
-      x: 0,
-      y: 0,
-      rotateX: 0,
-      rotateY: 0,
-      rotateZ: 0,
-      zoom: 0,
-      scale: 1,
-      config: { mass: 5, tension: 350, friction: 40 },
-    })
-  );
+  const [{ x, y, rotateX, rotateY, zoom, scale }, api] = useSpring(() => ({
+    x: 0,
+    y: 0,
+    rotateX: 0,
+    rotateY: 0,
+    zoom: 0,
+    scale: 1,
+    config: { mass: 5, tension: 350, friction: 40 },
+  }));
 
   useGesture(
     {
       onMove: ({ xy: [px, py], dragging }) => {
-        //console.log("px", px, "py", py);
-        //console.log("x", x.get(), "y", y.get());
-        //console.log(window.innerWidth);
-        //console.log("x - lx ", px - x.get());
-        //console.log("window.innerWidth / 2", window.innerWidth / 2);
-        console.log(
-          "x - lx - window.innerWidth / 2",
-          px - x.get() - window.innerWidth / 2
-        );
         !dragging &&
           api({
             rotateX: calcX(py, y.get()),
@@ -60,53 +48,80 @@ const SingleSlide = () => {
   );
 
   return (
-    <Container>
-      <animated.div
-        ref={domTarget}
-        className="card"
-        style={{
-          transform: "perspective(600px)",
-          x,
-          y,
-          scale: to([scale, zoom], (s, z) => s + z),
-          rotateX,
-          rotateZ,
-          rotateY,
-        }}
-      >
-        <div style={{ backgroundImage: `url(${image})` }}></div>
-      </animated.div>
-    </Container>
+    <Card
+      ref={domTarget}
+      style={{
+        transform: "perspective(1000px)",
+        x,
+        y,
+        scale: to([scale, zoom], (s, z) => s + z),
+        rotateX,
+
+        rotateY,
+      }}
+    >
+      <div
+        className="bcgImage"
+        style={{ backgroundImage: `url(${image})` }}
+      ></div>
+      <div className="slideContentInner">
+        <h2 className="slideTitle">title</h2>
+        <h3 className="slideSubtitle">subtitle</h3>
+        <p className="slideDescription">description</p>
+      </div>
+    </Card>
   );
 };
 
-const Container = styled.div`
-  border: 2px solid lime;
-  height: 100%;
-  display: flex;
+const Card = styled(animated.div)`
+  display: grid;
   align-items: center;
-  justify-content: center;
-  .card {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    background: transparent;
-    border-radius: 5px;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s, opacity 0.5s;
+  width: 300px;
+  height: 400px;
+  background: transparent;
+  border-radius: 10px;
+
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s, opacity 0.5s;
+  will-change: transform;
+  cursor: grab;
+  transform-style: preserve-3d;
+  &:hover {
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+  }
+  .bcgImage {
+    border-radius: 10px;
+    grid-area: 1/-1;
+    background-size: cover;
+    background-position: center center;
     will-change: transform;
-    cursor: grab;
-    overflow: hidden;
-    touch-action: none;
-    &:hover {
-      box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-    }
-    & > div {
-      background-size: cover;
-      background-position: center center;
-      will-change: transform;
-      height: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .slideContentInner {
+    grid-area: 1/-1;
+    transform-style: preserve-3d;
+    transform: translateZ(4rem);
+    transition: opacity 0.3s linear;
+    text-shadow: 0 0.1rem 1rem #000;
+    opacity: 1;
+    .slideSubtitle,
+    .slideTitle {
+      color: whitesmoke;
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: 0.2ch;
+      text-transform: uppercase;
       margin: 0;
+    }
+    .slideSubtitle::before {
+      content: "— ";
+    }
+    .slideDescription {
+      color: whitesmoke;
+      margin: 0;
+      font-size: 0.8rem;
+      letter-spacing: 0.2ch;
     }
   }
 `;
