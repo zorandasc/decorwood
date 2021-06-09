@@ -56,6 +56,7 @@ function useTilt(active) {
 }
 
 const Slida = ({ slide, offset }) => {
+  console.log("offset u slidi ", offset);
   const zyndex = offset === 0 ? 100 : 100 - Math.abs(offset);
 
   //AKO JE OFSET 0 ONA JE ACTIV CLAS AKTIVNA

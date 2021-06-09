@@ -74,15 +74,14 @@ const SingleSlide = () => {
 };
 
 const Card = styled(animated.div)`
+  grid-area: 1/-1;
   display: grid;
   align-items: center;
   width: 300px;
   height: 400px;
   background: transparent;
   border-radius: 10px;
-
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.5s, opacity 0.5s;
   will-change: transform;
   cursor: grab;
   transform-style: preserve-3d;
@@ -102,7 +101,6 @@ const Card = styled(animated.div)`
     grid-area: 1/-1;
     transform-style: preserve-3d;
     transform: translateZ(4rem);
-    transition: opacity 0.3s linear;
     text-shadow: 0 0.1rem 1rem #000;
     opacity: 1;
     .slideSubtitle,
