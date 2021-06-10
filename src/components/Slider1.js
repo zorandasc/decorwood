@@ -1,19 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { useSprings, animated, to, config } from "react-spring";
+import { useSprings, animated, config, to } from "react-spring";
 
 //import Slida from "./Slida";
 import SingleSlide from "./SingleSlide";
 import slides from "../constants/lists";
+
+//za transliranje i rotiranje slajdova
+const trans = (xTrans, r) =>
+  `perspective(1000px) translateX(calc(100% * ${xTrans})) rotateY(calc(-45deg * ${r}))`;
 
 const Slider = () => {
   //ne dovodi do rerenderovanja  komponente za razliku od usestate
   const slideIndex = React.useRef(0);
   let current = slideIndex.current;
 
-  const to = (i) => {
+  const toto = (i) => {
     let offset = slides.length + (current - i);
-
     return {
       xTrans: offset,
       rot: offset === 0 ? 0 : offset > 0 ? 1 : -1,
@@ -25,7 +28,7 @@ const Slider = () => {
     [...slides, ...slides, ...slides].length,
     (i) => ({
       from: { xTrans: 0, rot: 0 },
-      ...to(i),
+      ...toto(i),
       config: config.molasses,
     }),
     [current]
@@ -33,30 +36,27 @@ const Slider = () => {
 
   const handleNext = () => {
     current = (current + 1) % slides.length;
-    api.start((i) => ({ ...to(i) }));
+    api.start((i) => ({ ...toto(i) }));
   };
   const handlePrev = () => {
     current = current === 0 ? slides.length - 1 : current - 1;
-    api.start((i) => ({ ...to(i) }));
+    api.start((i) => ({ ...toto(i) }));
   };
 
   return (
     <Wrapper>
       <button onClick={handlePrev}>PREV</button>
-      {[...slides, ...slides, ...slides].map((slide, i) => {
-        let offset = slides.length + (current - i);
-        const dir = offset === 0 ? 0 : offset > 0 ? 1 : -1;
-        const zyndex = offset === 0 ? 100 : 100 - Math.abs(offset);
+      {springs.map(({ xTrans, rot, zIndex }, i) => {
         return (
           <animated.div
             key={i}
             className="slideWrapper"
             style={{
-              zIndex: `${zyndex}`,
-              transform: `perspective(1000px) translateX(calc(100% * ${offset})) rotateY(calc(-45deg * ${dir}))`,
+              zIndex,
+              transform: to([xTrans, rot], trans),
             }}
           >
-            <SingleSlide slide={slide}></SingleSlide>
+            <SingleSlide></SingleSlide>
           </animated.div>
         );
       })}
