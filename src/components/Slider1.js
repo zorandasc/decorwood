@@ -22,6 +22,7 @@ const Slider = () => {
       rot: offset === 0 ? 0 : offset > 0 ? 1 : -1,
       zIndex: offset === 0 ? 100 : 100 - Math.abs(offset),
       pointerEvents: offset === 0 ? "auto" : "none",
+      width: offset === 0 ? "100%" : "0%",
     };
   };
 
@@ -47,18 +48,28 @@ const Slider = () => {
   return (
     <Wrapper>
       <button onClick={handlePrev}>PREV</button>
-      {springs.map(({ xTrans, rot, zIndex, pointerEvents }, i) => {
+      {springs.map(({ xTrans, rot, zIndex, pointerEvents, width }, i) => {
+        let j = i % slides.length;
         return (
-          <animated.div
-            key={i}
-            className="slideWrapper"
-            style={{
-              zIndex,
-              transform: to([xTrans, rot], trans),
-            }}
-          >
-            <SingleSlide style={{ pointerEvents }}></SingleSlide>
-          </animated.div>
+          <>
+            <animated.div
+              className="bcgImage"
+              style={{ backgroundImage: `url(${slides[j].image})`, width }}
+            ></animated.div>
+            <animated.div
+              key={i}
+              className="slideWrapper"
+              style={{
+                zIndex,
+                transform: to([xTrans, rot], trans),
+              }}
+            >
+              <SingleSlide
+                style={{ pointerEvents }}
+                slide={slides[j]}
+              ></SingleSlide>
+            </animated.div>
+          </>
         );
       })}
 
@@ -74,6 +85,15 @@ const Wrapper = styled.div`
 
   .slideWrapper {
     grid-area: 1/-1;
+  }
+  .bcgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
   }
   button {
     background: tomato;

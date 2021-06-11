@@ -3,12 +3,12 @@ import { useSpring, animated, to } from "react-spring";
 import { useGesture } from "react-use-gesture";
 import styled from "styled-components";
 
-import image from "../images/hero.jpg";
+//import image from "../images/hero.jpg";
 
 const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 10;
 const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 10;
 
-const SingleSlide = ({ style }) => {
+const SingleSlide = ({ style, slide }) => {
   useEffect(() => {
     const preventDefault = (e) => e.preventDefault();
     document.addEventListener("gesturestart", preventDefault);
@@ -48,28 +48,30 @@ const SingleSlide = ({ style }) => {
   );
 
   return (
-    <Card
-      ref={domTarget}
-      style={{
-        transform: "perspective(1000px)",
-        x,
-        y,
-        scale: to([scale, zoom], (s, z) => s + z),
-        rotateX,
-        rotateY,
-        ...style,
-      }}
-    >
-      <div
-        className="bcgImage"
-        style={{ backgroundImage: `url(${image})` }}
-      ></div>
-      <div className="slideContentInner">
-        <h2 className="slideTitle">title</h2>
-        <h3 className="slideSubtitle">subtitle</h3>
-        <p className="slideDescription">description</p>
-      </div>
-    </Card>
+    <>
+      <Card
+        ref={domTarget}
+        style={{
+          transform: "perspective(1000px)",
+          x,
+          y,
+          scale: to([scale, zoom], (s, z) => s + z),
+          rotateX,
+          rotateY,
+          ...style,
+        }}
+      >
+        <div
+          className="cardImage"
+          style={{ backgroundImage: `url(${slide?.image})` }}
+        ></div>
+        <div className="slideContentInner">
+          <h2 className="slideTitle">title</h2>
+          <h3 className="slideSubtitle">subtitle</h3>
+          <p className="slideDescription">description</p>
+        </div>
+      </Card>
+    </>
   );
 };
 
@@ -87,7 +89,7 @@ const Card = styled(animated.div)`
   &:hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
   }
-  .bcgImage {
+  .cardImage {
     border-radius: 10px;
     grid-area: 1/-1;
     background-size: cover;
