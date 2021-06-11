@@ -12,9 +12,8 @@ const trans = (xTrans, r) =>
 
 const Slider = () => {
   //ne dovodi do rerenderovanja  komponente za razliku od usestate
-  //const slideIndex = React.useRef(0);
-  //let current = slideIndex.current;
-  const [current, setCurrent] = React.useState(0);
+  const slideIndex = React.useRef(0);
+  let current = slideIndex.current;
 
   const toto = (i) => {
     let offset = slides.length + (current - i);
@@ -22,6 +21,7 @@ const Slider = () => {
       xTrans: offset,
       rot: offset === 0 ? 0 : offset > 0 ? 1 : -1,
       zIndex: offset === 0 ? 100 : 100 - Math.abs(offset),
+      pointerEvents: offset === 0 ? "auto" : "none",
     };
   };
 
@@ -36,19 +36,18 @@ const Slider = () => {
   );
 
   const handleNext = () => {
-    setCurrent((current + 1) % slides.length);
+    current = (current + 1) % slides.length;
     api.start((i) => ({ ...toto(i) }));
   };
   const handlePrev = () => {
-    setCurrent(current === 0 ? slides.length - 1 : current - 1);
+    current = current === 0 ? slides.length - 1 : current - 1;
     api.start((i) => ({ ...toto(i) }));
   };
 
   return (
     <Wrapper>
       <button onClick={handlePrev}>PREV</button>
-      {springs.map(({ xTrans, rot, zIndex }, i) => {
-        let offset1 = slides.length + (current - i);
+      {springs.map(({ xTrans, rot, zIndex, pointerEvents }, i) => {
         return (
           <animated.div
             key={i}
@@ -58,7 +57,7 @@ const Slider = () => {
               transform: to([xTrans, rot], trans),
             }}
           >
-            <SingleSlide offset={offset1}></SingleSlide>
+            <SingleSlide style={{ pointerEvents }}></SingleSlide>
           </animated.div>
         );
       })}
@@ -72,6 +71,7 @@ const Wrapper = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
+
   .slideWrapper {
     grid-area: 1/-1;
   }
