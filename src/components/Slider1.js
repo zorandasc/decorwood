@@ -12,8 +12,9 @@ const trans = (xTrans, r) =>
 
 const Slider = () => {
   //ne dovodi do rerenderovanja  komponente za razliku od usestate
-  const slideIndex = React.useRef(0);
-  let current = slideIndex.current;
+  //const slideIndex = React.useRef(0);
+  //let current = slideIndex.current;
+  const [current, setCurrent] = React.useState(0);
 
   const toto = (i) => {
     let offset = slides.length + (current - i);
@@ -35,11 +36,11 @@ const Slider = () => {
   );
 
   const handleNext = () => {
-    current = (current + 1) % slides.length;
+    setCurrent((current + 1) % slides.length);
     api.start((i) => ({ ...toto(i) }));
   };
   const handlePrev = () => {
-    current = current === 0 ? slides.length - 1 : current - 1;
+    setCurrent(current === 0 ? slides.length - 1 : current - 1);
     api.start((i) => ({ ...toto(i) }));
   };
 
@@ -47,6 +48,7 @@ const Slider = () => {
     <Wrapper>
       <button onClick={handlePrev}>PREV</button>
       {springs.map(({ xTrans, rot, zIndex }, i) => {
+        let offset1 = slides.length + (current - i);
         return (
           <animated.div
             key={i}
@@ -56,7 +58,7 @@ const Slider = () => {
               transform: to([xTrans, rot], trans),
             }}
           >
-            <SingleSlide></SingleSlide>
+            <SingleSlide offset={offset1}></SingleSlide>
           </animated.div>
         );
       })}

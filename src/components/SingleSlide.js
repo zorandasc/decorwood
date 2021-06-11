@@ -8,7 +8,7 @@ import image from "../images/hero.jpg";
 const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 10;
 const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 10;
 
-const SingleSlide = () => {
+const SingleSlide = ({ offset }) => {
   useEffect(() => {
     const preventDefault = (e) => e.preventDefault();
     document.addEventListener("gesturestart", preventDefault);
@@ -34,7 +34,8 @@ const SingleSlide = () => {
   useGesture(
     {
       onMove: ({ xy: [px, py], dragging }) => {
-        !dragging &&
+        offset === 0 &&
+          !dragging &&
           api.start({
             rotateX: calcX(py, y.get()),
             rotateY: calcY(px, x.get()),
