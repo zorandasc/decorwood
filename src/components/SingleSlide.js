@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { useSpring, animated, to } from "react-spring";
+import { useSpring, animated } from "react-spring";
 import { useGesture } from "react-use-gesture";
 import styled from "styled-components";
 
@@ -9,6 +9,7 @@ const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 10;
 const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 10;
 
 const SingleSlide = ({ style, slide }) => {
+  const { pointerEvents, opacity } = style;
   useEffect(() => {
     const preventDefault = (e) => e.preventDefault();
     document.addEventListener("gesturestart", preventDefault);
@@ -21,12 +22,11 @@ const SingleSlide = ({ style, slide }) => {
 
   const domTarget = useRef(null);
 
-  const [{ x, y, rotateX, rotateY, zoom, scale }, api] = useSpring(() => ({
+  const [{ x, y, rotateX, rotateY, scale }, api] = useSpring(() => ({
     x: 0,
     y: 0,
     rotateX: 0,
     rotateY: 0,
-    zoom: 0,
     scale: 1,
     config: { mass: 5, tension: 350, friction: 40 },
   }));
@@ -55,21 +55,21 @@ const SingleSlide = ({ style, slide }) => {
           transform: "perspective(1000px)",
           x,
           y,
-          scale: to([scale, zoom], (s, z) => s + z),
+          scale,
           rotateX,
           rotateY,
-          ...style,
+          pointerEvents,
         }}
       >
         <div
           className="cardImage"
           style={{ backgroundImage: `url(${slide?.image})` }}
         ></div>
-        <div className="slideContentInner">
+        <animated.div className="slideContentInner" style={{ opacity }}>
           <h2 className="slideTitle">title</h2>
           <h3 className="slideSubtitle">subtitle</h3>
           <p className="slideDescription">description</p>
-        </div>
+        </animated.div>
       </Card>
     </>
   );

@@ -18,11 +18,18 @@ const Slider = () => {
   const toto = (i) => {
     let offset = slides.length + (current - i);
     return {
+      //TRANSLACIJE SLIKE U ODNOSU NA OFSET
       xTrans: offset,
+      //ROTAXIJA SLIKE U ODNOSU NA OFFSET
       rot: offset === 0 ? 0 : offset > 0 ? 1 : -1,
+      //ABSOLUTNI POLOZAJ OPADA SA UDALJAVANJEM OD CENTRA
       zIndex: offset === 0 ? 100 : 100 - Math.abs(offset),
+      //ZA SPRIJECAVANJE ANIMACIJE NA OFFSET SLICI
       pointerEvents: offset === 0 ? "auto" : "none",
-      width: offset === 0 ? "100%" : "0%",
+      //POMJERAJ BACKGROUND IMAGE
+      bcgX: offset === 0 ? 0 : offset > 0 ? 1 : -1,
+      //OPACITY FOR DESCRIPTION
+      opacity: offset === 0 ? "1" : "0",
     };
   };
 
@@ -52,29 +59,37 @@ const Slider = () => {
           <GoTriangleLeft></GoTriangleLeft>
         </i>
       </button>
-      {springs.map(({ xTrans, rot, zIndex, pointerEvents, width }, i) => {
-        let j = i % slides.length;
-        return (
-          <React.Fragment key={i}>
-            <animated.div
-              className="bcgImage"
-              style={{ backgroundImage: `url(${slides[j].image})`, width }}
-            ></animated.div>
-            <animated.div
-              className="slideWrapper"
-              style={{
-                zIndex,
-                transform: to([xTrans, rot], trans),
-              }}
-            >
-              <SingleSlide
-                style={{ pointerEvents }}
-                slide={slides[j]}
-              ></SingleSlide>
-            </animated.div>
-          </React.Fragment>
-        );
-      })}
+      {springs.map(
+        ({ xTrans, rot, zIndex, pointerEvents, opacity, bcgX }, i) => {
+          let j = i % slides.length;
+          return (
+            <React.Fragment key={i}>
+              <animated.div
+                className="bcgImage"
+                style={{
+                  backgroundImage: `url(${slides[j].image})`,
+                  transform: to(
+                    [bcgX],
+                    (bcgX) => `translateX(calc(100% * ${bcgX}))`
+                  ),
+                }}
+              ></animated.div>
+              <animated.div
+                className="slideWrapper"
+                style={{
+                  zIndex,
+                  transform: to([xTrans, rot], trans),
+                }}
+              >
+                <SingleSlide
+                  style={{ pointerEvents, opacity }}
+                  slide={slides[j]}
+                ></SingleSlide>
+              </animated.div>
+            </React.Fragment>
+          );
+        }
+      )}
 
       <button onClick={handleNext}>
         <i>
@@ -98,6 +113,7 @@ const Wrapper = styled.div`
     top: 0;
     left: 0;
     height: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center center;
     z-index: -1;
@@ -141,10 +157,10 @@ const Wrapper = styled.div`
     }
 
     &:first-child {
-      left: 20%;
+      left: 25%;
     }
     &:last-child {
-      right: 20%;
+      right: 25%;
     }
     i {
       font-size: 35px;
