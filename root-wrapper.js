@@ -9,6 +9,8 @@ Variables
 ===============
 */
 :root {
+  --colors-light:#f7fafc;
+  --colors-text:#e2e8f0;
   /* dark shades of primary color*/
   --clr-primary-1: hsl(21, 91%, 17%);
   --clr-primary-2: hsl(21, 84%, 25%);

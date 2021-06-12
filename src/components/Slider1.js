@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSprings, animated, config, to } from "react-spring";
-
+import { GoTriangleLeft, GoTriangleRight } from "react-icons/go";
 //import Slida from "./Slida";
 import SingleSlide from "./SingleSlide";
 import slides from "../constants/lists";
@@ -47,17 +47,20 @@ const Slider = () => {
 
   return (
     <Wrapper>
-      <button onClick={handlePrev}>PREV</button>
+      <button onClick={handlePrev}>
+        <i>
+          <GoTriangleLeft></GoTriangleLeft>
+        </i>
+      </button>
       {springs.map(({ xTrans, rot, zIndex, pointerEvents, width }, i) => {
         let j = i % slides.length;
         return (
-          <>
+          <React.Fragment key={i}>
             <animated.div
               className="bcgImage"
               style={{ backgroundImage: `url(${slides[j].image})`, width }}
             ></animated.div>
             <animated.div
-              key={i}
               className="slideWrapper"
               style={{
                 zIndex,
@@ -69,11 +72,15 @@ const Slider = () => {
                 slide={slides[j]}
               ></SingleSlide>
             </animated.div>
-          </>
+          </React.Fragment>
         );
       })}
 
-      <button onClick={handleNext}>NEXT</button>
+      <button onClick={handleNext}>
+        <i>
+          <GoTriangleRight></GoTriangleRight>
+        </i>
+      </button>
     </Wrapper>
   );
 };
@@ -96,20 +103,37 @@ const Wrapper = styled.div`
     z-index: -1;
   }
   button {
-    background: tomato;
-    border: none;
-    color: whitesmoke;
+    background: var(--colors-light);
+    color: var(--colors-text);
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     z-index: 200;
+
     width: 5rem;
     height: 5rem;
     opacity: 0.7;
-    transition: opacity 0.3s;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.6),
+      inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+      -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+      0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+      0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+
+    transition: transform 0.5s;
     &:hover {
-      opacity: 1;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0);
+
+      i {
+        transform: scale(0.9);
+      }
     }
 
     &:focus {
@@ -117,10 +141,16 @@ const Wrapper = styled.div`
     }
 
     &:first-child {
-      left: 0;
+      left: 20%;
     }
     &:last-child {
-      right: 0;
+      right: 20%;
+    }
+    i {
+      font-size: 35px;
+      color: #777;
+      transition: transform 0.5s;
+      line-height: 0;
     }
   }
 `;
