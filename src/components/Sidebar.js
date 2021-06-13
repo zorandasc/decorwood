@@ -13,7 +13,7 @@ import {
 import { GatsbyContext } from "../context/context";
 import links from "../constants/links";
 
-const Sidebar1 = () => {
+const Sidebar = () => {
   const { isSidebarOpen, toggleSidebar } = useContext(GatsbyContext);
   const [url, setUrl] = useState("");
 
@@ -119,4 +119,4 @@ const Wrapper = styled(animated.ul)`
   }
 `;
 
-export default Sidebar1;
+export default Sidebar;
