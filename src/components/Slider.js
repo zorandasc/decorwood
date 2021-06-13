@@ -104,7 +104,7 @@ const Wrapper = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
-
+  margin-bottom: 4rem;
   .slideWrapper {
     grid-area: 1/-1;
   }

@@ -3,12 +3,11 @@ import { graphql } from "gatsby";
 
 import {
   Layout,
+  Seo,
   Hero,
   About,
-  //LatestGalery,
-  //Contact,
   GridProjects,
-  Seo,
+  SliderWrapper,
 } from "../components";
 
 // markup
@@ -22,6 +21,7 @@ const IndexPage = ({ data }) => {
       <Hero></Hero>
       <About></About>
       <GridProjects projects={projects}></GridProjects>
+      {/*<SliderWrapper projects={projects}></SliderWrapper>*/}
     </Layout>
   );
 };

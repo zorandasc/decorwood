@@ -7,6 +7,7 @@ import Seo from "./seo";
 import PageTitle from "./PageTitle";
 import SearchButtons from "./SearchButtons";
 import Wave from "./Wave";
+import SliderWrapper from "./SliderWrapper";
 
 export {
   Layout,
@@ -18,4 +19,5 @@ export {
   PageTitle,
   SearchButtons,
   Wave,
+  SliderWrapper,
 };
