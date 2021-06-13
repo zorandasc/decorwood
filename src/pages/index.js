@@ -7,9 +7,8 @@ import {
   Hero,
   About,
   GridProjects,
-  //SliderWrapper,
+  SliderWrapper,
 } from "../components";
-//import isTouchScreendevice from "../tools/isTouchScreendevice";
 
 // markup
 const IndexPage = ({ data }) => {
@@ -24,7 +23,7 @@ const IndexPage = ({ data }) => {
 
       <GridProjects projects={projects}></GridProjects>
 
-      {/* <SliderWrapper projects={projects}></SliderWrapper>*/}
+      <SliderWrapper projects={projects}></SliderWrapper>
     </Layout>
   );
 };

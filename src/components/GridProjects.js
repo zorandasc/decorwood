@@ -43,6 +43,9 @@ const Wrapper = styled.section`
   background-attachment: fixed;
   padding: 9rem 0;
   position: relative;
+  @media (min-width: 1000px) {
+    display: none;
+  }
   &::before {
     content: "";
     position: absolute;

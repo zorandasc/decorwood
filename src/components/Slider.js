@@ -34,7 +34,7 @@ const Slider = ({ projects }) => {
   };
 
   const [springs, api] = useSprings(
-    [...projects, ...projects, ...projects].length,
+    projects.length * 3,
     (i) => ({
       from: { xTrans: 0, rot: 0 },
       ...toto(i),

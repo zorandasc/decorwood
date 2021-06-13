@@ -28,6 +28,10 @@ const Wrapper = styled.section`
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
   text-align: center;
+  display: none;
+  @media (min-width: 1000px) {
+    display: block;
+  }
   &::before {
     content: "";
     position: absolute;

@@ -106,7 +106,7 @@ const Card = styled(animated.div)`
   .slideContentInner {
     grid-area: 1/-1;
     transform-style: preserve-3d;
-    transform: translateZ(4rem) translateY(6rem);
+    transform: translateZ(4rem) translateY(-6rem);
     //text-shadow: 0 0.1rem 1rem #000;
     text-shadow: var(--text-shadow2);
     opacity: 1;
