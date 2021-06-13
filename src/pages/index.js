@@ -7,9 +7,9 @@ import {
   Hero,
   About,
   GridProjects,
-  SliderWrapper,
+  //SliderWrapper,
 } from "../components";
-import isTouchScreendevice from "../tools/isTouchScreendevice";
+//import isTouchScreendevice from "../tools/isTouchScreendevice";
 
 // markup
 const IndexPage = ({ data }) => {
@@ -21,11 +21,10 @@ const IndexPage = ({ data }) => {
       <Seo title="Home"></Seo>
       <Hero></Hero>
       <About></About>
-      {isTouchScreendevice ? (
-        <GridProjects projects={projects}></GridProjects>
-      ) : (
-        <SliderWrapper projects={projects}></SliderWrapper>
-      )}
+
+      <GridProjects projects={projects}></GridProjects>
+
+      {/* <SliderWrapper projects={projects}></SliderWrapper>*/}
     </Layout>
   );
 };
