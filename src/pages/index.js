@@ -9,6 +9,7 @@ import {
   GridProjects,
   SliderWrapper,
 } from "../components";
+import isTouchScreendevice from "../tools/isTouchScreendevice";
 
 // markup
 const IndexPage = ({ data }) => {
@@ -20,8 +21,11 @@ const IndexPage = ({ data }) => {
       <Seo title="Home"></Seo>
       <Hero></Hero>
       <About></About>
-      <GridProjects projects={projects}></GridProjects>
-      {/*<SliderWrapper projects={projects}></SliderWrapper>*/}
+      {isTouchScreendevice ? (
+        <GridProjects projects={projects}></GridProjects>
+      ) : (
+        <SliderWrapper projects={projects}></SliderWrapper>
+      )}
     </Layout>
   );
 };
@@ -31,6 +35,7 @@ export const query = graphql`
     allContentfulProduct(
       sort: { fields: itemNum, order: ASC }
       filter: { featured: { eq: true } }
+      limit: 5
     ) {
       nodes {
         id

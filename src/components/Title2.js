@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-const Title2 = ({ title, subtitle, invertColor }) => {
+const Title2 = ({ title, subtitle, invertColor, shadow }) => {
   return (
     <Wrapper>
-      <p>{subtitle}</p>
+      <p style={{ textShadow: shadow ? "var(--text-shadow2)" : "none" }}>
+        {subtitle}
+      </p>
       <h2
-        style={
-          invertColor
-            ? { color: "var( --clr-white)" }
-            : { color: "var(--clr-black)" }
-        }
+        style={{
+          color: invertColor ? "var( --clr-white)" : "var(--clr-black)",
+          textShadow: shadow ? "var(--text-shadow2)" : "none",
+        }}
       >
         <span>/</span> {title}
       </h2>

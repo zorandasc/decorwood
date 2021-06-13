@@ -2,21 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { useSprings, animated, config, to } from "react-spring";
 import { GoTriangleLeft, GoTriangleRight } from "react-icons/go";
-//import Slida from "./Slida";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import SingleSlide from "./SingleSlide";
-import slides from "../constants/lists";
 
 //za transliranje i rotiranje slajdova
 const trans = (xTrans, r) =>
   `perspective(1000px) translateX(calc(100% * ${xTrans})) rotateY(calc(-45deg * ${r}))`;
 
-const Slider = () => {
+const Slider = ({ projects }) => {
   //ne dovodi do rerenderovanja  komponente za razliku od usestate
   const slideIndex = React.useRef(0);
   let current = slideIndex.current;
 
   const toto = (i) => {
-    let offset = slides.length + (current - i);
+    let offset = projects.length + (current - i);
     return {
       //TRANSLACIJE SLIKE U ODNOSU NA OFSET
       xTrans: offset,
@@ -34,7 +34,7 @@ const Slider = () => {
   };
 
   const [springs, api] = useSprings(
-    [...slides, ...slides, ...slides].length,
+    [...projects, ...projects, ...projects].length,
     (i) => ({
       from: { xTrans: 0, rot: 0 },
       ...toto(i),
@@ -44,11 +44,11 @@ const Slider = () => {
   );
 
   const handleNext = () => {
-    current = (current + 1) % slides.length;
+    current = (current + 1) % projects.length;
     api.start((i) => ({ ...toto(i) }));
   };
   const handlePrev = () => {
-    current = current === 0 ? slides.length - 1 : current - 1;
+    current = current === 0 ? projects.length - 1 : current - 1;
     api.start((i) => ({ ...toto(i) }));
   };
 
@@ -61,19 +61,26 @@ const Slider = () => {
       </button>
       {springs.map(
         ({ xTrans, rot, zIndex, pointerEvents, opacity, bcgX }, i) => {
-          let j = i % slides.length;
+          let j = i % projects.length;
+          const { category, image } = projects[j];
+          const gatsImage = getImage(image);
           return (
             <React.Fragment key={i}>
               <animated.div
                 className="bcgImage"
                 style={{
-                  backgroundImage: `url(${slides[j].image})`,
                   transform: to(
                     [bcgX],
                     (bcgX) => `translateX(calc(100% * ${bcgX}))`
                   ),
                 }}
-              ></animated.div>
+              >
+                <GatsbyImage
+                  className="image"
+                  image={gatsImage}
+                  alt={category}
+                ></GatsbyImage>
+              </animated.div>
               <animated.div
                 className="slideWrapper"
                 style={{
@@ -83,7 +90,7 @@ const Slider = () => {
               >
                 <SingleSlide
                   style={{ pointerEvents, opacity }}
-                  slide={slides[j]}
+                  slide={projects[j]}
                 ></SingleSlide>
               </animated.div>
             </React.Fragment>
@@ -114,9 +121,14 @@ const Wrapper = styled.div`
     left: 0;
     height: 100%;
     width: 100%;
-    background-size: cover;
-    background-position: center center;
+
     z-index: -1;
+    .image {
+      background-size: contain;
+      background-position: center center;
+      height: 100%;
+      width: 100%;
+    }
   }
   button {
     background: var(--colors-light);

@@ -6,23 +6,26 @@ import Title from "./Title2";
 import BtnGalery from "./BtnGalery";
 import whiteCloud from "../images/cloudWhite.svg";
 
-const SliderWrapper = () => {
+const SliderWrapper = ({ projects }) => {
   return (
     <Wrapper>
       <Title
         subtitle="Mi volimo to što radimo"
         title="Pogledajte naša najnovija izdanja"
         invertColor={true}
+        shadow={true}
       ></Title>
-      <Slider></Slider>
+
+      <Slider projects={projects}></Slider>
+
       <BtnGalery></BtnGalery>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  padding: 12rem 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10rem 0;
+  background-color: rgba(0, 0, 0, 0.5);
   position: relative;
   text-align: center;
   &::before {
