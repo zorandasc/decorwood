@@ -21,7 +21,7 @@ const Title2 = ({ title, subtitle, invertColor, shadow }) => {
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   width: 85vw;
   max-width: 800px;
   text-align: center;
