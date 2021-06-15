@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import Slider from "./Slider";
+import Deck from "./Deck";
 import Title from "./Title2";
 import BtnGalery from "./BtnGalery";
 import whiteCloud from "../images/cloudWhite.svg";
+import wood from "../images/wood.jpg";
 
 const SliderWrapper = ({ projects }) => {
   return (
@@ -15,7 +17,7 @@ const SliderWrapper = ({ projects }) => {
         invertColor={true}
         shadow={true}
       ></Title>
-
+      <Deck projects={projects}></Deck>
       <Slider projects={projects}></Slider>
 
       <BtnGalery></BtnGalery>
@@ -25,13 +27,18 @@ const SliderWrapper = ({ projects }) => {
 
 const Wrapper = styled.section`
   padding: 10rem 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url(${wood});
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   text-align: center;
-  display: none;
   @media (min-width: 1000px) {
-    display: block;
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.5);
   }
+
   &::before {
     content: "";
     position: absolute;

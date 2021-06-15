@@ -108,10 +108,13 @@ const Slider = ({ projects }) => {
 };
 
 const Wrapper = styled.div`
-  display: grid;
   align-items: center;
   justify-content: center;
   margin-bottom: 4rem;
+  display: none;
+  @media (min-width: 1000px) {
+    display: grid;
+  }
   .slideWrapper {
     grid-area: 1/-1;
   }

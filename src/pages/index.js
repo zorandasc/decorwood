@@ -6,7 +6,7 @@ import {
   Seo,
   Hero,
   About,
-  GridProjects,
+  //GridProjects,
   SliderWrapper,
 } from "../components";
 
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
       <Hero></Hero>
       <About></About>
 
-      <GridProjects projects={projects}></GridProjects>
+      {/*<GridProjects projects={projects}></GridProjects>*/}
 
       <SliderWrapper projects={projects}></SliderWrapper>
     </Layout>
