@@ -28,7 +28,7 @@ const SliderWrapper = ({ projects }) => {
 const Wrapper = styled.section`
   padding: 10rem 0;
   background-image: url(${wood});
-
+  overflow-x: hidden;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

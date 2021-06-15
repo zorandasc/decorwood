@@ -4,15 +4,6 @@ import { useSprings, animated, to } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const cards = [
-  "https://upload.wikimedia.org/wikipedia/en/f/f5/RWS_Tarot_08_Strength.jpg",
-  "https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg",
-  "https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg",
-  "https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg",
-  "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg",
-  "https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg",
-];
-
 //helperske funkcije
 //svaki spring je deklarisan sa: x,y , scal, rot
 const from = (i) => ({ x: -1000, y: 0, scale: 1.5, rot: 0 });
@@ -91,7 +82,7 @@ const Deck = ({ projects }) => {
         };
       });
       //vrati sve na pocetak ako su svi otisli
-      if (!down && gone.size === cards.length) {
+      if (!down && gone.size === projects.length) {
         setTimeout(() => {
           gone.clear() || api.start((i) => toto(i));
         }, 600);
@@ -150,7 +141,7 @@ const Deck = ({ projects }) => {
 const Wrapper = styled.div`
   display: grid;
   justify-content: center;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   @media (min-width: 1000px) {
     display: none;
   }
