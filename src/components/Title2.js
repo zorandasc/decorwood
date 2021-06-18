@@ -21,10 +21,13 @@ const Title2 = ({ title, subtitle, invertColor, shadow }) => {
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   width: 85vw;
   max-width: 800px;
   text-align: center;
+  @media (min-width: 1000px) {
+    margin-bottom: 3rem;
+  }
 
   p {
     font-size: 1.3rem;

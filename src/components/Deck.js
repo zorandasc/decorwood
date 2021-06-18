@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { useSprings, animated, to } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+//import Bounce from "react-reveal/Bounce";
+
+import HandSwipe from "./HandSwipe";
 
 //helperske funkcije
 //svaki spring je deklarisan sa: x,y , scal, rot
@@ -99,6 +102,8 @@ const Deck = ({ projects }) => {
   //STRANICU MOGLI GRABOVATI
   return (
     <Wrapper>
+      <HandSwipe></HandSwipe>
+
       {springs.map(({ x, y, rot, scale }, i) => {
         const { category, image } = projects[i];
         const gatsImage = getImage(image);
@@ -123,13 +128,6 @@ const Deck = ({ projects }) => {
                 image={gatsImage}
                 alt={category}
               ></GatsbyImage>
-              {/*
-              <div
-                className="bcgImage"
-                style={{
-                  backgroundImage: `url(${cards[i]})`,
-                }}
-              ></div>*/}
             </animated.div>
           </animated.div>
         );
@@ -141,7 +139,8 @@ const Deck = ({ projects }) => {
 const Wrapper = styled.div`
   display: grid;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
   @media (min-width: 1000px) {
     display: none;
   }
