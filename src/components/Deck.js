@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useSprings, animated, to } from "react-spring";
+import { useSprings, animated, to } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 //import Bounce from "react-reveal/Bounce";

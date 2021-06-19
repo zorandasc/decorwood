@@ -8,7 +8,7 @@ import {
   animated,
   config,
   useSpringRef,
-} from "react-spring";
+} from "@react-spring/web";
 
 import { GatsbyContext } from "../context/context";
 import links from "../constants/links";

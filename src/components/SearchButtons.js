@@ -37,9 +37,8 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
     <Wrapper>
       {types.map((type, typeIndex) => {
         return (
-          <Bounce delay={800}>
+          <Bounce delay={800} key={typeIndex}>
             <button
-              key={typeIndex}
               className={index === typeIndex ? "active" : undefined}
               onClick={() => {
                 showProjects(type, typeIndex);

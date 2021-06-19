@@ -1,5 +1,5 @@
 import React from "react";
-import { useSpring, useChain, animated, useSpringRef } from "react-spring";
+import { useSpring, useChain, animated, useSpringRef } from "@react-spring/web";
 import {
   FaHandPointer,
   FaAngleDoubleLeft,

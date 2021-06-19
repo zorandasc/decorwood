@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useSprings, animated, config, to } from "react-spring";
+import { useSprings, animated, config, to } from "@react-spring/web";
 import { GoTriangleLeft, GoTriangleRight } from "react-icons/go";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
