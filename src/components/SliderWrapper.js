@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import VisibilitySensor from "react-visibility-sensor";
 
 import Slider from "./Slider";
 import Deck from "./Deck";
@@ -9,15 +10,24 @@ import whiteCloud from "../images/cloudWhite.svg";
 import wood from "../images/wood.jpg";
 
 const SliderWrapper = ({ projects }) => {
+  const [kurec, setKurec] = React.useState(false);
+  function onChange(isVisible) {
+    console.log("Element is now %s", isVisible ? "visible" : "hidden");
+    if (isVisible) {
+      setKurec(true);
+    }
+  }
   return (
     <Wrapper>
-      <Title
-        subtitle="Mi volimo to što radimo"
-        title="Pogledajte naša najnovija izdanja"
-        invertColor={true}
-        shadow={true}
-      ></Title>
-      <Deck projects={projects}></Deck>
+      <VisibilitySensor onChange={onChange}>
+        <Title
+          subtitle="Mi volimo to što radimo"
+          title="Pogledajte naša najnovija izdanja"
+          invertColor={true}
+          shadow={true}
+        ></Title>
+      </VisibilitySensor>
+      {kurec && <Deck projects={projects}></Deck>}
       <Slider projects={projects}></Slider>
 
       <BtnGalery></BtnGalery>

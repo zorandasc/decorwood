@@ -16,7 +16,7 @@ const HandSwipe = () => {
   const [{ o }, api] = useSpring(() => ({
     from: { o: 0 },
     to: { o: 1 },
-    delay: 2000,
+    delay: 3000,
     ref: appearRef,
   }));
 
@@ -33,6 +33,7 @@ const HandSwipe = () => {
     },
     from: { x: -100, opacity: 0 },
     to: { x: 100, opacity: 1 },
+    delay: 1000,
     ref: loopRef,
   });
 
