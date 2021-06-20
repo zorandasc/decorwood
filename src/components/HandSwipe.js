@@ -5,13 +5,13 @@ import {
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
 } from "react-icons/fa";
-//import Slide from "react-reveal/Slide";
 
 const HandSwipe = () => {
   const n = React.useRef(0);
 
   //inicijalno prikazi ruku
-  //sa zakasnjenjem od 2s
+  //sa zakasnjenjem od 3s, da se saceka pojava svih karata
+  //spring za prikazivanje ruke
   const appearRef = useSpringRef();
   const [{ o }, api] = useSpring(() => ({
     from: { o: 0 },
@@ -20,10 +20,11 @@ const HandSwipe = () => {
     ref: appearRef,
   }));
 
+  //spring za lupiranje 6 puta
   const loopRef = useSpringRef();
   const { x, opacity } = useSpring({
     loop: () => {
-      if (5 < n.current++) {
+      if (6 < n.current++) {
         //nakon zavrestka petlje
         //ukloni ruku
         api.start({ o: 0 });
@@ -33,7 +34,7 @@ const HandSwipe = () => {
     },
     from: { x: -100, opacity: 0 },
     to: { x: 100, opacity: 1 },
-    delay: 1000,
+    delay: 400,
     ref: loopRef,
   });
 

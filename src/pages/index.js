@@ -20,9 +20,7 @@ const IndexPage = ({ data }) => {
       <Seo title="Home"></Seo>
       <Hero></Hero>
       <About></About>
-
       {/*<GridProjects projects={projects}></GridProjects>*/}
-
       <SliderWrapper projects={projects}></SliderWrapper>
     </Layout>
   );

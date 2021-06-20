@@ -7,6 +7,7 @@ import Title from "./Title2";
 import BtnGalery from "./BtnGalery";
 import whiteCloud from "../images/cloudWhite.svg";
 
+//TRENUTNO SE NIGDJE NE KORISTI
 const GridProjects = ({ projects, title }) => {
   return (
     <Wrapper>

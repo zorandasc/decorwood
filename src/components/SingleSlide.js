@@ -3,11 +3,12 @@ import { useSpring, animated } from "@react-spring/web";
 import { useGesture } from "react-use-gesture";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Bounce from "react-reveal/Bounce";
+//import Bounce from "react-reveal/Bounce";
 
 const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 10;
 const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 10;
 
+//SINGLE SLIDE UNUTAR SLIDER KOMPONENTE
 const SingleSlide = ({ style, slide }) => {
   const { pointerEvents, opacity } = style;
   const { category, image } = slide;
@@ -52,31 +53,29 @@ const SingleSlide = ({ style, slide }) => {
   );
 
   return (
-    <Bounce>
-      <Card
-        ref={domTarget}
-        style={{
-          transform: "perspective(1000px)",
-          x,
-          y,
-          scale,
-          rotateX,
-          rotateY,
-          pointerEvents,
-        }}
-      >
-        <GatsbyImage
-          className="cardImage"
-          image={gatsImage}
-          alt={category}
-        ></GatsbyImage>
-        <animated.div className="slideContentInner" style={{ opacity }}>
-          <h2 className="slideTitle">{category}</h2>
-          {/*<h3 className="slideSubtitle"></h3>*/}
-          <p className="slideDescription">Decoorwood</p>
-        </animated.div>
-      </Card>
-    </Bounce>
+    <Card
+      ref={domTarget}
+      style={{
+        transform: "perspective(1000px)",
+        x,
+        y,
+        scale,
+        rotateX,
+        rotateY,
+        pointerEvents,
+      }}
+    >
+      <GatsbyImage
+        className="cardImage"
+        image={gatsImage}
+        alt={category}
+      ></GatsbyImage>
+      <animated.div className="slideContentInner" style={{ opacity }}>
+        <h2 className="slideTitle">{category}</h2>
+        {/*<h3 className="slideSubtitle"></h3>*/}
+        <p className="slideDescription">Decoorwood</p>
+      </animated.div>
+    </Card>
   );
 };
 

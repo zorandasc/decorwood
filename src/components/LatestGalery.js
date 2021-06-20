@@ -4,6 +4,7 @@ import styled from "styled-components";
 //import Title from "./Title";
 import Title from "./Title2";
 
+//TRENUTNO SE NIGDJE NE KORISTI
 //FLIP CARD GALERY
 const LatestGalery = () => {
   return (

@@ -6,6 +6,7 @@ import cloud3 from "../images/clouds/cloud3.png";
 import cloud4 from "../images/clouds/cloud4.png";
 import cloud5 from "../images/clouds/cloud5.png";
 
+//TRENUTNO SE NIGDJE NE KORISTI
 const Cloud = ({ className }) => {
   return (
     <div className={className}>

@@ -2,21 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import VisibilitySensor from "react-visibility-sensor";
 
-import Slider from "./Slider";
-import Deck from "./Deck";
-import Title from "./Title2";
-import BtnGalery from "./BtnGalery";
+import { Slider, Deck, Title, BtnGalery } from "./index";
 import whiteCloud from "../images/cloudWhite.svg";
 import wood from "../images/wood.jpg";
 
 const SliderWrapper = ({ projects }) => {
-  const [kurec, setKurec] = React.useState(false);
+  const [titleVisible, settitleVisible] = React.useState(false);
+
   function onChange(isVisible) {
-    console.log("Element is now %s", isVisible ? "visible" : "hidden");
-    if (isVisible) {
-      setKurec(true);
-    }
+    //kada title postane visible pokazi deck of card
+    //ali samo jednom, odnsono samo tokom svakog renderovanja
+    // kompononte odnosno prvog visiblblirnanja titla
+    // ponovno nestajanje title nece ponovo
+    //da dovede do prikazivanja decka i ruke, odnosno sve ostaje isto
+    isVisible ? settitleVisible(true) : settitleVisible(titleVisible);
   }
+
   return (
     <Wrapper>
       <VisibilitySensor onChange={onChange}>
@@ -27,9 +28,8 @@ const SliderWrapper = ({ projects }) => {
           shadow={true}
         ></Title>
       </VisibilitySensor>
-      {kurec && <Deck projects={projects}></Deck>}
-      <Slider projects={projects}></Slider>
-
+      {titleVisible && <Deck projects={projects}></Deck>}
+      {titleVisible && <Slider projects={projects}></Slider>}
       <BtnGalery></BtnGalery>
     </Wrapper>
   );

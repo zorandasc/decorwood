@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useSprings, animated, to } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-//import Bounce from "react-reveal/Bounce";
 
 import HandSwipe from "./HandSwipe";
 
@@ -17,7 +16,7 @@ const toto = (i) => ({
   rot: -10 + Math.random() * 30,
   delay: i * 200,
 });
-//to i from funkcije vracaju objekte
+//toto i from funkcije vracaju objekte
 //promjenjive unutar objekat se mjenjaju tokom gesturea, koje vraca setSpring
 
 const trans = (r, s) =>
