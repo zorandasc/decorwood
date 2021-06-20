@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { navigate } from "gatsby";
 import styled from "styled-components";
 import {
@@ -15,7 +15,8 @@ import links from "../constants/links";
 
 const Sidebar = () => {
   const { isSidebarOpen, toggleSidebar } = useContext(GatsbyContext);
-  const [url, setUrl] = useState("");
+
+  const url = React.useRef("");
 
   const springRef = useSpringRef();
   const transRef = useSpringRef();
@@ -30,7 +31,7 @@ const Sidebar = () => {
     },
     onRest: () => {
       //kad zavrsi animacija naviguj
-      url && navigate(url);
+      url.current && navigate(url.current);
     },
   });
   const transition = useTransition(isSidebarOpen ? links : [], {
@@ -46,9 +47,10 @@ const Sidebar = () => {
     isSidebarOpen ? 0.1 : 0.3,
   ]);
 
-  const handleClick = (url) => {
+  const handleClick = (address) => {
     //setuj url na koji cemo da odemo nakon animacije, onRest
-    setUrl(url);
+    //setUrl(url);
+    url.current = address;
     //zapoceni promjneu animacije
     toggleSidebar();
   };
@@ -77,7 +79,7 @@ const Wrapper = styled(animated.ul)`
   right: 0;
   top: 5rem;
   width: 100%;
-  z-index: 9;
+  z-index: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,7 +90,6 @@ const Wrapper = styled(animated.ul)`
     rgb(0, 0, 0)
   );
   border-bottom: 1px solid var(--clr-primary-6);
-  z-index: -2;
   box-shadow: var(--dark-shadow);
 
   button {

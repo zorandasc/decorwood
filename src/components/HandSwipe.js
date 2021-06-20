@@ -47,7 +47,7 @@ const HandSwipe = () => {
         bottom: "-2rem",
         width: "100%",
         height: "2rem",
-        zIndex: "500",
+        zIndex: "10",
         fontSize: "2.5rem",
         color: "var( --clr-white)",
         x,
