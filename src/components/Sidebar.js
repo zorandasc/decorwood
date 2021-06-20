@@ -21,13 +21,12 @@ const Sidebar = () => {
   const springRef = useSpringRef();
   const transRef = useSpringRef();
 
-  const { size, borWid } = useSpring({
+  const { y } = useSpring({
     ref: springRef,
     config: config.gentle,
-    from: { size: "0%", borWid: "0" },
+    from: { y: "-150%" },
     to: {
-      size: isSidebarOpen ? "70%" : "0%",
-      borWid: isSidebarOpen ? "1" : "0",
+      y: isSidebarOpen ? "0%" : "-150%",
     },
     onRest: () => {
       //kad zavrsi animacija naviguj
@@ -44,7 +43,7 @@ const Sidebar = () => {
 
   useChain(isSidebarOpen ? [springRef, transRef] : [transRef, springRef], [
     0,
-    isSidebarOpen ? 0.1 : 0.3,
+    isSidebarOpen ? 0.1 : 0.2,
   ]);
 
   const handleClick = (address) => {
@@ -58,8 +57,8 @@ const Sidebar = () => {
   return (
     <Wrapper
       style={{
-        height: size,
-        borderBottom: borWid.to((b) => `${b}px solid var(--clr-primary-6)`),
+        y,
+        borderBottom: `1px solid var(--clr-primary-6)`,
       }}
     >
       {transition((style, item) => (
@@ -79,6 +78,7 @@ const Wrapper = styled(animated.ul)`
   right: 0;
   top: 5rem;
   width: 100%;
+  height: 70%;
   z-index: 600;
   display: flex;
   flex-direction: column;

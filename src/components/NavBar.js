@@ -60,7 +60,7 @@ const Wrapper = styled.header`
   left: 0;
   width: 100vw;
   background: transparent;
-  z-index: 101;
+  z-index: 601;
   height: 5rem;
   display: flex;
   align-items: center;
@@ -86,6 +86,7 @@ const Wrapper = styled.header`
     max-width: var(--max-width);
   }
   .nav-header {
+    z-index: 601;
     color: var(--clr-white);
     display: flex;
     align-items: center;
@@ -97,7 +98,7 @@ const Wrapper = styled.header`
       padding-bottom: 0.5rem;
     }
     .toggle-btn {
-      z-index: 101;
+      z-index: 601;
       width: 3.5rem;
       height: 2.25rem;
       display: flex;
