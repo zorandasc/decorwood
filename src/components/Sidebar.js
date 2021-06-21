@@ -59,6 +59,7 @@ const Sidebar = () => {
       style={{
         y,
         borderBottom: `1px solid var(--clr-primary-6)`,
+        borderTop: `1px solid var(--clr-primary-6)`,
       }}
     >
       {transition((style, item) => (

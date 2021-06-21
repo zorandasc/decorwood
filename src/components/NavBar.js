@@ -81,12 +81,12 @@ const Wrapper = styled.header`
   }
 
   .nav-center {
+    z-index: 601;
     width: 90vw;
     margin: 0 auto;
     max-width: var(--max-width);
   }
   .nav-header {
-    z-index: 601;
     color: var(--clr-white);
     display: flex;
     align-items: center;
