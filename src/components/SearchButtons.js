@@ -20,7 +20,27 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
     "Svadbene Dekoracije",
     "Rođendani",
   ];
-
+  /*
+  //za seteocanje buuton collor
+  const setColor = (string) => {
+    switch (string) {
+      case "Uskršnje Dekoracije":
+        return "var(--clr-primary-8)";
+      case "8 Mart":
+        return "lightgreen";
+      case "Svadbene Dekoracije":
+        return "var(--clr-red-light)";
+      case "Rođendani":
+        return "var(--clr-grey-7)";
+      default:
+        return "white";
+    }
+  };
+  style={{
+                color: `${setColor(type)}`,
+                border: `2px solid ${setColor(type)}`,
+              }}
+*/
   const showProjects = (type, typeIndex) => {
     setIndex(typeIndex);
     if (type === "Sve") {

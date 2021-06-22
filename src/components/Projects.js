@@ -8,9 +8,10 @@ import isTouchScreendevice from "../tools/isTouchScreendevice";
 
 const Projects = ({ projects: data }) => {
   const [projects, setProjects] = useState(data);
-  const [{ showLightbox, currentImage }, setLightbox] = useState({
+  const [{ showLightbox, currentImage, imageNumber }, setLightbox] = useState({
     showLightbox: false,
     currentImage: null,
+    imageNumber: 0,
   });
 
   const setBackToAll = () => {
@@ -37,22 +38,23 @@ const Projects = ({ projects: data }) => {
                 setLightbox({
                   showLightbox: true,
                   currentImage: gatsImage,
+                  imageNumber: itemNum,
                 })
               }
               onKeyDown={() =>
                 setLightbox({
                   showLightbox: true,
                   currentImage: gatsImage,
+                  imageNumber: itemNum,
                 })
               }
               role="button"
               tabIndex="0"
             >
               <GatsbyImage className="img" image={gatsImage} alt={category} />
-              <div className="info">
-                <h3>{category}</h3>
+              <div className="ribbon-wrapper-8">
+                <div className="ribbon-8">{itemNum}</div>
               </div>
-              <span className="broj">{itemNum}</span>
             </div>
           );
         })}
@@ -72,6 +74,9 @@ const Projects = ({ projects: data }) => {
                   })
                 }
               />
+              <div className="ribbon-wrapper-8">
+                <div className="ribbon-8">{imageNumber}</div>
+              </div>
             </div>
           </Roll>
         </div>
@@ -93,9 +98,9 @@ const Wrapper = styled.div`
     width: 90vw;
     max-width: var(--max-width);
     margin: 2rem auto 6rem auto;
-    gap: 1rem;
+    gap: 2rem;
     /* safari workaround */
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     //definise dva rowa visine 300px
     //u ovom slucaju to su articly
     grid-template-rows: 350px 350px;
@@ -116,55 +121,12 @@ const Wrapper = styled.div`
     transition: var(--transition);
     box-shadow: var(--dark-shadow);
     position: relative;
-    overflow: hidden;
     border-radius: var(--radius);
     cursor: pointer;
     will-change: width, height;
     &:hover {
       box-shadow: var(--up-shadow);
-    }
-    &:hover .img {
-      //opacity: 0.2;
       transform: scale(1.1);
-    }
-    .info {
-      position: absolute;
-      top: 0%;
-      left: 0%;
-      transform: translateY(0%);
-      width: 100%;
-      height: 100%;
-      transition: var(--transition);
-      color: var(--clr-white);
-      background-image: linear-gradient(
-        transparent,
-        transparent,
-        var(--clr-black)
-      );
-      text-align: center;
-      opacity: 1;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      transition: var(--transition);
-      p {
-        margin-bottom: 0.5rem;
-        color: var(--clr-white);
-        text-transform: uppercase;
-      }
-    }
-    &:hover .info {
-      transform: translateY(50%);
-    }
-    .broj {
-      position: absolute;
-      left: 0;
-      top: 10%;
-      background: var(--clr-primary-5);
-      color: var(--clr-white);
-      padding: 0.4rem 0.5rem;
-      border-top-right-radius: 1rem;
-      border-bottom-right-radius: 1rem;
     }
   }
   .dialog {
@@ -178,6 +140,7 @@ const Wrapper = styled.div`
     z-index: 105;
 
     .dialogContent {
+      position: relative;
       cursor: pointer;
       width: 70vw;
       max-width: 900px;

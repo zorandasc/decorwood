@@ -184,7 +184,68 @@ p {
   }
 }
 
+// ribbon in project.js
+.ribbon-wrapper-8 {
+  width: 108px;
+  height: 108px;
+  overflow: hidden;
+  position: absolute;
+  top: -6px;
+  right: -6px; }
 
+.ribbon-8 {
+  font: bold 15px Sans-Serif;
+  line-height: 18px;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  transform:rotate(-45deg) ;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -4px;
+  top: 26px;
+  width: 150px;
+  background-color: var(--clr-primary-8);
+  color:var(--clr-black);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  box-shadow: -3px 5px 6px -5px rgba(0, 0, 0, 0.5);
+  outline: 1px dashed var(--clr-black);
+  outline-offset: -4px; }
+
+.ribbon-8:before, .ribbon-8:after {
+  content: "";
+  border-top: 4px solid var(--clr-primary-8);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  position: absolute;
+  bottom: -4px; }
+
+.ribbon-8:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 4px solid var(--clr-primary-2);
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid var(--clr-primary-2); }
+
+.ribbon-8:after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 100%;
+  z-index: -1;
+  border-left: 4px solid transparent;
+  border-right: 4px solid var(--clr-primary-2);
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid var(--clr-primary-2); }
 `;
 
 export const wrapRootElement = ({ element }) => {
