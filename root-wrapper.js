@@ -16,8 +16,10 @@ Variables
   --clr-primary-2: hsl(21, 84%, 25%);
   --clr-primary-3: hsl(21, 81%, 29%);
   --clr-primary-4: hsl(21, 77%, 34%);
+  //WOOD #9d7e68
+  --clr-primary-5: #9d7e68;
   /* primary/main color */
-  --clr-primary-5: hsl(21, 62%, 45%);
+  //--clr-primary-5: hsl(21, 62%, 45%);
   //BA5D2C
   //rgb(186,93,44)
   /* lighter shades of primary color */
@@ -209,12 +211,12 @@ p {
   left: -4px;
   top: 26px;
   width: 150px;
-  background-color: var(--clr-primary-8);
-  color:var(--clr-black);
+  background-color:#9D7E68;
+  color:var(--clr-white);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.5px;
   box-shadow: -3px 5px 6px -5px rgba(0, 0, 0, 0.5);
-  outline: 1px dashed var(--clr-black);
+  outline: 1px dashed var(--clr-white);
   outline-offset: -4px; }
 
 .ribbon-8:before, .ribbon-8:after {

@@ -114,7 +114,7 @@ const Card = styled(animated.div)`
 
     .slideSubtitle,
     .slideTitle {
-      color: whitesmoke;
+      color: white;
       font-size: 2rem;
       font-weight: normal;
       letter-spacing: 0.2ch;
@@ -125,7 +125,7 @@ const Card = styled(animated.div)`
       content: "— ";
     }
     .slideDescription {
-      color: whitesmoke;
+      color: white;
       margin: 0;
       font-size: 0.8rem;
       letter-spacing: 0.2ch;

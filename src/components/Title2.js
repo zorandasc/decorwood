@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--clr-primary-5);
     font-family: "Kaushan Script", serif;

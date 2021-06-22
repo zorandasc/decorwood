@@ -58,8 +58,8 @@ const Sidebar = () => {
     <Wrapper
       style={{
         y,
-        borderBottom: `1px solid var(--clr-primary-6)`,
-        borderTop: `1px solid var(--clr-primary-6)`,
+        borderBottom: `1px solid var(--clr-primary-5)`,
+        borderTop: `1px solid var(--clr-primary-5)`,
       }}
     >
       {transition((style, item) => (
@@ -90,7 +90,7 @@ const Wrapper = styled(animated.ul)`
     rgb(0, 0, 0, 0.7),
     rgb(0, 0, 0)
   );
-  border-bottom: 1px solid var(--clr-primary-6);
+  border-bottom: 1px solid var(--clr-primary-5);
   box-shadow: var(--dark-shadow);
 
   button {

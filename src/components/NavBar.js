@@ -76,7 +76,7 @@ const Wrapper = styled.header`
     );
     z-index: -1;
     height: 5rem;
-    border-bottom: 1px solid var(--clr-primary-6);
+    border-bottom: 1px solid var(--clr-primary-5);
     box-shadow: var(--dark-shadow);
   }
 
