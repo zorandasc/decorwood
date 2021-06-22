@@ -126,7 +126,7 @@ const Wrapper = styled.div`
     will-change: width, height;
     &:hover {
       box-shadow: var(--up-shadow);
-      transform: scale(1.1);
+      transform: ${isTouchScreendevice() ? `scale(1)` : `scale(1.1)`};
     }
   }
   .dialog {
