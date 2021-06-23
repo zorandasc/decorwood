@@ -18,7 +18,10 @@ const Title2 = ({ title, subtitle, invertColor, shadow, color }) => {
           textShadow: shadow ? "var(--text-shadow2)" : "none",
         }}
       >
-        <span>/</span> {title}
+        <span stytle={{ color: color ? color : "var(--clr-primary-5)" }}>
+          /
+        </span>
+        {title}
       </h2>
     </Wrapper>
   );
