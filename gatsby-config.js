@@ -67,10 +67,10 @@ module.exports = {
         name: `Decorwood`,
         short_name: `Decorwood`,
         start_url: `/`,
-        background_color: `#BA5D2C`,
-        theme_color: `#BA5D2C`,
+        background_color: `#9d7e68`,
+        theme_color: `#9d7e68`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon_brown.png`, // This path is relative to the root of the site.
       },
     },
   ],

@@ -16,7 +16,10 @@ Variables
   --clr-primary-2: hsl(21, 84%, 25%);
   --clr-primary-3: hsl(21, 81%, 29%);
   --clr-primary-4: hsl(21, 77%, 34%);
-  //WOOD #9d7e68
+  //WOOD --
+  //#9d7e68
+  //rgb(157, 126, 104)
+  //-----------------
   --clr-primary-5: #9d7e68;
   /* primary/main color */
   //--clr-primary-5: hsl(21, 62%, 45%);
@@ -62,7 +65,7 @@ Variables
   --dark-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --up-shadow: 8px 10px 5px 5px rgba(0, 0, 0, 0.2);
   --text-shadow:2px 2px rgba(0, 0, 0, 0.4);
-  --text-shadow2: 3px 3px 3px rgba(0, 0, 0, 1);
+  --text-shadow2: 3px 3px 3px rgba(0, 0, 0, 0.9);
   --max-width: 1170px;
   --fixed-width: 620px;
 }

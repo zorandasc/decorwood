@@ -126,6 +126,7 @@ const Wrapper = styled.div`
     will-change: width, height;
     &:hover {
       box-shadow: var(--up-shadow);
+      //ako je touchscreen no hover scale
       transform: ${isTouchScreendevice() ? `scale(1)` : `scale(1.1)`};
     }
   }
