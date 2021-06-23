@@ -40,6 +40,8 @@ Variables
   --clr-primary-8:  #C1AD9E;
   --clr-primary-9: hsl(21, 94%, 87%);
   --clr-primary-10: hsl(21, 100%, 94%);
+  --deep-scy:#0d1419;
+
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-2: hsl(211, 39%, 23%);
