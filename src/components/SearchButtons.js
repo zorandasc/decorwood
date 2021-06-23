@@ -87,7 +87,7 @@ const Wrapper = styled.section`
     border-radius: 3rem;
     border: 2px solid var(--clr-white);
     color: var(--clr-white);
-    background-color: #9d7e68;
+    background-color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
     font-size: 1.2rem;
     cursor: pointer;

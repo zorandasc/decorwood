@@ -112,7 +112,8 @@ const Wrapper = styled.header`
       cursor: pointer;
       transition: var(--transition);
       &:hover {
-        background: var(--clr-primary-3);
+        //background: var(--clr-primary-3);
+        transform: scale(1.1);
       }
     }
   }

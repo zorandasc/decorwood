@@ -135,7 +135,8 @@ const Wrapper = styled(BgImage)`
       font-size: 1.5rem;
     }
     a {
-      color: var(--clr-primary-8);
+      font-weight: bold;
+      color: var(--clr-primary-7);
     }
 
     //da bi se zadrzao glass

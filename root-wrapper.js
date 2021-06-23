@@ -13,23 +13,31 @@ Variables
   --colors-text:#e2e8f0;
   /* dark shades of primary color*/
   --clr-primary-1: hsl(21, 91%, 17%);
-  --clr-primary-2: hsl(21, 84%, 25%);
+  //stara
+  //--clr-primary-2: hsl(21, 84%, 25%);
+  //DARK WOOD
+  --clr-primary-2: #41342A;
   --clr-primary-3: hsl(21, 81%, 29%);
   --clr-primary-4: hsl(21, 77%, 34%);
-  //WOOD --
-  //#9d7e68
-  //rgb(157, 126, 104)
-  //-----------------
-  --clr-primary-5: #9d7e68;
+
   /* primary/main color */
+  //PRIMARY WOOD COLOR--
+  --clr-primary-5: #7E6553;
+
+  //NEKADASNJA
   //--clr-primary-5: hsl(21, 62%, 45%);
   //BA5D2C
   //rgb(186,93,44)
+
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(21, 57%, 50%);
-  --clr-primary-7: hsl(21, 65%, 59%);
+  //--clr-primary-6: hsl(21, 57%, 50%);
+  //LIGHTER WOOD
+  --clr-primary-6: #9d7e68;
+  //--clr-primary-7: hsl(21, 65%, 59%);
+  --clr-primary-7: #B19886;
   //rgb(218,130,10)
-  --clr-primary-8: hsl(21, 80%, 74%);
+  //--clr-primary-8: hsl(21, 80%, 74%);
+  --clr-primary-8:  #C1AD9E;
   --clr-primary-9: hsl(21, 94%, 87%);
   --clr-primary-10: hsl(21, 100%, 94%);
   /* darkest grey - used for headings */
@@ -214,7 +222,7 @@ p {
   left: -4px;
   top: 26px;
   width: 150px;
-  background-color:#9D7E68;
+  background-color:var(--clr-primary-5);
   color:var(--clr-white);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.5px;
