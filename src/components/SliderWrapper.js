@@ -38,6 +38,7 @@ const SliderWrapper = ({ projects }) => {
           title="Pogledajte naša najnovija izdanja"
           invertColor={true}
           shadow={true}
+          color="var(--clr-primary-7)"
         ></Title>
       </VisibilitySensor>
       {titleVisible && <Deck projects={projects}></Deck>}

@@ -125,10 +125,11 @@ const Card = styled(animated.div)`
       content: "— ";
     }
     .slideDescription {
-      color: white;
+      color: var(--clr-white);
       margin: 0;
-      font-size: 0.8rem;
+      font-size: 1rem;
       letter-spacing: 0.2ch;
+      text-shadow: var(--text-shadow2);
     }
   }
 `;

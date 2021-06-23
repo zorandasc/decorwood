@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const Title2 = ({ title, subtitle, invertColor, shadow }) => {
+const Title2 = ({ title, subtitle, invertColor, shadow, color }) => {
   return (
     <Wrapper>
-      <p style={{ textShadow: shadow ? "var(--text-shadow2)" : "none" }}>
+      <p
+        style={{
+          textShadow: shadow ? "var(--text-shadow2)" : "none",
+          color: color ? color : "var(--clr-primary-5)",
+        }}
+      >
         {subtitle}
       </p>
       <h2
@@ -32,7 +37,6 @@ const Wrapper = styled.div`
   p {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--clr-primary-5);
     font-family: "Kaushan Script", serif;
     letter-spacing: var(--spacing);
     text-transform: none;
