@@ -9,7 +9,7 @@ let ttl = 8000;
 let xmax = 5;
 let ymax = 2;
 let rmax = 10;
-let rt = 1;
+//let rt = 1;
 
 class Circle {
   constructor(x, y, r, dx, dy, hl, rt, settings_rt, stop) {
@@ -64,68 +64,68 @@ class Circle {
   }
 }
 
-const resizeCanvasToDisplaySize = (canvas) => {
-  //canvas.getBoundingClientRect() ce nam dati css-om definisane
-  //vrijednosti canvasa (cijeli viewport).
-  //Inicijalno ctx.canvas.width ili cnavas.width je oko 300px
-  const { width, height } = canvas.getBoundingClientRect();
-  //console.log(width, height);
-  if (canvas.width !== width || canvas.height !== height) {
-    console.log("kurec");
-    canvas.width = width;
-    canvas.height = height;
-    return true;
-  }
-  return false;
-};
-
-const init = (WIDTH, HEIGHT) => {
-  pixies = [];
-  for (var i = 0; i < MAX_PARTICLES; i++) {
-    let x = WIDTH * Math.random();
-    let y = HEIGHT * Math.random();
-
-    let r = (rmax - 1) * Math.random() + 10;
-
-    let dx = Math.random() * xmax * (Math.random() < 0.5 ? -1 : 1);
-    let dy = Math.random() * ymax * (Math.random() < 0.5 ? -1 : 1);
-
-    let hl = (ttl / DRAW_INTERVAL) * (r / rmax);
-
-    let rt = Math.random() * hl;
-
-    let settings_rt = Math.random() + 1;
-
-    let stop = Math.random() * 0.2 + 0.4;
-
-    pixies.push(new Circle(x, y, r, dx, dy, hl, rt, settings_rt, stop));
-  }
-};
-
 const Cestice = (props) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    const WIDTH = window.innerWidth;
+    const HEIGHT = window.innerHeight;
     let animationFrameId;
 
+    const init = () => {
+      pixies = [];
+      for (var i = 0; i < MAX_PARTICLES; i++) {
+        let x = WIDTH * Math.random();
+        let y = HEIGHT * Math.random();
+
+        let r = (rmax - 1) * Math.random() + 10;
+
+        let dx = Math.random() * xmax * (Math.random() < 0.5 ? -1 : 1);
+        let dy = Math.random() * ymax * (Math.random() < 0.5 ? -1 : 1);
+
+        let hl = (ttl / DRAW_INTERVAL) * (r / rmax);
+
+        let rt = Math.random() * hl;
+
+        let settings_rt = Math.random() + 1;
+
+        let stop = Math.random() * 0.2 + 0.4;
+
+        pixies.push(new Circle(x, y, r, dx, dy, hl, rt, settings_rt, stop));
+      }
+    };
+
     const animate = () => {
-      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
       for (var i = 0; i < pixies.length; i++) {
         pixies[i].fade();
-        pixies[i].move(ctx.canvas.width, ctx.canvas.height);
+        pixies[i].move(WIDTH, HEIGHT);
         pixies[i].draw(ctx);
       }
-      resizeCanvasToDisplaySize(canvas);
       animationFrameId = window.requestAnimationFrame(animate);
     };
 
-    init(ctx.canvas.width, ctx.canvas.height);
+    const handleResize = (e) => {
+      ctx.canvas.height = window.innerHeight;
+      ctx.canvas.width = window.innerWidth;
+    };
 
+    //DEFINISE CANVAS SIZE INICIJALNO
+    handleResize();
+
+    //GENERISI PARTICLES
+    init();
+
+    //START ANIMATE
     animate();
 
+    //HANDLE RESIZE
+    window.addEventListener("resize", handleResize);
+
     return () => {
+      window.removeEventListener("resize", handleResize);
       window.cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -137,8 +137,7 @@ const Cestice = (props) => {
         left: "0%",
         width: "100%",
         height: "100%",
-        border: "2px solid blue",
-        zIndex: "100",
+        //border: "2px solid blue",
       }}
       ref={canvasRef}
       {...props}
