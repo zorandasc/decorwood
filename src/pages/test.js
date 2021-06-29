@@ -1,30 +1,46 @@
 import React from "react";
-import Cestice from "../components/Cestice";
+import { graphql } from "gatsby";
 
-const Test = () => {
-  /*
-  const draw = (ctx, frameCount) => {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = "tomato";
-    ctx.beginPath();
-    ctx.arc(150, 80, 40 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI);
-    ctx.fill();
-  };
-*/
+import Cestice from "../components/Cestice";
+import Projects1 from "../components/Projects1";
+import { Layout, PageTitle } from "../components";
+
+const Test = ({ data }) => {
+  const {
+    allContentfulProduct: { nodes: projects },
+  } = data;
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100vw",
-        height: "100vh",
-        background: "linear-gradient(#040429, #257eb7)",
-      }}
-    >
-      kurec palec
-      {/*<CanvasTest draw={draw}></CanvasTest>*/}
+    <Layout>
       <Cestice></Cestice>
-    </div>
+      <div style={{ marginTop: "12rem" }}>
+        <PageTitle
+          subtitle="Sve što vam treba za savršen poklon"
+          title="naša galerija"
+        ></PageTitle>
+      </div>
+      <Projects1 projects={projects}></Projects1>
+    </Layout>
   );
 };
+
+export const query = graphql`
+  {
+    allContentfulProduct(sort: { fields: itemNum, order: ASC }) {
+      nodes {
+        id
+        category
+        date
+        itemNum
+        image {
+          gatsbyImageData(
+            placeholder: BLURRED
+            layout: CONSTRAINED
+            formats: [AUTO, WEBP]
+          )
+        }
+      }
+    }
+  }
+`;
 
 export default Test;

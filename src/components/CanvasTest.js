@@ -1,6 +1,7 @@
 import React from "react";
 import useCanvas from "../tools/useCanvas";
 
+//SAMO TERST NIGDJE SE NE KORISTI
 const CanvasTest = (props) => {
   const { draw, ...rest } = props;
 

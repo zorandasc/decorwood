@@ -132,12 +132,14 @@ const Cestice = (props) => {
   return (
     <canvas
       style={{
-        position: "absolute",
+        position: "fixed",
         top: "0%",
         left: "0%",
         width: "100%",
         height: "100%",
-        //border: "2px solid blue",
+        display: "block",
+        background: "linear-gradient(#040429, #257eb7)",
+        zIndex: "-1",
       }}
       ref={canvasRef}
       {...props}
