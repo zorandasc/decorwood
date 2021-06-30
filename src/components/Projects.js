@@ -18,6 +18,9 @@ const Projects = ({ projects: data }) => {
     setProjects(data);
   };
 
+  //OVDIJE PROJECT IN SERACBUTON NIJE JEDNAK PROJECT U STATEU
+  // VEC DATA,KOJI JE UVIJEK AVAILABLE, TAKO DA UVIJEK IMAMO KATEGPORIJU
+  //DOK JE PROJECT STATE ODRECUJE SLIKE U PROJEKTU I ON SE MIJENJA
   return (
     <Wrapper className="section">
       <SearchButtons
