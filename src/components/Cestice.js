@@ -139,7 +139,7 @@ const Cestice = (props) => {
         height: "100%",
         display: "block",
         background:
-          "linear-gradient(var(--deep-scy),#040429, var(--clr-complement), var(--clr-white))",
+          "radial-gradient(farthest-corner at 50% 100%,var(--clr-white),var(--clr-complement),#040429,var(--deep-scy))",
         zIndex: "-1",
       }}
       ref={canvasRef}

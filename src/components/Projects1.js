@@ -32,7 +32,7 @@ const Projects1 = ({ projects: data }) => {
           const { id, category, itemNum, image } = project;
           const gatsImage = getImage(image);
           return (
-            <Bounce bottom key={id} delay={900}>
+            <Bounce bottom key={id} delay={700}>
               <div
                 className="article"
                 onClick={() =>
