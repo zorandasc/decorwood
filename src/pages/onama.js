@@ -116,10 +116,12 @@ const Wrapper = styled(BgImage)`
     width: 90%;
     max-width: 1000px;
     padding: 2rem 1rem;
+    margin: auto;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+
     position: relative;
     z-index: 1;
     box-shadow: var(--dark-shadow);

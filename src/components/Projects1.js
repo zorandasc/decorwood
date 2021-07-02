@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Roll from "react-reveal/Roll";
+import Bounce from "react-reveal/Bounce";
 
 import SearchButtons from "./SearchButtons";
 import isTouchScreendevice from "../tools/isTouchScreendevice";
@@ -31,31 +32,32 @@ const Projects1 = ({ projects: data }) => {
           const { id, category, itemNum, image } = project;
           const gatsImage = getImage(image);
           return (
-            <div
-              className="article"
-              key={id}
-              onClick={() =>
-                setLightbox({
-                  showLightbox: true,
-                  currentImage: gatsImage,
-                  imageNumber: itemNum,
-                })
-              }
-              onKeyDown={() =>
-                setLightbox({
-                  showLightbox: true,
-                  currentImage: gatsImage,
-                  imageNumber: itemNum,
-                })
-              }
-              role="button"
-              tabIndex="0"
-            >
-              <GatsbyImage className="img" image={gatsImage} alt={category} />
-              <div className="ribbon-wrapper-8">
-                <div className="ribbon-8">{itemNum}</div>
+            <Bounce bottom key={id} delay={900}>
+              <div
+                className="article"
+                onClick={() =>
+                  setLightbox({
+                    showLightbox: true,
+                    currentImage: gatsImage,
+                    imageNumber: itemNum,
+                  })
+                }
+                onKeyDown={() =>
+                  setLightbox({
+                    showLightbox: true,
+                    currentImage: gatsImage,
+                    imageNumber: itemNum,
+                  })
+                }
+                role="button"
+                tabIndex="0"
+              >
+                <GatsbyImage className="img" image={gatsImage} alt={category} />
+                <div className="ribbon-wrapper-8">
+                  <div className="ribbon-8">{itemNum}</div>
+                </div>
               </div>
-            </div>
+            </Bounce>
           );
         })}
       </div>
@@ -98,6 +100,8 @@ const Wrapper = styled.div`
     width: 90vw;
     max-width: var(--max-width);
     margin: 2rem auto 6rem auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
     gap: 2rem;
     /* safari workaround */
     grid-gap: 2rem;

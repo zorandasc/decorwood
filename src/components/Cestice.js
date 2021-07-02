@@ -138,7 +138,7 @@ const Cestice = (props) => {
         width: "100%",
         height: "100%",
         display: "block",
-        background: "linear-gradient(#040429, #257eb7)",
+        background: "linear-gradient(var(--deep-scy),#040429, #257eb7, white)",
         zIndex: "-1",
       }}
       ref={canvasRef}

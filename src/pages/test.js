@@ -1,9 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Cestice from "../components/Cestice";
-import Projects1 from "../components/Projects1";
-import { Layout, PageTitle } from "../components";
+import { Layout, PageTitle, Projects1, Cestice } from "../components";
 
 const Test = ({ data }) => {
   const {

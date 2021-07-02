@@ -70,7 +70,7 @@ const Wrapper = styled.div`
       text-transform: uppercase;
       font-weight: 500;
       line-height: 1.25;
-      margin: 1rem 0 6rem 0;
+      margin: 1rem 0 2rem 0;
       letter-spacing: 3px;
       text-shadow: var(--text-shadow);
     }

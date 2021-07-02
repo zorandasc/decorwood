@@ -111,6 +111,7 @@ const Wrapper = styled(BgImage)`
     height: 40rem;
     padding: 2rem;
     margin: auto;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
