@@ -42,33 +42,6 @@ const Hero = () => {
     </Wrapper>
   );
 };
-/*
-const lowerHead = keyframes`
-  from{
-    transform: translateY(-500px);
-  }
-  to{
-    transform: translateY(0px);
-  }
-`;
-
-const lowerSub = keyframes`
-  from{
-    transform: translateY(-500px);
-  }
-  to{
-    transform: translateY(0px);
-  }
-`;
-
-const showDivider = keyframes`
-  from{
-    transform: scale(0);
-  }
-  to{
-    transform: scale(1);
-  }
-`;
 
 //wraper animation to black
 /*

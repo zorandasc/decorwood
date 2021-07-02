@@ -128,6 +128,7 @@ const Wrapper = styled.div`
     border-radius: var(--radius);
     cursor: pointer;
     will-change: width, height;
+    background: var(--clr-white);
     &:hover {
       box-shadow: var(--up-shadow);
       //ako je touchscreen no hover scale

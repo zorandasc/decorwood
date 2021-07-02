@@ -23,6 +23,8 @@ Variables
   /* primary/main color */
   //PRIMARY WOOD COLOR--
   --clr-primary-5: #7E6553;
+  //complementary to PRIMARY WOOD COLOR-
+  --clr-complement:#536c7e;
 
   //NEKADASNJA
   //--clr-primary-5: hsl(21, 62%, 45%);

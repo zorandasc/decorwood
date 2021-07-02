@@ -10,7 +10,7 @@ const Test = ({ data }) => {
   return (
     <Layout>
       <Cestice></Cestice>
-      <div style={{ marginTop: "12rem" }}>
+      <div style={{ marginTop: "8rem" }}>
         <PageTitle
           subtitle="Sve što vam treba za savršen poklon"
           title="naša galerija"
