@@ -4,11 +4,12 @@ import styled, { keyframes } from "styled-components";
 import Rotate from "react-reveal/Rotate";
 import Bounce from "react-reveal/Bounce";
 
-import BtnGalery from "./BtnGalery";
+import { BtnGalery, CesticeHome } from "./index";
 
 const Hero = () => {
   return (
     <Wrapper>
+      <CesticeHome></CesticeHome>
       {/* You can use a GatsbyImage component if the image is dynamic */}
       <StaticImage
         className="bcg"

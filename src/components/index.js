@@ -12,6 +12,8 @@ import Wave from "./Wave";
 import Slider from "./Slider";
 import Deck from "./Deck";
 import SliderWrapper from "./SliderWrapper";
+import Cestice from "./Cestice";
+import CesticeHome from "./CesticeHome";
 
 export {
   Layout,
@@ -28,4 +30,6 @@ export {
   Slider,
   Deck,
   SliderWrapper,
+  Cestice,
+  CesticeHome,
 };
