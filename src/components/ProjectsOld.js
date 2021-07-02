@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Roll from "react-reveal/Roll";
-import Bounce from "react-reveal/Bounce";
 
 import SearchButtons from "./SearchButtons";
 import isTouchScreendevice from "../tools/isTouchScreendevice";
 
-const Projects1 = ({ projects: data }) => {
+const ProjectsOld = ({ projects: data }) => {
   const [projects, setProjects] = useState(data);
   const [{ showLightbox, currentImage, imageNumber }, setLightbox] = useState({
     showLightbox: false,
@@ -19,6 +18,9 @@ const Projects1 = ({ projects: data }) => {
     setProjects(data);
   };
 
+  //OVDIJE PROJECT IN SERACBUTON NIJE JEDNAK PROJECT U STATEU
+  // VEC DATA,KOJI JE UVIJEK AVAILABLE, TAKO DA UVIJEK IMAMO KATEGPORIJU
+  //DOK JE PROJECT STATE ODRECUJE SLIKE U PROJEKTU I ON SE MIJENJA
   return (
     <Wrapper className="section">
       <SearchButtons
@@ -32,32 +34,31 @@ const Projects1 = ({ projects: data }) => {
           const { id, category, itemNum, image } = project;
           const gatsImage = getImage(image);
           return (
-            <Bounce bottom key={id} delay={700}>
-              <div
-                className="article"
-                onClick={() =>
-                  setLightbox({
-                    showLightbox: true,
-                    currentImage: gatsImage,
-                    imageNumber: itemNum,
-                  })
-                }
-                onKeyDown={() =>
-                  setLightbox({
-                    showLightbox: true,
-                    currentImage: gatsImage,
-                    imageNumber: itemNum,
-                  })
-                }
-                role="button"
-                tabIndex="0"
-              >
-                <GatsbyImage className="img" image={gatsImage} alt={category} />
-                <div className="ribbon-wrapper-8">
-                  <div className="ribbon-8">{itemNum}</div>
-                </div>
+            <div
+              className="article"
+              key={id}
+              onClick={() =>
+                setLightbox({
+                  showLightbox: true,
+                  currentImage: gatsImage,
+                  imageNumber: itemNum,
+                })
+              }
+              onKeyDown={() =>
+                setLightbox({
+                  showLightbox: true,
+                  currentImage: gatsImage,
+                  imageNumber: itemNum,
+                })
+              }
+              role="button"
+              tabIndex="0"
+            >
+              <GatsbyImage className="img" image={gatsImage} alt={category} />
+              <div className="ribbon-wrapper-8">
+                <div className="ribbon-8">{itemNum}</div>
               </div>
-            </Bounce>
+            </div>
           );
         })}
       </div>
@@ -90,7 +91,7 @@ const Projects1 = ({ projects: data }) => {
 const Wrapper = styled.div`
   position: relative;
   padding-top: 0;
-  background: transparent;
+  background: var(--clr-grey-10);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,7 +101,6 @@ const Wrapper = styled.div`
     width: 90vw;
     max-width: var(--max-width);
     margin: 2rem auto 6rem auto;
-    padding: 0 1rem;
     gap: 2rem;
     /* safari workaround */
     grid-gap: 2rem;
@@ -127,7 +127,6 @@ const Wrapper = styled.div`
     border-radius: var(--radius);
     cursor: pointer;
     will-change: width, height;
-    background: var(--clr-white);
     &:hover {
       box-shadow: var(--up-shadow);
       //ako je touchscreen no hover scale
@@ -169,8 +168,6 @@ const Wrapper = styled.div`
     }
     .tile-layout {
       grid-template-columns: 1fr 1fr;
-      padding: 0;
-      margin-top: 4rem;
     }
   }
   @media (min-width: 992px) {
@@ -187,4 +184,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Projects1;
+export default ProjectsOld;
