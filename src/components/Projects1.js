@@ -170,6 +170,7 @@ const Wrapper = styled.div`
     .tile-layout {
       grid-template-columns: 1fr 1fr;
       padding: 0;
+      margin-top: 4rem;
     }
   }
   @media (min-width: 992px) {
