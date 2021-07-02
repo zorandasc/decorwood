@@ -100,8 +100,7 @@ const Wrapper = styled.div`
     width: 90vw;
     max-width: var(--max-width);
     margin: 2rem auto 6rem auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
     gap: 2rem;
     /* safari workaround */
     grid-gap: 2rem;
@@ -170,6 +169,7 @@ const Wrapper = styled.div`
     }
     .tile-layout {
       grid-template-columns: 1fr 1fr;
+      padding: 0;
     }
   }
   @media (min-width: 992px) {

@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import styled from "styled-components";
 
 import { Layout, PageTitle, Projects1, Cestice } from "../components";
 
@@ -10,16 +11,23 @@ const Test = ({ data }) => {
   return (
     <Layout>
       <Cestice></Cestice>
-      <div style={{ marginTop: "8rem" }}>
+      <Header>
         <PageTitle
           subtitle="Sve što vam treba za savršen poklon"
           title="naša galerija"
         ></PageTitle>
-      </div>
+      </Header>
       <Projects1 projects={projects}></Projects1>
     </Layout>
   );
 };
+
+const Header = styled.div`
+  margin-top: 8rem;
+  @media (min-width: 768px) {
+    margin-top: 12rem;
+  }
+`;
 
 export const query = graphql`
   {
