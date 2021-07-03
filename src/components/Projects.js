@@ -99,7 +99,7 @@ const Wrapper = styled.div`
   .tile-layout {
     display: grid;
     width: 90vw;
-    max-width: var(--max-width);
+    max-width: 500px;
     margin: 2rem auto 6rem auto;
     padding: 0 1rem;
     gap: 2rem;
@@ -129,6 +129,13 @@ const Wrapper = styled.div`
     cursor: pointer;
     will-change: width, height;
     background: var(--clr-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .img {
+      width: 95%;
+      height: 95%;
+    }
     &:hover {
       box-shadow: var(--up-shadow);
       //ako je touchscreen no hover scale
@@ -169,20 +176,23 @@ const Wrapper = styled.div`
       }
     }
     .tile-layout {
+      max-width: 800px;
       grid-template-columns: 1fr 1fr;
-      padding: 0;
+      //padding: 0;
       margin-top: 4rem;
     }
   }
   @media (min-width: 992px) {
     .tile-layout {
       grid-template-columns: 1fr 1fr 1fr;
+      max-width: 1050px;
       //grid-template-rows: 350px 350px;
       //grid-auto-rows: 350px;
     }
   }
   @media (min-width: 1600px) {
     .tile-layout {
+      max-width: var(--max-width);
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
