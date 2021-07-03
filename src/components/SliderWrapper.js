@@ -61,7 +61,7 @@ const Wrapper = styled.section`
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     z-index: -1;
     @media (min-width: 1000px) {
       display: none;

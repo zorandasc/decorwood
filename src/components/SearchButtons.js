@@ -92,7 +92,7 @@ const Wrapper = styled.section`
     font-size: 1.2rem;
     cursor: pointer;
     outline: none;
-    box-shadow: var(--dark-shadow);
+    box-shadow: var(--white-shadow);
     transition: var(--transition);
   }
   button:hover,

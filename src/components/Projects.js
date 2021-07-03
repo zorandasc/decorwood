@@ -88,6 +88,7 @@ const Projects = ({ projects: data }) => {
 };
 
 const Wrapper = styled.div`
+  //ribon je definisan u root-wrapperu
   position: relative;
   padding-top: 0;
   background: transparent;

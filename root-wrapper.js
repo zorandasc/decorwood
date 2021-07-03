@@ -75,6 +75,7 @@ Variables
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --white-shadow:4px 7px 5px 0px rgba(255, 255, 255, 0.5);
   --up-shadow: 8px 10px 5px 5px rgba(0, 0, 0, 0.2);
   --text-shadow:2px 2px rgba(0, 0, 0, 0.4);
   --text-shadow2: 3px 3px 3px rgba(0, 0, 0, 0.9);
@@ -248,10 +249,11 @@ p {
   left: 0px;
   top: 100%;
   z-index: -1;
-  border-left: 4px solid var(--clr-primary-2);
+  border-left: 4px solid var(--clr-white);
   border-right: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-top: 4px solid var(--clr-primary-2); }
+  border-top: 4px solid var(--clr-white); 
+  }
 
 .ribbon-8:after {
   content: "";
@@ -260,9 +262,9 @@ p {
   top: 100%;
   z-index: -1;
   border-left: 4px solid transparent;
-  border-right: 4px solid var(--clr-primary-2);
+  border-right: 4px solid var(--clr-white);
   border-bottom: 4px solid transparent;
-  border-top: 4px solid var(--clr-primary-2); }
+  border-top: 4px solid var(--clr-white); }
 `;
 
 export const wrapRootElement = ({ element }) => {
