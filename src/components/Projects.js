@@ -100,7 +100,7 @@ const Wrapper = styled.div`
     display: grid;
     width: 90vw;
     max-width: 500px;
-    margin: 2rem auto 6rem auto;
+    margin: 2rem auto 1rem auto;
     padding: 0 1rem;
     gap: 2rem;
     /* safari workaround */

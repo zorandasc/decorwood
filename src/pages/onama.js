@@ -37,7 +37,7 @@ const Onama = ({ data }) => {
               <p>
                 Sada iza nas stoji višegodišnji rad sa velikim brojem uspešno
                 pripremljenih unikatnih i ručno izrađenih dekoracija za
-                venčanja, rođendane, uskrse, 8 martovske i druge svečane
+                venčanja, rođendane, uskršnje, 8 martovske i druge svečane
                 priredbe.
               </p>
               <span>*</span>
