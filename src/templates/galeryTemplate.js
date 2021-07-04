@@ -5,6 +5,13 @@ import styled from "styled-components";
 import { Layout, PageTitle, Projects, Cestice } from "../components";
 
 const GaleryTemplate = (props) => {
+  //pageContext objekat se dobije od context objekta
+  //koji smo definisali unutar gatsby-node.js
+  //gdije se za kreiranje ovih stranica korisit
+  //ovaj template. Takodjee $skip:, $limit:
+  //promjenjive koje se koriste u graphql queriju un
+  //unutar ovog templeta, za svaku starnicu, su
+  //dobijene od context objekta
   const { currentPage, numPages } = props.pageContext;
   //const { data } = props;
 
@@ -65,12 +72,13 @@ const Header = styled.div`
 
 const PageLinks = styled.div`
   width: 80vw;
-  max-width: 1050px;
+  max-width: 1020px;
   margin: 0 auto 8rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   .link {
+    font-family: var(--ff-secondary);
     text-transform: uppercase;
     letter-spacing: var(--spacing);
     background: var(--clr-primary-5);
@@ -86,14 +94,15 @@ const PageLinks = styled.div`
   }
 
   .link:hover {
-    background: transparent;
-    color: var(--clr-white);
+    background: var(--clr-white);
+    color: var(--clr-primary-5);
     border: 2px solid var(--clr-white);
     box-shadow: var(--light-shadow);
   }
   .active {
-    background: var(--clr-white);
-    color: var(--clr-primary-5);
+    background: transparent;
+    color: var(--clr-white);
+    border: 2px solid var(--clr-white);
   }
 `;
 
