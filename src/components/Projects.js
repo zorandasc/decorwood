@@ -18,7 +18,10 @@ const Projects = ({ projects: data }) => {
   const setBackToAll = () => {
     setProjects(data);
   };
-
+  //u searcgbtn saljemo orginalni data, tako da dugmamad uvijek
+  //imaju kategoriju iz irginalnih podatak
+  //dok se slike odnosno  projects filtriraju
+  //iz usestate projects preko setProjects
   return (
     <Wrapper className="section">
       <SearchButtons

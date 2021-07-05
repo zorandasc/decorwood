@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Bounce from "react-reveal/Bounce";
 
 const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
-  //ovaj state je za lokali css underline line
+  //ovaj state je za lokali css selection of actoive class
   const [index, setIndex] = React.useState(0);
 
   //da bi dobili array od jedinstvenih tipova, koristimo Set
@@ -20,27 +20,7 @@ const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
     "Svadbene Dekoracije",
     "Rođendani",
   ];
-  /*
-  //za seteocanje buuton collor
-  const setColor = (string) => {
-    switch (string) {
-      case "Uskršnje Dekoracije":
-        return "var(--clr-primary-8)";
-      case "8 Mart":
-        return "lightgreen";
-      case "Svadbene Dekoracije":
-        return "var(--clr-red-light)";
-      case "Rođendani":
-        return "var(--clr-grey-7)";
-      default:
-        return "white";
-    }
-  };
-  style={{
-                color: `${setColor(type)}`,
-                border: `2px solid ${setColor(type)}`,
-              }}
-*/
+
   const showProjects = (type, typeIndex) => {
     setIndex(typeIndex);
     if (type === "Sve") {

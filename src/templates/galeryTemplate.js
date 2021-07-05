@@ -13,7 +13,6 @@ const GaleryTemplate = (props) => {
   //unutar ovog templeta, za svaku starnicu, su
   //dobijene od context objekta
   const { currentPage, numPages } = props.pageContext;
-  //const { data } = props;
 
   const {
     allContentfulProduct: { nodes: projects },
