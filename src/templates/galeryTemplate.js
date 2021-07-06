@@ -2,28 +2,42 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 
-import { Layout, PageTitle, Projects, Cestice } from "../components";
+import {
+  Layout,
+  PageTitle,
+  Projects,
+  Cestice,
+  SearchButtons,
+} from "../components";
 
 const GaleryTemplate = (props) => {
   //pageContext objekat se dobije od context objekta
   //koji smo definisali unutar gatsby-node.js
   //gdije se za kreiranje ovih stranica korisit
-  //ovaj template. Takodjee $skip:, $limit:
+  //ovaj template. Takodjee $skip:, $limit:,category
   //promjenjive koje se koriste u graphql queriju un
   //unutar ovog templeta, za svaku starnicu, su
   //dobijene od context objekta
-  const { currentPage, numPages } = props.pageContext;
+  const { currentPage, numPages, category } = props.pageContext;
 
+  /*
   const {
     allContentfulProduct: { nodes: projects },
   } = props.data;
+*/
+  const projects =
+    category === "sve"
+      ? props.data.allProduct.nodes
+      : props.data.filteredProduct.nodes;
 
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
 
-  const nextPage = `/galerija/${currentPage + 1}`;
+  const nextPage = `/galerija/${category}/${currentPage + 1}`;
   const prevPage =
-    currentPage - 1 === 1 ? `/galerija/` : `/galerija/${currentPage - 1}`;
+    currentPage - 1 === 1
+      ? `/galerija/${category}`
+      : `/galerija/${category}/${currentPage - 1}`;
 
   return (
     <Layout>
@@ -34,6 +48,7 @@ const GaleryTemplate = (props) => {
           title="naša galerija"
         ></PageTitle>
       </Header>
+      <SearchButtons category={category}></SearchButtons>
       <Projects projects={projects}></Projects>
       <PageLinks>
         {!isFirst && (
@@ -45,7 +60,7 @@ const GaleryTemplate = (props) => {
           return (
             <Link
               key={i}
-              to={`/galerija/${i === 0 ? "" : i + 1}`}
+              to={`/galerija/${category}/${i === 0 ? "" : i + 1}`}
               className={i + 1 === currentPage ? `link active` : "link"}
             >
               {i + 1}
@@ -104,10 +119,30 @@ const PageLinks = styled.div`
     border: 2px solid var(--clr-white);
   }
 `;
-
+//$category: String!, $skip: Int!, $limit: Int! dobijamo od context objekta
 export const query = graphql`
-  query getProduct($skip: Int!, $limit: Int!) {
-    allContentfulProduct(
+  query getProduct($category: String!, $skip: Int!, $limit: Int!) {
+    allProduct: allContentfulProduct(
+      skip: $skip
+      limit: $limit
+      sort: { fields: itemNum, order: ASC }
+    ) {
+      nodes {
+        id
+        category
+        date
+        itemNum
+        image {
+          gatsbyImageData(
+            placeholder: BLURRED
+            layout: CONSTRAINED
+            formats: [AUTO, WEBP]
+          )
+        }
+      }
+    }
+    filteredProduct: allContentfulProduct(
+      filter: { slug: { eq: $category } }
       skip: $skip
       limit: $limit
       sort: { fields: itemNum, order: ASC }

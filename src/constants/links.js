@@ -1,6 +1,11 @@
-import React from "react"
-import { FaHome, FaBabyCarriage, FaHatWizard,FaEnvelopeOpenText} from "react-icons/fa"
-const links= [
+import React from "react";
+import {
+  FaHome,
+  FaBabyCarriage,
+  FaHatWizard,
+  FaEnvelopeOpenText,
+} from "react-icons/fa";
+const links = [
   {
     page: "pocetna",
     label: "Početna",
@@ -16,7 +21,7 @@ const links= [
   {
     page: "galerija",
     label: "Galerija",
-    url: `/galerija`,
+    url: `/galerija/sve`,
     icon: <FaHatWizard className="icon" />,
   },
   {
@@ -25,7 +30,6 @@ const links= [
     url: `/kontakt`,
     icon: <FaEnvelopeOpenText className="icon" />,
   },
- 
-]
+];
 
-export default links
+export default links;

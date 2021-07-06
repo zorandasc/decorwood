@@ -1,36 +1,51 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import Bounce from "react-reveal/Bounce";
 
-const SearchButtons = ({ category }) => {
+const SearchButtons = ({ projects, setProjects, setBackToAll }) => {
   //ovaj state je za lokali css selection of actoive class
-  //const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(0);
 
   //da bi dobili array od jedinstvenih tipova, koristimo Set
   //strukturu koju konvertujemo sa ... tacke u array jedinst
   //venig arraje tipova
   const types = [
-    { label: "Sve", link: "sve" },
-    { label: "Uskršnje Dekoracije", link: "uskrsnje-dekoracije" },
-    { label: "Osmi Mart", link: "osmi-mart" },
-    { label: "Svadbene Dekoracije", link: "svadbene-dekoracije" },
+    "Sve",
+    ...new Set(
+      projects.map((project) => {
+        return project.category;
+      })
+    ),
+    "8 Mart",
+    "Svadbene Dekoracije",
+    "Rođendani",
   ];
+
+  const showProjects = (type, typeIndex) => {
+    setIndex(typeIndex);
+    if (type === "Sve") {
+      setBackToAll();
+    } else {
+      const tempProjects = projects.filter(
+        (project) => project.category === type
+      );
+      setProjects(tempProjects);
+    }
+  };
 
   return (
     <Wrapper>
-      {types.map((type, index) => {
+      {types.map((type, typeIndex) => {
         return (
-          <Bounce delay={700} key={index}>
-            <Link
-              //className={index === typeIndex ? "active button" : "button"}
-              className="button"
-              activeClassName="active"
-              partiallyActive={true}
-              to={`/galerija/${type.link}`}
+          <Bounce delay={700} key={typeIndex}>
+            <button
+              className={index === typeIndex ? "active" : undefined}
+              onClick={() => {
+                showProjects(type, typeIndex);
+              }}
             >
-              {type.label}
-            </Link>
+              {type}
+            </button>
           </Bounce>
         );
       })}
@@ -43,7 +58,7 @@ const Wrapper = styled.section`
   margin: 2rem 0;
   justify-content: center;
   flex-wrap: wrap;
-  .button {
+  button {
     font-family: var(--ff-secondary);
     margin: 0.5rem;
     text-transform: capitalize;
@@ -60,8 +75,8 @@ const Wrapper = styled.section`
     box-shadow: var(--white-shadow);
     transition: var(--transition);
   }
-  .button:hover,
-  .button.active {
+  button:hover,
+  button.active {
     box-shadow: var(--light-shadow);
     color: var(--clr-white);
     border-color: var(--clr-white);

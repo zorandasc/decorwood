@@ -4,32 +4,26 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Roll from "react-reveal/Roll";
 import Bounce from "react-reveal/Bounce";
 
-import SearchButtons from "./SearchButtons";
 import isTouchScreendevice from "../tools/isTouchScreendevice";
 
-const Projects = ({ projects: data }) => {
-  const [projects, setProjects] = useState(data);
+const Projects = ({ projects }) => {
+  // const [projects, setProjects] = useState(data);
   const [{ showLightbox, currentImage, imageNumber }, setLightbox] = useState({
     showLightbox: false,
     currentImage: null,
     imageNumber: 0,
   });
-
+  /*
   const setBackToAll = () => {
     setProjects(data);
   };
+  */
   //u searcgbtn saljemo orginalni data, tako da dugmamad uvijek
   //imaju kategoriju iz irginalnih podatak
   //dok se slike odnosno  projects filtriraju
   //iz usestate projects preko setProjects
   return (
     <Wrapper className="section">
-      <SearchButtons
-        projects={data}
-        setProjects={setProjects}
-        setBackToAll={setBackToAll}
-      ></SearchButtons>
-
       <div className="tile-layout">
         {projects.map((project, index) => {
           const { id, category, itemNum, image } = project;
