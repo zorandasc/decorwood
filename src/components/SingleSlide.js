@@ -86,7 +86,7 @@ const Card = styled(animated.div)`
   align-items: center;
   width: 300px;
   height: 400px;
-  background: transparent;
+  background: var(--clr-white);
   border-radius: 10px;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   will-change: transform;
@@ -98,11 +98,14 @@ const Card = styled(animated.div)`
   .cardImage {
     border-radius: 10px;
     grid-area: 1/-1;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
     background-position: center center;
     will-change: transform;
-    height: 100%;
-    margin: 0;
+    width: 95%;
+    height: 95%;
+    margin: auto;
   }
   .slideContentInner {
     grid-area: 1/-1;

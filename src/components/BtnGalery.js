@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 const BtnGalery = () => {
   return (
-    <Wrapper to="/galerija" className="banner-btn">
+    <Wrapper to="/galerija/sve" className="banner-btn">
       Galerija
     </Wrapper>
   );
