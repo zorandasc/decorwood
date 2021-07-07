@@ -44,6 +44,7 @@ const Wrapper = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   .button {
+    display: block;
     font-family: var(--ff-secondary);
     margin: 0.5rem;
     text-transform: capitalize;
@@ -60,11 +61,17 @@ const Wrapper = styled.section`
     box-shadow: var(--white-shadow);
     transition: var(--transition);
   }
-  .button:hover,
-  .button.active {
-    box-shadow: var(--light-shadow);
+  .button:hover {
+    box-shadow: var(--dark-shadow);
     color: var(--clr-white);
     border-color: var(--clr-white);
+  }
+
+  .button.active {
+    box-shadow: var(--dark-shadow);
+    color: var(--clr-white);
+    border-color: var(--clr-white);
+    background-color: transparent;
   }
 `;
 
